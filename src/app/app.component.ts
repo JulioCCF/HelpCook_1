@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'HelpCook';
+  opened = false;
+  expanded = false;
+
+  toggleSidenav() {
+    this.expanded = !this.expanded;
+  }
 }

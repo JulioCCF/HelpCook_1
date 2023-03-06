@@ -1,0 +1,120 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #f5f8ed;
+    font-family: Averta Standard;
+    font-size:540px;
+    color: #3c240d;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.navbar {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+}
+
+.navbar-brand {
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.btn-login {
+    background-color: #8b9a8a;
+    color: #fff;
+    border-radius: 10px; 
+    border: #8b9a8a;
+    width: 150px;
+    height: 35px;
+}
+
+.btn-reg {
+    background-color: #8b9a8a;
+    color: #fff;
+    border-radius: 10px; 
+    border: #8b9a8a;
+    width: 150px;
+    height: 35px;
+}
+
+.form-inline {
+    width: 500px;
+    border-radius: 20px;  
+}
+
+.form-control {
+    width: 500px;
+    border-radius: 20px;  
+}
+
+.form-inline button {
+    border-radius: 20px;
+}
+
+.sidebar {
+    height: 100vh;
+    transition: all 0.3s ease-in-out;
+    position: fixed;
+    z-index: 1;
+}
+
+.sidebar-sticky {
+    top: 0;
+    bottom: 0;
+    padding-top: 56px;
+    overflow-y: auto;
+    background-color: #f5f8ed;
+}
+
+.sidebar .nav-link {
+    padding: 10px 20px;
+}
+
+.sidebar .nav-link.active {
+    color: #fff;
+    background-color: #8b9a8a;
+}
+
+.sidebar.expanded {
+    width: 250px;
+}
+
+.main {
+    margin-top: 60px;
+}
+
+.space-nav {
+    width: 100px;
+}
+
+.space-nav-btn {
+    width: 150px;
+}
+
+.space-reg-login {
+    width: 20px;
+}
+
+.space-btn-btn {
+    width: 150px;
+}
+
+@media (min-width: 768px) {
+  .navbar-expand-lg .navbar-collapse {
+    display: flex!important;
+  }
+  .navbar-collapse {
+    flex-basis: auto;
+    flex-grow: 1;
+  }
+  .navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .main {
+    margin-left: 250px;
+  }
+}
