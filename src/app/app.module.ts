@@ -30,7 +30,7 @@ import { MostrarUnaRecetaComponent } from './pages/mostrar-una-receta/mostrar-un
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    FormsModule
     
   ],
   providers: [],
