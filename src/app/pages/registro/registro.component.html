@@ -1,7 +1,6 @@
-
 <h1>Help Cook</h1>
-    <form>
-        <label for="username">Nombre de Usuario</label>
+<form>
+    <!-- <label for="username">Nombre de Usuario</label>
         <input type="text" id="username" name="username" required>
         <label for="email">Correo Electrónico</label>
         <input type="email" id="email" name="email" required>
@@ -14,6 +13,36 @@
         <input type="checkbox" id="authorization" name="authorization" class="authorization" required>
         <label for="authorization">Autorizo el uso de mi información</label>
         <button type="submit">Registrarme</button>
-        <p>¿Ya tienes una cuenta? <a href="#">Iniciar Sesión</a></p>
-    </form>
-
+        <p>¿Ya tienes una cuenta? <a href="#">Iniciar Sesión</a></p> -->
+    <div class="form-group">
+        <label for="InputUsername">Nombre de usuario: </label>
+        <input type="text" class="form-control" name="username" id="InputUsername"
+            placeholder="Introduzca su nombre de usuario" required>
+    </div>
+    <div class="form-group">
+        <label for="InputEmail1">Correo electrónico: </label>
+        <input type="email" class="form-control" name="email" id="InputEmail1"
+            placeholder="Introduzca un correo electrónico válido" required>
+    </div>
+    <div class="form-group">
+        <label for="InputPassword1">Contraseña: </label>
+        <input type="password" class="form-control" name="password" id="InputPassword1" placeholder="Contraseña"
+            required>
+    </div>
+    <div class="form-group">
+        <label for="confirm-password">Confirmar Contraseña: </label>
+        <input type="password" class="form-control" id="confirm-password" name="confirm-password"
+            placeholder="Repita la contraseña" required>
+    </div>
+    <div class="custom-control custom-checkbox">
+        <tr>
+            <td><input type="checkbox" class="custom-control-input" id="customCheck1"></td>
+            <td> <label class="custom-control-label" for="customCheck1">Acepto la Política de Privacidad</label></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="custom-control-input" id="customCheck2"></td>
+            <td> <label class="custom-control-label" for="customCheck1">Autorizo el uso de mi información</label></td>
+        </tr>
+    </div>
+    <button type="submit" class="btn btn-primary">Registrarme</button>
+</form>
