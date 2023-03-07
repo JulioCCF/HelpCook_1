@@ -44,3 +44,18 @@ button {
     transform: translateX(-50%);
 }
 
+.p-texto {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.p-link{
+    margin-top:-20px;
+    text-align: center;
+}
+
+.link-registro {
+    color: #3F2811;
+    font-weight: bold;
+}
+
