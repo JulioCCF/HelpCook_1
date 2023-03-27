@@ -2,7 +2,8 @@
 <nav class="navbar navbar-expand-xxxl">
   <div class="container-fluid">
     <!-- Botón del menú desplegable -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+      aria-controls="offcanvasExample">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="row">
@@ -38,25 +39,237 @@
       </div>
     </div>
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
+      <div class="offcanvas-header" style="background-color: #d4d0c4;">
+        <h4 class="offcanvas-title fw-bold" id="offcanvasExampleLabel">Ingredientes</h4>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body" style="background-color: #f5f6ed; height: 100vh; overflow-y: auto;">
         <!-- Menu items -->
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <!-- <a class="nav-link active" aria-current="page" href="#">Carnes</a> -->
+            <h5 class="fw-bold">Carnes</h5>
+            <div class="row">
+              <div class="col">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                  <label class="form-check-label" for="inlineCheckbox1">Pollo</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                  <label class="form-check-label" for="inlineCheckbox2">Pavo</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                  <label class="form-check-label" for="inlineCheckbox3">Cerdo</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+                  <label class="form-check-label" for="inlineCheckbox4">Ternera</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+                  <label class="form-check-label" for="inlineCheckbox5">Cordero</label>
+                </div>
+              </div>
+            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <!-- <a class="nav-link" href="#">Pescados</a> -->
+            <h5 class="fw-bold mt-4">Pescados y mariscos</h5>
+            <div class="row">
+              <div class="col">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
+                  <label class="form-check-label" for="inlineCheckbox6">Bacalao</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
+                  <label class="form-check-label" for="inlineCheckbox7">Atún</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option8">
+                  <label class="form-check-label" for="inlineCheckbox8">Salmón</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox9" value="option9">
+                  <label class="form-check-label" for="inlineCheckbox9">Merluza</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox10" value="option10">
+                  <label class="form-check-label" for="inlineCheckbox10">Sardinas</label>
+                </div>
+              </div>
+            </div>
+            <p>
+              <a class="btn-mostrarmas d-flex justify-content-center mt-2" data-bs-toggle="collapse"
+                href="#multiCollapsePescados" role="button" aria-expanded="false"
+                aria-controls="multiCollapsePescados">Mostrar más</a>
+            </p>
+            <div class="row">
+              <div class="col">
+                <div class="collapse multi-collapse" id="multiCollapsePescados">
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox11" value="option11">
+                        <label class="form-check-label" for="inlineCheckbox11">Sardinas</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox12" value="option12">
+                        <label class="form-check-label" for="inlineCheckbox12">Rape</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <!-- <a class="nav-link" href="#">Hortalizas y verduras</a> -->
+            <h5 class="fw-bold">Arroces</h5>
+            <div class="row">
+              <div class="col">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox13" value="option13">
+                  <label class="form-check-label" for="inlineCheckbox13">Arroz redondo</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox14" value="option14">
+                  <label class="form-check-label" for="inlineCheckbox14">Arroz largo</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox15" value="option15">
+                  <label class="form-check-label" for="inlineCheckbox15">Arroz basmati</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox16" value="option16">
+                  <label class="form-check-label" for="inlineCheckbox16">Arroz vaporizado</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox17" value="option17">
+                  <label class="form-check-label" for="inlineCheckbox17">Arroz integral</label>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <!-- <a class="nav-link" href="#">Hortalizas y verduras</a> -->
+            <h5 class="fw-bold mt-4">Pasta</h5>
+            <div class="row">
+              <div class="col">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox18" value="option18">
+                  <label class="form-check-label" for="inlineCheckbox18">Macarrones</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox19" value="option19">
+                  <label class="form-check-label" for="inlineCheckbox19">Espaguetis</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox20" value="option20">
+                  <label class="form-check-label" for="inlineCheckbox20">Tallarines</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox21" value="option21">
+                  <label class="form-check-label" for="inlineCheckbox21">Penne</label>
+                </div>
+              </div>
+              </div>
+              <div class="row">
+              <div class="col">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox22" value="option22">
+                  <label class="form-check-label" for="inlineCheckbox22">Raviolis</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox23" value="option23">
+                  <label class="form-check-label" for="inlineCheckbox23">Tortellini</label>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <!-- <a class="nav-link" href="#">Hortalizas y verduras</a> -->
+            <h5 class="fw-bold">Hortalizas y verduras</h5>
+            <div class="row">
+              <div class="col">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
+                  <label class="form-check-label" for="inlineCheckbox6">Ajo</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
+                  <label class="form-check-label" for="inlineCheckbox7">Cebolla</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option8">
+                  <label class="form-check-label" for="inlineCheckbox8">Tomate</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox9" value="option9">
+                  <label class="form-check-label" for="inlineCheckbox9">Patata</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox10" value="option10">
+                  <label class="form-check-label" for="inlineCheckbox10">Calabacín</label>
+                </div>
+              </div>
+            </div>
+            <p>
+              <a class="btn-mostrarmas d-flex justify-content-center mt-2" data-bs-toggle="collapse"
+                href="#multiCollapseHortalizas" role="button" aria-expanded="false"
+                aria-controls="multiCollapseHortalizas">Mostrar más</a>
+            </p>
+            <div class="row">
+              <div class="col">
+                <div class="collapse multi-collapse" id="multiCollapseHortalizas">
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox11" value="option11">
+                        <label class="form-check-label" for="inlineCheckbox11">Pepino</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox12" value="option12">
+                        <label class="form-check-label" for="inlineCheckbox12">Espinacas</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <!-- <a class="nav-link" href="#">Hortalizas y verduras</a> -->
+            <h5 class="fw-bold">Setas</h5>
+          </li>
+          <li class="nav-item">
+            <!-- <a class="nav-link" href="#">Hortalizas y verduras</a> -->
+            <h5 class="fw-bold">Postres</h5>
           </li>
         </ul>
       </div>
     </div>
   </div>
 </nav>
-
