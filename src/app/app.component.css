@@ -18,3 +18,9 @@ body {
 .logo {
     text-align: center;
 }
+a{
+    color:#3c240d
+}
+a:hover{
+    color: #8b9a8a
+}

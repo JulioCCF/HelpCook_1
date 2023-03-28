@@ -14,7 +14,7 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'subirReceta',component:SubirRecetaComponent},
   {path:'perfil',component:PerfilComponent},
-  {path:'c',component:MostrarRecetasComponent},
+  {path:'mostrarRecetas',component:MostrarRecetasComponent},
   {path:'mostraUnaReceta',component:MostrarUnaRecetaComponent},
 ];
 

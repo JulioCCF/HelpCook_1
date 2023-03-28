@@ -11,28 +11,28 @@
       role="group"
       aria-label="Basic example"
     >
-      <button type="button" class="btn iconosbarra">
+      <button type="button" class="btn iconosbarra" routerLink="mostrarRecetas">
         <img src="/assets/iconos/carnes.png" width="40px" style="margin-left: 30px;"/>
       </button>
-      <button type="button" class="btn iconosbarra">
+      <button type="button" class="btn iconosbarra" routerLink="mostrarRecetas">
         <img src="/assets/iconos/pescado.png" width="40px" style="margin-left: 30px;"/>
       </button>
-      <button type="button" class="btn iconosbarra">
+      <button type="button" class="btn iconosbarra" routerLink="mostrarRecetas">
         <img src="/assets/iconos/legumbres.png" width="40px" style="margin-left: 30px;"/>
       </button>
-      <button type="button" class="btn iconosbarra">
+      <button type="button" class="btn iconosbarra" routerLink="mostrarRecetas">
         <img src="/assets/iconos/arroces.png" width="40px" style="margin-left: 30px;"/>
       </button>
       <button type="button" class="btn iconosbarra">
         <img src="/assets/iconos/pasta.png" width="40px" style="margin-left: 30px;"/>
       </button>
-      <button type="button" class="btn iconosbarra">
+      <button type="button" class="btn iconosbarra" routerLink="mostrarRecetas">
         <img src="/assets/iconos/verduras.png" width="40px" style="margin-left: 30px;"/>
       </button>
       <button type="button" class="btn iconosbarra">
         <img src="/assets/iconos/setas.png" width="40px" style="margin-left: 30px;"/>
       </button>
-      <button type="button" class="btn iconosbarra">
+      <button type="button" class="btn iconosbarra" routerLink="mostrarRecetas">
         <img src="/assets/iconos/postre1.png" width="40px" style="margin-left: 30px; margin-right: 30px;"/>
       </button>
     </div>
@@ -43,7 +43,7 @@
   <br/>
 
   <!-- Recetas mas valoradas -->
-  <h4 style="margin-left: 150px; font-weight: bold;">Recetas mejor valoradas</h4>
+  <a routerLink="mostrarRecetas"><h4 style="margin-left: 150px; font-weight: bold;">Recetas mejor valoradas</h4></a>
   <h5 class="texto" style="margin-left: 150px;">
       Encuentra las recetas mejor valoradas según nuestros usuarios
     </h5>
@@ -56,6 +56,7 @@
           width="300px"
           height="200"
           style="margin-left: 50px"
+          routerLink = "mostraUnaReceta"
         />
       </div>
 
@@ -66,6 +67,7 @@
           width="300px"
           height="200"
           style="margin-left: 50px"
+          routerLink = "mostraUnaReceta"
         />
       </div>
 
@@ -76,6 +78,7 @@
           width="300px"
           height="200"
           style="margin-left: 50px"
+          routerLink = "mostraUnaReceta"
         />
       </div>
     </div>
@@ -88,7 +91,7 @@
   <br/>
 
   <!-- Recetas mas recientes -->
-  <h4 style="margin-left: 150px; font-weight: bold;">Recetas más recientes</h4>
+  <a routerLink="mostrarRecetas"><h4 style="margin-left: 150px; font-weight: bold;">Recetas más recientes</h4></a>
   <h5 class="texto" style="margin-left: 150px;">Últimas recetas añadidas</h5>
   <div class="container , contenedorimagenes" style="margin-top: 40px;">
     <div class="row">
@@ -99,6 +102,7 @@
           width="300px"
           height="200"
           style="margin-left: 50px"
+          routerLink = "mostraUnaReceta"
         />
       </div>
 
@@ -109,6 +113,7 @@
           width="300px"
           height="200"
           style="margin-left: 50px"
+          routerLink = "mostraUnaReceta"
         />
       </div>
 
@@ -119,6 +124,7 @@
           width="300px"
           height="200"
           style="margin-left: 50px"
+          routerLink = "mostraUnaReceta"
         />
       </div>
     </div>
