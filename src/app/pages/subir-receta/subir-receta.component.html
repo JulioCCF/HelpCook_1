@@ -1,1 +1,124 @@
-<p>subir-receta works!</p>
+<!-- Seccion logo -->
+<div class="text-center" style="margin-top: 30px">
+    <a class="nav-link" routerLink=""><img src="/assets/img/logo.png" class="w-25" alt="" /></a>
+</div>
+<form>
+    <!-- Imagen -->
+    <div class="mb-3">
+        <label class="form-label fw-bold text-center mt-3" for="formFile">Adjunta la imagen</label>
+        <input class="form-control fs-5" type="file" name="formFile" id="formFile">
+    </div>
+    <!-- Titulo receta -->
+    <div class="mb-3">
+        <label class="form-label fw-bold text-center mt-3" for="FormControlImput1">Título</label>
+        <input class="form-control fs-5" type="text" name="" id="FormControlImput1" placeholder="Introduce el título de la receta">
+    </div>
+    <!-- Barra ingredientes -->
+    <div class="text-center mt-5">
+        <div class="btn-group barracategorias" role="group" aria-label="Basic example">
+          <button type="button" class="btn iconosbarra">
+            <img src="/assets/iconos/carnes.png" width="40px" style="margin-left: 30px;"/>
+          </button>
+          <button type="button" class="btn iconosbarra">
+            <img src="/assets/iconos/pescado.png" width="40px" style="margin-left: 30px;"/>
+          </button>
+          <button type="button" class="btn iconosbarra">
+            <img src="/assets/iconos/legumbres.png" width="40px" style="margin-left: 30px;"/>
+          </button>
+          <button type="button" class="btn iconosbarra">
+            <img src="/assets/iconos/arroces.png" width="40px" style="margin-left: 30px;"/>
+          </button>
+          <button type="button" class="btn iconosbarra">
+            <img src="/assets/iconos/pasta.png" width="40px" style="margin-left: 30px;"/>
+          </button>
+          <button type="button" class="btn iconosbarra">
+            <img src="/assets/iconos/verduras.png" width="40px" style="margin-left: 30px;"/>
+          </button>
+          <button type="button" class="btn iconosbarra">
+            <img src="/assets/iconos/setas.png" width="40px" style="margin-left: 30px;"/>
+          </button>
+          <button type="button" class="btn iconosbarra">
+            <img src="/assets/iconos/postre1.png" width="40px" style="margin-left: 30px; margin-right: 30px;"/>
+          </button>
+        </div>
+      </div>
+      <!-- Cantidad -->
+      <div class="mb-3">
+        <label class="form-label custom-label fw-bold text-center mt-3" for="typeNumber">Cantidad</label>
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <input class="form-control text-center fs-5" type="number" name="" id="typeNumber" placeholder="100" style="width: 140px;">
+            </div>
+        </div>
+      </div>
+      <!-- Comensales -->
+      <div class="row">
+        <div class="col">
+            <label class="form-label custom-label fw-bold mt-3 ms-5" for="FormControlImput2">Comensales</label>
+            <input class="form-control fs-5" type="number" name="comensales" id="idComensales" placeholder="4" style="width: 200px;">
+        </div>
+        <!-- Tiempo de preparación -->
+        <div class="col">
+            <label class="form-label custom-label fw-bold mt-3" for="FormControlImput3">Tiempo de preparación</label>
+            <input class="form-control fs-5" type="number" name="preparacion" id="idPreparacion" placeholder="120" style="width: 200px;">
+        </div>
+        <div class="col">
+            <label class="form-label custom-label fw-bold mt-3 ms-5" for="FormControlImput4">Categoría</label>
+            <input class="form-control fs-5" type="text" name="categoria" id="idCategoria" placeholder="Entrante, segundo..." style="width: 200px;">
+        </div>
+        <!-- Tipo de cocina -->
+        <div class="col">
+            <label class="form-label custom-label fw-bold mt-3 ms-4" for="FormControlImput4">Tipo de cocina</label>
+            <input class="form-control fs-5" type="text" name="tipo" id="idTipo" placeholder="Española, árabe..." style="width: 200px;">
+        </div>
+      </div>
+      <!-- Pasos -->
+      <div class="row">
+        <div class="col">
+            <label class="form-label custom-label fw-bold mt-3" for="comment">Paso 1</label>
+            <textarea name="text" id="comment" cols="50" rows="3"></textarea>
+        </div>
+        <div class="col">
+            <label class="form-label fw-bold text-center mt-3" for="formFile">Adjunta la imagen</label>
+            <input class="form-control mt-4 fs-5" type="file" name="formFile" id="formFile">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+            <label class="form-label custom-label fw-bold mt-3" for="comment">Paso 2</label>
+            <textarea name="text" id="comment" cols="50" rows="3"></textarea>
+        </div>
+        <br>
+        <br>
+        <div class="col">
+            <label class="form-label fw-bold text-center mt-3" for="formFile">Adjunta la imagen</label>
+            <input class="form-control mt-4 fs-5" type="file" name="formFile" id="formFile">
+        </div>
+      </div>
+      <!-- Botón añadir más pasos -->
+      <div class="row">
+        <div class="col">
+          <div class="collapse multi-collapse" id="multiCollapsePasos">
+            <div class="row">
+                    <div class="col">
+                        <label class="form-label custom-label fw-bold mt-3" for="comment">Paso 3</label>
+                        <textarea name="text" id="comment" cols="50" rows="3"></textarea>
+                    </div>
+                    <div class="col">
+                        <label class="form-label fw-bold text-center mt-3" for="formFile">Adjunta la imagen</label>
+                        <input class="form-control mt-4" type="file" name="formFile" id="formFile">
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+      <p>
+        <a class="btn-mostrarmas text-center mt-5" data-bs-toggle="collapse"
+          href="#multiCollapsePasos" role="button" aria-expanded="false"
+          aria-controls="multiCollapsePescados">Añadir más pasos</a>
+      </p>
+      <br>
+      <br>
+      <!-- Botón enviar -->
+      <button type="submit" class="btn btn-primary">Enviar</button>
+</form>

@@ -12,7 +12,7 @@ const routes: Routes = [
   {path:'',component:InicioComponent},
   {path:'registro',component:RegistroComponent},
   {path:'login',component:LoginComponent},
-  {path:'subirReceita',component:SubirRecetaComponent},
+  {path:'subirReceta',component:SubirRecetaComponent},
   {path:'perfil',component:PerfilComponent},
   {path:'c',component:MostrarRecetasComponent},
   {path:'mostraUnaReceta',component:MostrarUnaRecetaComponent},
