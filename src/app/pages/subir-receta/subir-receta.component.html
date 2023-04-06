@@ -13,29 +13,56 @@
         <label class="form-label fw-bold text-center mt-3" for="FormControlImput1">Título</label>
         <input class="form-control fs-5" type="text" name="" id="FormControlImput1" placeholder="Introduce el título de la receta">
     </div>
+    <!-- Descripción receta -->
+    <div class="mb-3">
+      <label class="form-label fw-bold text-center mt-3" for="FormControlImput1">Descripción</label>
+      <input class="form-control fs-5" type="text" name="" id="FormControlImput1" placeholder="Breve descripción de tu receta">
+  </div>
     <!-- Barra ingredientes -->
     <div class="text-center mt-5">
         <div class="btn-group barracategorias" role="group" aria-label="Basic example">
-          <button type="button" class="btn iconosbarra">
+          <button type="button" class="btn dropdown-toggle iconosbarra" data-toggle="dropdown">
             <img src="/assets/iconos/carnes.png" width="40px" style="margin-left: 30px;"/>
+            <span class="caret"></span>
           </button>
+          <!-- <button type="button" class="btn iconosbarra">
+            <img src="/assets/iconos/carnes.png" width="40px" style="margin-left: 30px;"/>
+          </button> -->
           <button type="button" class="btn iconosbarra">
             <img src="/assets/iconos/pescado.png" width="40px" style="margin-left: 30px;"/>
+            <div class="collapse" id="collapseBtns">
+
+            </div>
           </button>
           <button type="button" class="btn iconosbarra">
             <img src="/assets/iconos/legumbres.png" width="40px" style="margin-left: 30px;"/>
+            <div class="collapse" id="collapseBtns">
+
+            </div>
           </button>
           <button type="button" class="btn iconosbarra">
             <img src="/assets/iconos/arroces.png" width="40px" style="margin-left: 30px;"/>
+            <div class="collapse" id="collapseBtns">
+
+            </div>
           </button>
           <button type="button" class="btn iconosbarra">
             <img src="/assets/iconos/pasta.png" width="40px" style="margin-left: 30px;"/>
+            <div class="collapse" id="collapseBtns">
+
+            </div>
           </button>
           <button type="button" class="btn iconosbarra">
             <img src="/assets/iconos/verduras.png" width="40px" style="margin-left: 30px;"/>
+            <div class="collapse" id="collapseBtns">
+
+            </div>
           </button>
           <button type="button" class="btn iconosbarra">
             <img src="/assets/iconos/setas.png" width="40px" style="margin-left: 30px;"/>
+            <div class="collapse" id="collapseBtns">
+
+            </div>
           </button>
           <button type="button" class="btn iconosbarra">
             <img src="/assets/iconos/postre1.png" width="40px" style="margin-left: 30px; margin-right: 30px;"/>
@@ -57,7 +84,7 @@
             <label class="form-label custom-label fw-bold mt-3 ms-5" for="FormControlImput2">Comensales</label>
             <input class="form-control fs-5" type="number" name="comensales" id="idComensales" placeholder="4" style="width: 200px;">
         </div>
-        <!-- Tiempo de preparación -->
+        <!-- Tiempo de eparación -->
         <div class="col">
             <label class="form-label custom-label fw-bold mt-3" for="FormControlImput3">Tiempo de preparación</label>
             <input class="form-control fs-5" type="number" name="preparacion" id="idPreparacion" placeholder="120" style="width: 200px;">
@@ -65,11 +92,6 @@
         <div class="col">
             <label class="form-label custom-label fw-bold mt-3 ms-5" for="FormControlImput4">Categoría</label>
             <input class="form-control fs-5" type="text" name="categoria" id="idCategoria" placeholder="Entrante, segundo..." style="width: 200px;">
-        </div>
-        <!-- Tipo de cocina -->
-        <div class="col">
-            <label class="form-label custom-label fw-bold mt-3 ms-4" for="FormControlImput4">Tipo de cocina</label>
-            <input class="form-control fs-5" type="text" name="tipo" id="idTipo" placeholder="Española, árabe..." style="width: 200px;">
         </div>
       </div>
       <!-- Pasos -->
