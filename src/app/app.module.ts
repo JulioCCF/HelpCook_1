@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { SubirRecetaComponent } from './pages/subir-receta/subir-receta.componen
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { MostrarRecetasComponent } from './pages/mostrar-recetas/mostrar-recetas.component';
 import { MostrarUnaRecetaComponent } from './pages/mostrar-una-receta/mostrar-una-receta.component';
+import { DataService } from './data.service';
 
 @NgModule({
   declarations: [
@@ -30,10 +32,11 @@ import { MostrarUnaRecetaComponent } from './pages/mostrar-una-receta/mostrar-un
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
     
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

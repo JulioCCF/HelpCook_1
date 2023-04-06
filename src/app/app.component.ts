@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,9 @@ export class AppComponent {
   title = 'HelpCook';
   opened = false;
   expanded = false;
+  constructor(private dataService:DataService){
+    
+  }
 
   toggleSidenav() {
     this.expanded = !this.expanded;
