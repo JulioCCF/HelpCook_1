@@ -7,14 +7,19 @@ import { Injectable } from '@angular/core';
 export class MiServicio {
  
   recetasAMostrar: string;
-  categoria:boolean;
+  recetasXCategoria: string;
+ 
  
   constructor(){
   }
   
-  mostrarRecetas(recetasAMostrar: string, categoria:boolean) {
+  mostrarRecetas(recetasAMostrar: string) {
     this.recetasAMostrar = recetasAMostrar;
-    this.categoria= categoria;
+    
+  }
+  mostrarRecetasCategoria(recetasXCategoria: string) {
+    this.recetasXCategoria = recetasXCategoria;
+  
   }
  
  

@@ -7,8 +7,9 @@
   }
   
 .titulo{
-    font-size: 50px; 
-    margin-top: 20px;
+    font-size: 60px; 
+    margin-top: 30px;
+    font-weight: bold;
       
 }
 .receta{
@@ -19,9 +20,20 @@
     font-size: 50px; 
     margin-top: 50px;
     background-color: #8b9a8a;
-    color:#FDFEFE;
-   
+    color:#FDFEFE;   
+}
+.fechaAlta{
+    text-align: right; 
+    margin-right: 100px; 
+    margin-bottom: 40px; 
+    font-size: x-large;
+    font-weight:bolder;
     
-    
-    
+
+
+}
+.descripcion{
+    font-size: 25px;
+    background-color: #3c240d;
+    color:#d4d0c4
 }

@@ -11,22 +11,22 @@ export class InicioComponent {
 
   recetasAMostrar: string;
   recetasXCategoria:string;
-  categoria:boolean;
+ 
 
   constructor(private miServicio: MiServicio ){
     
   }
   capturarTexto(evento :MouseEvent) {
     this.recetasAMostrar = (evento.target as HTMLElement).textContent;
-    this.categoria = false;
-    this.miServicio.mostrarRecetas(this.recetasAMostrar,this.categoria);
+    console.log(this.recetasAMostrar);
+   
+    this.miServicio.mostrarRecetas(this.recetasAMostrar);
     
     
   }
   capturarTextoCategorias(event: any) {
     this.recetasXCategoria = event.target.alt;
-    this.categoria = true;
-    this.miServicio.mostrarRecetas(this.recetasXCategoria,this.categoria);
+    this.miServicio.mostrarRecetasCategoria(this.recetasXCategoria);
   }
 
 }

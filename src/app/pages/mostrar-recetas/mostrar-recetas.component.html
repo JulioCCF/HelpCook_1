@@ -8,34 +8,42 @@
 <div class="container rounded receta">
     <h1  *ngIf="categoria; else sinCategoria"
     >
-      Recetas de {{ recetasAMostrar }}
+      {{ recetasAMostrar }}
     </h1>
     <ng-template #sinCategoria>
       <h1>
-        <div>{{ recetasAMostrar }}</div>
+       Recetas de {{recetasXCategoria}} 
       </h1>
     </ng-template>
 </div>
 
 <!-- Recetas que se muestran -->
-  <div class="container pt-5" style="margin-top: 50px;" *ngFor="let receta of recetas" >
-    
-      <div class="row rounded outer" style="height: max-content;">
-
-        <h1 class="text-center titulo"  >{{ receta.categoria }}</h1>
-
-        <div class="col-md-4" style="margin-bottom: 50px; margin-top: 20px;">
+  <div class="container pt-5 " style="margin-top: 50px;" *ngFor="let receta of recetas" >
+ <!-- Titulo-->   
+      <div class="row  rounded outer">
+        <div class="col-md-10 text-center titulo" >
+           {{ receta.categoria }} 
+        </div>
+<!-- Valoracion -->  
+        <div class="col-md-2" style="margin-top: 50px; font-size: 25px;" >
+          <i class="bi bi-star-fill" ></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+       </div>
+<!-- Foto-->  
+        <div class="col-md-6" style="margin-top: 40px;" >
             <input type="image" 
             src="assets/img/pruebareceta.jpg"
             class="rounded"
-            width="300px"
-            height="200"
+            width="350px"
             routerLink = "mostraUnaReceta"
           />
         </div>
-
-        <div class="col-md-6" >
-            <p style="font-size: 25px;">{{ receta.descripcion }}</p>
+<!-- Descripcion-->  
+        <div class="col-md-5 descripcion rounded" >
+            <p >{{ receta.descripcion }}</p>
+        </div>
+<!-- FechaAlta-->  
+        <div class="fechaAlta">  
+          {{receta.fechaAlta}}
         </div>
     </div>
   </div>
