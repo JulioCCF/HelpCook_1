@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/data.service';
 import { MiServicio } from 'src/app/miServivio.service';
-import { Receta } from 'src/app/receta.model';
+import { Receta } from 'src/app/Receta.model';
 
 @Component({
   selector: 'app-mostrar-recetas',
@@ -12,7 +12,7 @@ export class MostrarRecetasComponent implements OnInit {
   recetasAMostrar: string;
   categoria:boolean;
 
-  recetas:Receta[];
+  recetas:Receta[] = [];
 
   constructor(private miServicio: MiServicio,
     private dataService:DataService) {     
@@ -21,7 +21,10 @@ export class MostrarRecetasComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   this.dataService.obtenerTodos().subscribe(recetas=>this.recetas = recetas);
+    console.log(this.recetasAMostrar);
+  
+   this.dataService.obtenerTodos(this.recetasAMostrar).subscribe(recetas=>
+    {this.recetas = recetas;});
     }
   }
  

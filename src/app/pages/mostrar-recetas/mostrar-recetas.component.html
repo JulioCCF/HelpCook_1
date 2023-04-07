@@ -9,6 +9,10 @@
 </ng-template>
 <!-- Recetas que se muestran -->
 <div class=" container pt-5">
-  
+    <ul >
+        <li *ngFor="let receta of recetas" >
+            {{receta.categoria}} {{receta.comensales}}{{receta.descripcion}}
+        </li>
+    </ul> 
 </div>
 
