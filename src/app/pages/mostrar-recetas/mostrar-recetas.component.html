@@ -1,18 +1,42 @@
 <!-- Seccion logo -->
 <div class="text-center" style="margin-top: 30px">
-    <a class="nav-link" routerLink=""><img src="/assets/img/logo.png" class="w-25" alt="" /></a>
+  <a class="nav-link" routerLink=""
+    ><img src="/assets/img/logo.png" class="w-25" alt=""
+  /></a>
 </div>
 <!-- Titulo de las recetas que se van a mostrar -->
-<h1 style="margin-left: 150px; font-size: 40px; margin-top: 50px" *ngIf = "categoria; else sinCategoria"><u>Recetas de {{recetasAMostrar}}</u></h1>
-<ng-template #sinCategoria>
-    <h1 style="margin-left: 150px; font-size: 40px; margin-top: 50px"><u>{{recetasAMostrar}}</u></h1>
-</ng-template>
-<!-- Recetas que se muestran -->
-<div class=" container pt-5">
-    <ul >
-        <li *ngFor="let receta of recetas" >
-            {{receta.categoria}} {{receta.comensales}}{{receta.descripcion}}
-        </li>
-    </ul> 
+<div class="container rounded receta">
+    <h1  *ngIf="categoria; else sinCategoria"
+    >
+      Recetas de {{ recetasAMostrar }}
+    </h1>
+    <ng-template #sinCategoria>
+      <h1>
+        <div>{{ recetasAMostrar }}</div>
+      </h1>
+    </ng-template>
 </div>
+
+<!-- Recetas que se muestran -->
+  <div class="container pt-5" style="margin-top: 50px;" *ngFor="let receta of recetas" >
+    
+      <div class="row rounded outer" style="height: max-content;">
+
+        <h1 class="text-center titulo"  >{{ receta.categoria }}</h1>
+
+        <div class="col-md-4" style="margin-bottom: 50px; margin-top: 20px;">
+            <input type="image" 
+            src="assets/img/pruebareceta.jpg"
+            class="rounded"
+            width="300px"
+            height="200"
+            routerLink = "mostraUnaReceta"
+          />
+        </div>
+
+        <div class="col-md-6" >
+            <p style="font-size: 25px;">{{ receta.descripcion }}</p>
+        </div>
+    </div>
+  </div>
 

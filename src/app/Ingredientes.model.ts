@@ -1,11 +1,11 @@
-import { Pasos } from "./Pasos.model";
+
+import { Receta } from "./Receta.model";
 
 export class Ingredientes{
     public idIngrediente : number;
     public nombre: string;
     public tipo: string;
-    public pasos: Pasos[];
-    //public recetas: Recetas[];
+    public recetas: Receta[];
     constructor(){
 
     }

@@ -1,0 +1,27 @@
+.outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    background-color: #d4d0c4;
+  }
+  
+.titulo{
+    font-size: 50px; 
+    margin-top: 20px;
+      
+}
+.receta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    font-size: 50px; 
+    margin-top: 50px;
+    background-color: #8b9a8a;
+    color:#FDFEFE;
+   
+    
+    
+    
+}

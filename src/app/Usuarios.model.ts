@@ -1,3 +1,4 @@
+import { Receta } from "./Receta.model";
 
 
 export class Usuarios{
@@ -8,7 +9,7 @@ export class Usuarios{
     public apellido: string;
     public email: string;
     public foto: string;
-    //public receta: Receta[];
+    public receta: Receta[];
     constructor(){
         
     }
