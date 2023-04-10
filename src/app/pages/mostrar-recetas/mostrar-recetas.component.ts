@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/data.service';
 import { Ingredientes } from 'src/app/Ingredientes.model';
 import { MiServicio } from 'src/app/miServivio.service';
-import { Receta } from 'src/app/receta.model';
+import { Receta } from 'src/app/Receta.model';
 
 @Component({
   selector: 'app-mostrar-recetas',

@@ -19,11 +19,8 @@ export class LoginComponent implements OnInit{
     
   }
 
-  // Recibirá los datos del formulario mediante NgForm
-  login(form: NgForm) {
-    // Rescatamos los campos que vienen del formulario
-    this.email = form.value.email;
-    this.password = form.value.password;
+  login() {
+    
   }
   
 }
