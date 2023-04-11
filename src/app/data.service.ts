@@ -4,10 +4,29 @@ import { Observable } from 'rxjs';
 import { Receta } from './Receta.model';
 import { Ingredientes } from './Ingredientes.model';
 
+
+/**
+ * Servicio que proporciona acceso a la API REST utilizando el HttpClient de Angular
+ */
 @Injectable()
 export class DataService {
+  /**
+   * Constructor del servicio que inyecta el HttpClient de Angular.
+   * @param http. Cliente HTTP utilizado para realizar solicitudes a una API REST.
+   */
   constructor(private http: HttpClient) {}
 
+  /**
+   * Método para la conexión con el método del backend para obtener Recetas
+   * 
+   * Según el párametro que recibamos modificamos la consulta que se hace al back asignando su correspondiente declaración 
+   * 
+   * @param {string} recetasAMostrar. Recibimos el valor para el filtro de mostrar recetas por categoría.
+   * @param {number} idIngredientes. Recibimos el array con los Id de los ingredientes de la receta para el filtro por ingredientes. 
+   * @param {number} idUsuario. Recibimos el id del Usuario para el filtro de las recetas subidas por el usuario.
+   * @param {string} ordenacion. Recibimos el valor del párametro para el filtro de recetas según su ordenación.
+   * @returns {Receta}  Devolvemos un array de las recetas obtenidas según lo requerido.
+   */
   obtenerTodos(
     recetasAMostrar: string,
     idIngredientes: Ingredientes[],
