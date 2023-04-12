@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+/**
+ * Representa el pie de página de la aplicación.
+ */
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -7,4 +10,8 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+   /**
+   * Crea una instancia de la clase FooterComponent.
+   */
+   constructor() { }
 }

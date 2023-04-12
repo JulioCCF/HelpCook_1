@@ -67,6 +67,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Descripción</h3>
+            </p>
+            <p class="comment">
+                <p>Clase que representa las recetas.</p>
+
+            </p>
 
 
 
@@ -150,15 +157,228 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(idReceta: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, idUsuario: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, descripcion: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, tiempo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, foto: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, titulo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, categoria: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, fechaAlta: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>, valoracionMedia: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, comensales: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, ingredientes: <a href="../classes/Ingredientes.html" target="_self">Ingredientes[]</a>, pasos: <a href="../classes/Pasos.html" target="_self">Pasos[]</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="18" class="link-to-prism">src/app/Receta.model.ts:18</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="68" class="link-to-prism">src/app/Receta.model.ts:68</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Crea una instancia de la clase Receta.</p>
+</div>
+                            <div>
+                                    <b>Parámetros :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Nombre</td>
+                                                    <td>Tipo</td>
+                                                <td>Opcional</td>
+                                                    <td>Descripción</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>idReceta</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Identificador único de la receta.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>idUsuario</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Identificador del usuario que ha creado la receta.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>descripcion</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Descripción de la receta.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>tiempo</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Tiempo estimado de preparación de la receta (en minutos).</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>foto</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>URL de la foto de la receta.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>titulo</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Título de la receta.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>categoria</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Categoría de la receta.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>fechaAlta</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Fecha de alta de la receta.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>valoracionMedia</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Valoración media de la receta.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>comensales</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Número de comensales para los que está diseñada la receta.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>ingredientes</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/Ingredientes.html" target="_self" >Ingredientes[]</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Ingredientes necesarios para la receta.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>pasos</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/Pasos.html" target="_self" >Pasos[]</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Pasos necesarios para la elaboración de la receta.</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -188,10 +408,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="13" class="link-to-prism">src/app/Receta.model.ts:13</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="43" class="link-to-prism">src/app/Receta.model.ts:43</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Categoría de la receta.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -215,10 +441,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="16" class="link-to-prism">src/app/Receta.model.ts:16</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="58" class="link-to-prism">src/app/Receta.model.ts:58</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Número de comensales para los que está diseñada la receta</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -242,10 +474,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="9" class="link-to-prism">src/app/Receta.model.ts:9</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="22" class="link-to-prism">src/app/Receta.model.ts:22</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Descripción de la receta.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -269,10 +507,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="14" class="link-to-prism">src/app/Receta.model.ts:14</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="48" class="link-to-prism">src/app/Receta.model.ts:48</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Fecha en la que se añadió la receta</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -296,10 +540,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="11" class="link-to-prism">src/app/Receta.model.ts:11</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="32" class="link-to-prism">src/app/Receta.model.ts:32</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>URL de la foto de la receta.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -323,10 +573,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="7" class="link-to-prism">src/app/Receta.model.ts:7</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">src/app/Receta.model.ts:12</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Identificador único de la receta.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -350,10 +606,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="8" class="link-to-prism">src/app/Receta.model.ts:8</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">src/app/Receta.model.ts:17</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Identificador del usuario que ha creado la receta.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -377,10 +639,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">src/app/Receta.model.ts:17</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="63" class="link-to-prism">src/app/Receta.model.ts:63</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Ingredientes necesarios para la receta.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -404,10 +672,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="18" class="link-to-prism">src/app/Receta.model.ts:18</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="68" class="link-to-prism">src/app/Receta.model.ts:68</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Pasos necesarios para la elaboración de la receta.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -431,10 +705,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="10" class="link-to-prism">src/app/Receta.model.ts:10</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="27" class="link-to-prism">src/app/Receta.model.ts:27</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Tiempo estimado de preparación de la receta</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -458,10 +738,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">src/app/Receta.model.ts:12</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="38" class="link-to-prism">src/app/Receta.model.ts:38</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Título de la receta.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -485,10 +771,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">src/app/Receta.model.ts:15</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="53" class="link-to-prism">src/app/Receta.model.ts:53</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Valoración media de la receta</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -507,22 +799,103 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Ingredientes } from &quot;./Ingredientes.model&quot;;
 import { Pasos } from &quot;./Pasos.model&quot;;
 
-
+/**
+ * Clase que representa las recetas.
+ */
 export class Receta{
 
+    /**
+     * Identificador único de la receta.
+     */
     public idReceta:number; 
+
+    /**
+     * Identificador del usuario que ha creado la receta.
+     */
     public idUsuario:number; 
+
+    /**
+     * Descripción de la receta.
+     */
     public descripcion:string;
+
+    /**
+     * Tiempo estimado de preparación de la receta
+     */
     public tiempo:number; 
+
+    /**
+     * URL de la foto de la receta.
+     */
     public foto:string; 
+
+    /**
+     * Título de la receta.
+     * 
+     */
     public titulo:string; 
+
+    /**
+     * Categoría de la receta.
+     */
     public categoria:string;
+
+    /**
+     * Fecha en la que se añadió la receta
+     */
     public fechaAlta:Date;
+
+    /**
+     * Valoración media de la receta
+     */
     public valoracionMedia:number;
+
+    /**
+     * Número de comensales para los que está diseñada la receta
+     */
     public comensales:number;
+
+    /**
+     * Ingredientes necesarios para la receta.
+     */
     public ingredientes: Ingredientes[];
+
+    /**
+     * Pasos necesarios para la elaboración de la receta.
+     */
     public pasos: Pasos[];  
-    constructor() {}
+    
+
+    /**
+     * Crea una instancia de la clase Receta.
+     * @param idReceta Identificador único de la receta.
+     * @param idUsuario Identificador del usuario que ha creado la receta.
+     * @param descripcion Descripción de la receta.
+     * @param tiempo Tiempo estimado de preparación de la receta (en minutos).
+     * @param foto URL de la foto de la receta.
+     * @param titulo Título de la receta.
+     * @param categoria Categoría de la receta.
+     * @param fechaAlta Fecha de alta de la receta.
+     * @param valoracionMedia Valoración media de la receta.
+     * @param comensales Número de comensales para los que está diseñada la receta.
+     * @param ingredientes Ingredientes necesarios para la receta.
+     * @param pasos Pasos necesarios para la elaboración de la receta.
+     */
+    constructor(idReceta: number, idUsuario: number, descripcion: string, tiempo: number, foto: string, titulo: string, categoria: string, fechaAlta: Date, valoracionMedia: number, comensales: number, ingredientes: Ingredientes[], pasos: Pasos[]) {
+        this.idReceta &#x3D; idReceta;
+        this.idUsuario &#x3D; idUsuario;
+        this.descripcion &#x3D; descripcion;
+        this.tiempo &#x3D; tiempo;
+        this.foto &#x3D; foto;
+        this.titulo &#x3D; titulo;
+        this.categoria &#x3D; categoria;
+        this.fechaAlta &#x3D; fechaAlta;
+        this.valoracionMedia &#x3D; valoracionMedia;
+        this.comensales &#x3D; comensales;
+        this.ingredientes &#x3D; ingredientes;
+        this.pasos &#x3D; pasos;
+    }
+
 }
 
 
