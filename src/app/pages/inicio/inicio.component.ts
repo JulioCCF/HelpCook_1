@@ -1,6 +1,8 @@
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { MiServicio } from 'src/app/miServivio.service';
+import { recetasService } from '../mostrar-recetas/recetasService.service';
+import { Receta } from 'src/app/Receta.model';
 
 /**
  * Componente para la página de Inicio
@@ -12,7 +14,7 @@ import { MiServicio } from 'src/app/miServivio.service';
 })
 
 
-export class InicioComponent {
+export class InicioComponent implements OnInit{
 
 /**
  * Variable para alamacenar el filtro de
@@ -24,12 +26,26 @@ export class InicioComponent {
  * Variable para almacenar el filtro de recetas por categoria.
  */
   recetasXCategoria:string;
+
+  recetasMejorValoradas: Receta[];
+
+  recetasMasRecientes: Receta[];
  
 /**
  * Injectamos el servicio para pasar y recibir datos a otro componente
  * @param miServicio. Servicio para conectar componentes
  */
-  constructor(private miServicio: MiServicio ){
+  constructor(private miServicio: MiServicio, private recetasService: recetasService ){
+
+    this.recetasService.obtenerTodos(null,null,null,"Recetas mejor valoradas").subscribe(recetas=>
+      {this.recetasMejorValoradas = recetas;});
+
+      this.recetasService.obtenerTodos(null,null,null,"Recetas más recientes").subscribe(recetas=>
+        {this.recetasMasRecientes = recetas;});
+  }
+  
+  ngOnInit(): void {
+  
     
   }
 

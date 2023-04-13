@@ -57,9 +57,9 @@
           width="300px"
           height="200"
           style="margin-left: 50px"
-          routerLink = "mostraUnaReceta"
+          routerLink = "mostraUnaReceta/{{recetasMejorValoradas[0].idRecetas}}"
         />
-        <h4 style="text-align: center;">Titulo</h4>
+        <h4 style="text-align: center;">{{recetasMejorValoradas[0]?.titulo}}</h4>
       </div>
 
       <div class="col">
@@ -70,9 +70,9 @@
           width="300px"
           height="200"
           style="margin-left: 50px"
-          routerLink = "mostraUnaReceta"
+          routerLink = "mostraUnaReceta/{{recetasMejorValoradas[1].idRecetas}}"
         />
-        <h4 style="text-align: center;">Titulo</h4>
+        <h4 style="text-align: center;">{{recetasMejorValoradas[1]?.titulo}}</h4>
       </div>
 
       <div class="col"><input type="image" 
@@ -82,9 +82,9 @@
           width="300px"
           height="200"
           style="margin-left: 50px"
-          routerLink = "mostraUnaReceta"
+          routerLink = "mostraUnaReceta/{{recetasMejorValoradas[2].idRecetas}}"
         />
-        <h4 style="text-align: center;">Titulo</h4>
+        <h4 style="text-align: center;">{{recetasMejorValoradas[2]?.titulo}}</h4>
       </div>
     </div>
   </div>
@@ -110,7 +110,7 @@
           style="margin-left: 50px"
           routerLink = "mostraUnaReceta"
         />
-        <h4 style="text-align: center;">Titulo</h4>
+        <h4 style="text-align: center;">{{recetasMasRecientes[0].titulo}}</h4>
       </div>
 
       <div class="col"><input type="image" 
@@ -122,7 +122,7 @@
           style="margin-left: 50px"
           routerLink = "mostraUnaReceta"
         />
-        <h4 style="text-align: center;">Titulo</h4>
+        <h4 style="text-align: center;">{{recetasMasRecientes[1].titulo}}</h4>
       </div>
 
       <div class="col"><input type="image" 
@@ -134,7 +134,7 @@
           style="margin-left: 50px"
           routerLink = "mostraUnaReceta"
         />
-        <h4 style="text-align: center;">Titulo</h4>
+        <h4 style="text-align: center;">{{recetasMasRecientes[2].titulo}}</h4>
       </div>
     </div>
   </div>
