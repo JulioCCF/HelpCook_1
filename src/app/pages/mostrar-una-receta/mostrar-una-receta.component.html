@@ -1,1 +1,11 @@
-<p>mostrar-una-receta works!</p>
+
+{{receta?.titulo}}
+{{receta?.categoria}}
+{{receta?.comensales}}
+{{receta?.tiempo}}
+<ul>
+    <li *ngFor="let ingrediente of receta.ingredientesResponse">{{ingrediente?.nombre}}</li>
+  
+
+  <li *ngFor="let pasos of receta.pasosResponse">{{pasos?.descripcion}}</li>
+</ul>

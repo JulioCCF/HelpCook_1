@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/data.service';
 import { MiServicio } from 'src/app/miServivio.service';
 import { Receta } from 'src/app/Receta.model';
+import { recetasService } from './recetasService.service';
 /**
  * Componente para la Página de mostrar Recetas
  * 
@@ -34,13 +34,15 @@ export class MostrarRecetasComponent implements OnInit {
   */
   recetas:Receta[] = [];
 
+  
+
   /**
    * Injectamos los servicios para pasar y recibir datos a otro componente y para la conexión con el Backend
    * @param miServicio. Servicio para conectar componentes
-   * @param dataService. Servicio para conectar con el Backend
+   * @param recetasService. Servicio para conectar con el Backend
    */
   constructor(private miServicio: MiServicio,
-    private dataService:DataService) {   
+    private recetasService: recetasService) {   
 
         this.recetasAMostrar = this.miServicio.recetasAMostrar;
         this.recetasXCategoria = this.miServicio.recetasXCategoria;
@@ -62,13 +64,18 @@ export class MostrarRecetasComponent implements OnInit {
   ngOnInit(): void {
     if(this.recetasXCategoria!=null){
       this.categoria=false;
-   this.dataService.obtenerTodos(this.recetasXCategoria,null,null,null).subscribe(recetas=>
+   this.recetasService.obtenerTodos(this.recetasXCategoria,null,null,null).subscribe(recetas=>
     {this.recetas = recetas;});
+    
+
+    
    }else{
     this.categoria=true;
-    this.dataService.obtenerTodos(null,null,null,this.recetasAMostrar).subscribe(recetas=>
+    this.recetasService.obtenerTodos(null,null,null,this.recetasAMostrar).subscribe(recetas=>
       {this.recetas = recetas;});
+     
    }
     }
+    
   }
  

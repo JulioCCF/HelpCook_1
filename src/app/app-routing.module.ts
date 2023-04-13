@@ -16,6 +16,7 @@ const routes: Routes = [
   {path:'perfil',component:PerfilComponent},
   {path:'mostrarRecetas',component:MostrarRecetasComponent},
   {path:'mostraUnaReceta',component:MostrarUnaRecetaComponent},
+  {path:'mostraUnaReceta/:idRecetas',component:MostrarUnaRecetaComponent}
 ];
 
 @NgModule({

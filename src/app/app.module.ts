@@ -14,7 +14,7 @@ import { SubirRecetaComponent } from './pages/subir-receta/subir-receta.componen
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { MostrarRecetasComponent } from './pages/mostrar-recetas/mostrar-recetas.component';
 import { MostrarUnaRecetaComponent } from './pages/mostrar-una-receta/mostrar-una-receta.component';
-import { DataService } from './data.service';
+import { recetasService } from './pages/mostrar-recetas/recetasService.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,7 @@ import { DataService } from './data.service';
     HttpClientModule
     
   ],
-  providers: [DataService],
+  providers: [recetasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

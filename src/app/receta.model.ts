@@ -9,12 +9,12 @@ export class Receta{
     /**
      * Identificador único de la receta.
      */
-    public idReceta:number; 
+    public idRecetas:number; 
 
     /**
      * Identificador del usuario que ha creado la receta.
      */
-    public idUsuario:number; 
+    public idUsuarios:number; 
 
     /**
      * Descripción de la receta.
@@ -60,18 +60,18 @@ export class Receta{
     /**
      * Ingredientes necesarios para la receta.
      */
-    public ingredientes: Ingredientes[];
+    public ingredientesResponse: Ingredientes[];
 
     /**
      * Pasos necesarios para la elaboración de la receta.
      */
-    public pasos: Pasos[];  
+    public pasosResponse: Pasos[];  
     
 
     /**
      * Crea una instancia de la clase Receta.
-     * @param idReceta Identificador único de la receta.
-     * @param idUsuario Identificador del usuario que ha creado la receta.
+     * @param idRecetas Identificador único de la receta.
+     * @param idUsuarios Identificador del usuario que ha creado la receta.
      * @param descripcion Descripción de la receta.
      * @param tiempo Tiempo estimado de preparación de la receta (en minutos).
      * @param foto URL de la foto de la receta.
@@ -83,9 +83,9 @@ export class Receta{
      * @param ingredientes Ingredientes necesarios para la receta.
      * @param pasos Pasos necesarios para la elaboración de la receta.
      */
-    constructor(idReceta: number, idUsuario: number, descripcion: string, tiempo: number, foto: string, titulo: string, categoria: string, fechaAlta: Date, valoracionMedia: number, comensales: number, ingredientes: Ingredientes[], pasos: Pasos[]) {
-        this.idReceta = idReceta;
-        this.idUsuario = idUsuario;
+    constructor(idRecetas: number, idUsuarios: number, descripcion: string, tiempo: number, foto: string, titulo: string, categoria: string, fechaAlta: Date, valoracionMedia: number, comensales: number, ingredientesResponse: Ingredientes[], pasosResponse: Pasos[]) {
+        this.idRecetas = idRecetas;
+        this.idUsuarios = idUsuarios;
         this.descripcion = descripcion;
         this.tiempo = tiempo;
         this.foto = foto;
@@ -94,8 +94,8 @@ export class Receta{
         this.fechaAlta = fechaAlta;
         this.valoracionMedia = valoracionMedia;
         this.comensales = comensales;
-        this.ingredientes = ingredientes;
-        this.pasos = pasos;
+        this.ingredientesResponse = ingredientesResponse;
+        this.pasosResponse = pasosResponse;
     }
 
 }

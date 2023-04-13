@@ -12,6 +12,11 @@ export class Pasos{
     public idPasos:number;
 
     /**
+     * Identificador de la receta
+     */
+    public idRecetas:number;
+
+    /**
      * Tipo de paso
      */
     public tipo: number;

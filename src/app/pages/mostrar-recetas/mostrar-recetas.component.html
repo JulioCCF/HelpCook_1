@@ -19,10 +19,11 @@
 
 <!-- Recetas que se muestran -->
   <div class="container pt-5 " style="margin-top: 50px;" *ngFor="let receta of recetas" >
+
  <!-- Titulo-->   
       <div class="row  rounded outer">
         <div class="col-md-10 text-center titulo" >
-           {{ receta.categoria }} 
+           {{ receta.titulo }} 
         </div>
 <!-- Valoracion -->  
         <div class="col-md-2" style="margin-top: 50px; font-size: 25px;" >
@@ -34,7 +35,7 @@
             src="assets/img/pruebareceta.jpg"
             class="rounded"
             width="350px"
-            routerLink = "mostraUnaReceta"
+            routerLink = "/mostraUnaReceta/{{receta.idRecetas}}"
           />
         </div>
 <!-- Descripcion-->  

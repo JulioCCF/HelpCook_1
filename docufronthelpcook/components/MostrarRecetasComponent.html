@@ -187,7 +187,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(miServicio: <a href="../injectables/MiServicio.html" target="_self">MiServicio</a>, dataService: <a href="../injectables/DataService.html" target="_self">DataService</a>)</code>
+<code>constructor(miServicio: <a href="../injectables/MiServicio.html" target="_self">MiServicio</a>, recetasService: recetasService)</code>
                     </td>
                 </tr>
                         <tr>
@@ -224,10 +224,10 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>dataService</td>
+                                                        <td>recetasService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/DataService.html" target="_self" >DataService</a></code>
+                                                                    <code>recetasService</code>
                                                         </td>
                                                   
                                                     <td>
@@ -444,9 +444,9 @@ almacenamos en el array de recetas las recetas que recibimos para poder mostrarl
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import { DataService } from &#x27;src/app/data.service&#x27;;
 import { MiServicio } from &#x27;src/app/miServivio.service&#x27;;
 import { Receta } from &#x27;src/app/Receta.model&#x27;;
+import { recetasService } from &#x27;./recetasService.service&#x27;;
 /**
  * Componente para la Página de mostrar Recetas
  * 
@@ -485,7 +485,7 @@ export class MostrarRecetasComponent implements OnInit {
    * @param dataService. Servicio para conectar con el Backend
    */
   constructor(private miServicio: MiServicio,
-    private dataService:DataService) {   
+    private recetasService: recetasService) {   
 
         this.recetasAMostrar &#x3D; this.miServicio.recetasAMostrar;
         this.recetasXCategoria &#x3D; this.miServicio.recetasXCategoria;
@@ -507,11 +507,11 @@ export class MostrarRecetasComponent implements OnInit {
   ngOnInit(): void {
     if(this.recetasXCategoria!&#x3D;null){
       this.categoria&#x3D;false;
-   this.dataService.obtenerTodos(this.recetasXCategoria,null,null,null).subscribe(recetas&#x3D;&gt;
+   this.recetasService.obtenerTodos(this.recetasXCategoria,null,null,null).subscribe(recetas&#x3D;&gt;
     {this.recetas &#x3D; recetas;});
    }else{
     this.categoria&#x3D;true;
-    this.dataService.obtenerTodos(null,null,null,this.recetasAMostrar).subscribe(recetas&#x3D;&gt;
+    this.recetasService.obtenerTodos(null,null,null,this.recetasAMostrar).subscribe(recetas&#x3D;&gt;
       {this.recetas &#x3D; recetas;});
    }
     }
@@ -557,7 +557,7 @@ export class MostrarRecetasComponent implements OnInit {
             src&#x3D;&quot;assets/img/pruebareceta.jpg&quot;
             class&#x3D;&quot;rounded&quot;
             width&#x3D;&quot;350px&quot;
-            routerLink &#x3D; &quot;mostraUnaReceta&quot;
+            routerLink &#x3D; &quot;mostraUnaReceta/{{receta.idReceta}}&quot;
           /&gt;
         &lt;/div&gt;
 &lt;!-- Descripcion--&gt;  
@@ -644,7 +644,7 @@ export class MostrarRecetasComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- Seccion logo --><div class="text-center" style="margin-top: 30px">  <a class="nav-link" routerLink=""    ><img src="/assets/img/logo.png" class="w-25" alt=""  /></a></div><!-- Titulo de las recetas que se van a mostrar --><div class="container rounded receta">    <h1  *ngIf="categoria; else sinCategoria"    >      {{ recetasAMostrar }}    </h1>    <ng-template #sinCategoria>      <h1>       Recetas de {{recetasXCategoria}}       </h1>    </ng-template></div><!-- Recetas que se muestran -->  <div class="container pt-5 " style="margin-top: 50px;" *ngFor="let receta of recetas" > <!-- Titulo-->         <div class="row  rounded outer">        <div class="col-md-10 text-center titulo" >           {{ receta.categoria }}         </div><!-- Valoracion -->          <div class="col-md-2" style="margin-top: 50px; font-size: 25px;" >          <i class="bi bi-star-fill" ></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>       </div><!-- Foto-->          <div class="col-md-6" style="margin-top: 40px;" >            <input type="image"             src="assets/img/pruebareceta.jpg"            class="rounded"            width="350px"            routerLink = "mostraUnaReceta"          />        </div><!-- Descripcion-->          <div class="col-md-5 descripcion rounded" >            <p >{{ receta.descripcion }}</p>        </div><!-- FechaAlta-->          <div class="fechaAlta">            {{receta.fechaAlta}}        </div>    </div>  </div></div>'
+        var COMPONENT_TEMPLATE = '<div><!-- Seccion logo --><div class="text-center" style="margin-top: 30px">  <a class="nav-link" routerLink=""    ><img src="/assets/img/logo.png" class="w-25" alt=""  /></a></div><!-- Titulo de las recetas que se van a mostrar --><div class="container rounded receta">    <h1  *ngIf="categoria; else sinCategoria"    >      {{ recetasAMostrar }}    </h1>    <ng-template #sinCategoria>      <h1>       Recetas de {{recetasXCategoria}}       </h1>    </ng-template></div><!-- Recetas que se muestran -->  <div class="container pt-5 " style="margin-top: 50px;" *ngFor="let receta of recetas" > <!-- Titulo-->         <div class="row  rounded outer">        <div class="col-md-10 text-center titulo" >           {{ receta.categoria }}         </div><!-- Valoracion -->          <div class="col-md-2" style="margin-top: 50px; font-size: 25px;" >          <i class="bi bi-star-fill" ></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>       </div><!-- Foto-->          <div class="col-md-6" style="margin-top: 40px;" >            <input type="image"             src="assets/img/pruebareceta.jpg"            class="rounded"            width="350px"            routerLink = "mostraUnaReceta/{{receta.idReceta}}"          />        </div><!-- Descripcion-->          <div class="col-md-5 descripcion rounded" >            <p >{{ receta.descripcion }}</p>        </div><!-- FechaAlta-->          <div class="fechaAlta">            {{receta.fechaAlta}}        </div>    </div>  </div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'InicioComponent', 'selector': 'app-inicio'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MostrarRecetasComponent', 'selector': 'app-mostrar-recetas'},{'name': 'MostrarUnaRecetaComponent', 'selector': 'app-mostrar-una-receta'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'SubirRecetaComponent', 'selector': 'app-subir-receta'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MostrarRecetasComponent'};

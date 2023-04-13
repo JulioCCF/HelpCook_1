@@ -1,15 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Receta } from './Receta.model';
-import { Ingredientes } from './Ingredientes.model';
+import { Receta } from '../../Receta.model';
+import { Ingredientes } from '../../Ingredientes.model';
 
 
 /**
  * Servicio que proporciona acceso a la API REST utilizando el HttpClient de Angular
  */
 @Injectable()
-export class DataService {
+export class recetasService {
   /**
    * Constructor del servicio que inyecta el HttpClient de Angular.
    * @param http. Cliente HTTP utilizado para realizar solicitudes a una API REST.
@@ -57,4 +57,20 @@ export class DataService {
     
     return this.http.get<Receta[]>('http://localhost:8081/recetas?' + param);
   }
+
+
+  /**
+   * Método para la conexión con el método del backend para obtener Receta por su id,
+   * 
+   * Realizamos la petición http al método obtener del back pasandole el id de la receta
+   * 
+   * @param id. Recibimos el id de la receta que queremos mostrar.
+   * @returns Devolvemos el objeto receta que recibimos del backend
+   */
+  obtener(id:number){
+    
+    return this.http.get<Receta>('http://localhost:8081/recetas/' + id);
+
+  }
+
 }
