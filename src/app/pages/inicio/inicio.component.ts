@@ -2,7 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { MiServicio } from 'src/app/miServivio.service';
 import { recetasService } from '../mostrar-recetas/recetasService.service';
-import { Receta } from 'src/app/Receta.model';
+import { Receta } from 'src/app/receta.model';
 
 /**
  * Componente para la página de Inicio
