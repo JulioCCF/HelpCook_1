@@ -8,6 +8,8 @@ import { Receta } from 'src/app/Receta.model';
 
 /**
  * Servicio que proporciona acceso a la API REST utilizando el HttpClient de Angular
+ * 
+ * Utilizado para las consultas de recetas.
  */
 @Injectable()
 export class recetasService {

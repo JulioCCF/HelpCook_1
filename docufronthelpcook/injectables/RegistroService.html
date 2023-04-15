@@ -41,7 +41,7 @@
 
 <ol class="breadcrumb">
   <li>Inyectables</li>
-  <li >recetasService</li>
+  <li >RegistroService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -59,7 +59,7 @@
             <h3>Fichero</h3>
         </p>
         <p class="comment">
-            <code>src/app/pages/mostrar-recetas/recetasService.service.ts</code>
+            <code>src/app/pages/registro/registro-service.service.ts</code>
         </p>
 
 
@@ -68,7 +68,7 @@
             </p>
             <p class="comment">
                 <p>Servicio que proporciona acceso a la API REST utilizando el HttpClient de Angular</p>
-<p>Utilizado para las consultas de recetas.</p>
+<p>Utilizado para las consultas de usuarios.</p>
 
             </p>
 
@@ -88,10 +88,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#obtener" >obtener</a>
-                            </li>
-                            <li>
-                                <a href="#obtenerTodos" >obtenerTodos</a>
+                                <a href="#addNewUser" >addNewUser</a>
                             </li>
                         </ul>
                     </td>
@@ -116,7 +113,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">src/app/pages/mostrar-recetas/recetasService.service.ts:15</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="14" class="link-to-prism">src/app/pages/registro/registro-service.service.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -165,32 +162,31 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="obtener"></a>
+                    <a name="addNewUser"></a>
                     <span class="name">
-                        <span ><b>obtener</b></span>
-                        <a href="#obtener"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>addNewUser</b></span>
+                        <a href="#addNewUser"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>obtener(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+<code>addNewUser(users: <a href="../classes/Usuarios.html" target="_self">Usuarios</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="73"
-                            class="link-to-prism">src/app/pages/mostrar-recetas/recetasService.service.ts:73</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="27"
+                            class="link-to-prism">src/app/pages/registro/registro-service.service.ts:27</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Método para la conexión con el método del backend para obtener Receta por su id,</p>
-<p>Realizamos la petición http al método obtener del back pasandole el id de la receta</p>
+                    <div class="io-description"><p>Método para la conexión con el método del backend para crear un Usuario,</p>
 </div>
 
                     <div class="io-description">
@@ -206,9 +202,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>id</td>
+                                    <td>users</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                <code><a href="../classes/Usuarios.html" target="_self" >Usuarios</a></code>
                                     </td>
 
                                     <td>
@@ -227,116 +223,7 @@
 
                     </div>
                     <div class="io-description">
-                        <p>Devolvemos el objeto receta que recibimos del backend</p>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="obtenerTodos"></a>
-                    <span class="name">
-                        <span ><b>obtenerTodos</b></span>
-                        <a href="#obtenerTodos"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>obtenerTodos(recetasAMostrar: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, idIngredientes: <a href="../classes/Ingredientes.html" target="_self">Ingredientes[]</a>, idUsuario: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, ordenacion: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="33"
-                            class="link-to-prism">src/app/pages/mostrar-recetas/recetasService.service.ts:33</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Método para la conexión con el método del backend para obtener Recetas</p>
-<p>Según el párametro que recibamos modificamos la consulta que se hace al back asignando su correspondiente declaración</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parámetros :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Nombre</td>
-                                    <td>Tipo</td>
-                                    <td>Opcional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>recetasAMostrar</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>idIngredientes</td>
-                                    <td>
-                                                <code><a href="../classes/Ingredientes.html" target="_self" >Ingredientes[]</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>idUsuario</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>ordenacion</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Devuelve : </b>        <code><a href="../classes/Receta.html" target="_self" >Observable&lt;Receta[]&gt;</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        <p>Devolvemos un array de las recetas obtenidas según lo requerido.</p>
+                        <p>Devolvemos el usuario ya guardado en la BBDD</p>
 
                     </div>
                 </td>
@@ -350,83 +237,34 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
-import { Injectable } from &#x27;@angular/core&#x27;;
-import { Observable } from &#x27;rxjs&#x27;;
-
-import { Ingredientes } from &#x27;../../Ingredientes.model&#x27;;
-import { Receta } from &#x27;src/app/Receta.model&#x27;;
+import { Injectable, OnInit } from &#x27;@angular/core&#x27;;
+import { Usuarios } from &#x27;src/app/Usuarios.model&#x27;;
 
 
 /**
  * Servicio que proporciona acceso a la API REST utilizando el HttpClient de Angular
  * 
- * Utilizado para las consultas de recetas.
+ * Utilizado para las consultas de usuarios.
  */
-@Injectable()
-export class recetasService {
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class RegistroService{
   /**
-   * Constructor del servicio que inyecta el HttpClient de Angular.
-   * @param http. Cliente HTTP utilizado para realizar solicitudes a una API REST.
-   */
+       * Constructor del servicio que inyecta el HttpClient de Angular.
+       * @param http. Cliente HTTP utilizado para realizar solicitudes a una API REST.
+       */
   constructor(private http: HttpClient) {}
 
-  /**
-   * Método para la conexión con el método del backend para obtener Recetas
-   * 
-   * Según el párametro que recibamos modificamos la consulta que se hace al back asignando su correspondiente declaración 
-   * 
-   * @param {string} recetasAMostrar. Recibimos el valor para el filtro de mostrar recetas por categoría.
-   * @param {number} idIngredientes. Recibimos el array con los Id de los ingredientes de la receta para el filtro por ingredientes. 
-   * @param {number} idUsuario. Recibimos el id del Usuario para el filtro de las recetas subidas por el usuario.
-   * @param {string} ordenacion. Recibimos el valor del párametro para el filtro de recetas según su ordenación.
-   * @returns {Receta}  Devolvemos un array de las recetas obtenidas según lo requerido.
-   */
-  obtenerTodos(
-    recetasAMostrar: string,
-    idIngredientes: Ingredientes[],
-    idUsuario: number, 
-    ordenacion: string
-  ): Observable&lt;Receta[]&gt; {
-    let param &#x3D; &#x27;&#x27;;
- 
-    if (recetasAMostrar !&#x3D; null) {
-      param +&#x3D; &#x27;categoria&#x3D;&#x27; + recetasAMostrar;
-    }
-    if (idIngredientes !&#x3D; null &amp;&amp; param !&#x3D; &#x27;&#x27;) {
-      param +&#x3D; &#x27;&amp;idIngredientes&#x3D;&#x27; + idIngredientes;
-    } else if (idIngredientes !&#x3D; null &amp;&amp; param &#x3D;&#x3D; &#x27;&#x27;) {
-      param +&#x3D; &#x27;idIngredientes&#x3D;&#x27; + idIngredientes;
-    }
-
-    if (idUsuario !&#x3D; null &amp;&amp; param !&#x3D; &#x27;&#x27;) {
-      param +&#x3D; &#x27;&amp;idUsuario&#x3D;&#x27; + idUsuario;
-    } else if(idUsuario !&#x3D; null &amp;&amp; param &#x3D;&#x3D; &#x27;&#x27;) {
-      param +&#x3D; &#x27;idUsuario&#x3D;&#x27; + idUsuario;
-    }
-    if (ordenacion !&#x3D; null &amp;&amp; param !&#x3D; &#x27;&#x27;) {
-      param +&#x3D; &#x27;&amp;ordenacion&#x3D;&#x27; + ordenacion;
-    } else if(ordenacion !&#x3D; null &amp;&amp; param &#x3D;&#x3D; &#x27;&#x27;) {
-      param +&#x3D; &#x27;ordenacion&#x3D;&#x27; + ordenacion;
-    }
-    
-    return this.http.get&lt;Receta[]&gt;(&#x27;http://localhost:8081/recetas?&#x27; + param);
-  }
-
 
   /**
-   * Método para la conexión con el método del backend para obtener Receta por su id,
-   * 
-   * Realizamos la petición http al método obtener del back pasandole el id de la receta
-   * 
-   * @param id. Recibimos el id de la receta que queremos mostrar.
-   * @returns Devolvemos el objeto receta que recibimos del backend
+   * Método para la conexión con el método del backend para crear un Usuario,
+   * @param users. Recibimos el objeto usuario con los datos rellenados por éste
+   * @returns Devolvemos el usuario ya guardado en la BBDD
    */
-  obtener(id:number){
-    
-    return this.http.get&lt;Receta&gt;(&#x27;http://localhost:8081/recetas/&#x27; + id);
-
+  addNewUser(users: Usuarios){
+      return this.http.post(&#x27;http://localhost:8081/usuarios&#x27;, users);
   }
-
 }
 </code></pre>
     </div>
@@ -471,7 +309,7 @@ export class recetasService {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'recetasService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'RegistroService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

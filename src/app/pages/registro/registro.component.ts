@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 //import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { RegistroService } from './registro-service.service';
 import { Usuarios } from 'src/app/Usuarios.model';
+import { HttpErrorResponse } from '@angular/common/http';
 //import { Observable } from 'rxjs';
 
 @Component({
@@ -12,7 +13,7 @@ import { Usuarios } from 'src/app/Usuarios.model';
 
 export class RegistroComponent implements OnInit{
 
-  users: Usuarios[];
+ 
   nombre: string;
   apellido: string;
   nick: string;
@@ -28,14 +29,23 @@ export class RegistroComponent implements OnInit{
     
   }
 
+
   addUserService(){
     let usuario = new Usuarios(this.nick, this.contrasenia, this.nombre, this.apellido, this.email, this.foto);
 
-    this.users.push(usuario);
-
     console.log(this.email);
 
-    this.registSvc.addNewUser(this.users);
+    this.registSvc.addNewUser(usuario).subscribe(
+      response => console.log("Se ha guardado el usuario: " + response),
+      (error: HttpErrorResponse) => {
+        if (error.error instanceof ErrorEvent) {
+          console.error('Error de red:', error.error.message);
+        } else {
+          console.error(`Error en el servidor: ${error.status}: ${error.error}`);
+        }
+      
+      }
+    );
   }
 
 }

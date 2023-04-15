@@ -119,46 +119,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                 </ul>
                 </li>
                     <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#components-links"' :
-                            'data-target="#xs-components-links"' }>
-                            <span class="icon ion-md-cog"></span>
-                            <span>Componentes</span>
-                            <span class="icon ion-ios-arrow-down"></span>
-                        </div>
-                        <ul class="links collapse " ${ isNormalMode ? 'id="components-links"' : 'id="xs-components-links"' }>
-                            <li class="link">
-                                <a href="components/AppComponent.html" data-type="entity-link" >AppComponent</a>
-                            </li>
-                            <li class="link">
-                                <a href="components/FooterComponent.html" data-type="entity-link" >FooterComponent</a>
-                            </li>
-                            <li class="link">
-                                <a href="components/InicioComponent.html" data-type="entity-link" >InicioComponent</a>
-                            </li>
-                            <li class="link">
-                                <a href="components/LoginComponent.html" data-type="entity-link" >LoginComponent</a>
-                            </li>
-                            <li class="link">
-                                <a href="components/MostrarRecetasComponent.html" data-type="entity-link" >MostrarRecetasComponent</a>
-                            </li>
-                            <li class="link">
-                                <a href="components/MostrarUnaRecetaComponent.html" data-type="entity-link" >MostrarUnaRecetaComponent</a>
-                            </li>
-                            <li class="link">
-                                <a href="components/NavbarComponent.html" data-type="entity-link" >NavbarComponent</a>
-                            </li>
-                            <li class="link">
-                                <a href="components/PerfilComponent.html" data-type="entity-link" >PerfilComponent</a>
-                            </li>
-                            <li class="link">
-                                <a href="components/RegistroComponent.html" data-type="entity-link" >RegistroComponent</a>
-                            </li>
-                            <li class="link">
-                                <a href="components/SubirRecetaComponent.html" data-type="entity-link" >SubirRecetaComponent</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#classes-links"' :
                             'data-target="#xs-classes-links"' }>
                             <span class="icon ion-ios-paper"></span>
@@ -199,6 +159,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                                 <li class="link">
                                     <a href="injectables/recetasService.html" data-type="entity-link" >recetasService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/RegistroService.html" data-type="entity-link" >RegistroService</a>
                                 </li>
                             </ul>
                         </li>
