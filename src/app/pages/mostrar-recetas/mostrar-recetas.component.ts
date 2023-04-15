@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MiServicio } from 'src/app/miServivio.service';
 import { Receta } from 'src/app/receta.model';
 import { recetasService } from './recetasService.service';
+
+
 /**
  * Componente para la Página de mostrar Recetas
  * 
@@ -34,7 +36,7 @@ export class MostrarRecetasComponent implements OnInit {
   */
   recetas:Receta[] = [];
 
-  
+
 
   /**
    * Injectamos los servicios para pasar y recibir datos a otro componente y para la conexión con el Backend

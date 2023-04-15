@@ -1,5 +1,4 @@
 import { Component, OnInit} from '@angular/core';
-import { Router } from '@angular/router';
 import { MiServicio } from 'src/app/miServivio.service';
 import { recetasService } from '../mostrar-recetas/recetasService.service';
 import { Receta } from 'src/app/receta.model';
@@ -27,8 +26,14 @@ export class InicioComponent implements OnInit{
  */
   recetasXCategoria:string;
 
+  /**
+   * Variable para almacenar la lista de recetas mejor valoradas
+   */
   recetasMejorValoradas: Receta[];
 
+  /**
+   * Variable para almacenar la lista de recetas más recientes
+   */
   recetasMasRecientes: Receta[];
  
 /**
@@ -44,6 +49,9 @@ export class InicioComponent implements OnInit{
         {this.recetasMasRecientes = recetas;});
   }
   
+  /**
+   * Método que se carga cuando inicia la página
+   */
   ngOnInit(): void {
   
     

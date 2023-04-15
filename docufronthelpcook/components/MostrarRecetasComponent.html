@@ -187,12 +187,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(miServicio: <a href="../injectables/MiServicio.html" target="_self">MiServicio</a>, recetasService: recetasService)</code>
+<code>constructor(miServicio: <a href="../injectables/MiServicio.html" target="_self">MiServicio</a>, recetasService: <a href="../injectables/recetasService.html" target="_self">recetasService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="35" class="link-to-prism">src/app/pages/mostrar-recetas/mostrar-recetas.component.ts:35</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="37" class="link-to-prism">src/app/pages/mostrar-recetas/mostrar-recetas.component.ts:37</a></div>
                             </td>
                         </tr>
 
@@ -227,7 +227,7 @@
                                                         <td>recetasService</td>
                                                   
                                                         <td>
-                                                                    <code>recetasService</code>
+                                                                        <code><a href="../injectables/recetasService.html" target="_self" >recetasService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -273,8 +273,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="62"
-                            class="link-to-prism">src/app/pages/mostrar-recetas/mostrar-recetas.component.ts:62</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="66"
+                            class="link-to-prism">src/app/pages/mostrar-recetas/mostrar-recetas.component.ts:66</a></div>
                 </td>
             </tr>
 
@@ -323,7 +323,7 @@ almacenamos en el array de recetas las recetas que recibimos para poder mostrarl
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="30" class="link-to-prism">src/app/pages/mostrar-recetas/mostrar-recetas.component.ts:30</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="32" class="link-to-prism">src/app/pages/mostrar-recetas/mostrar-recetas.component.ts:32</a></div>
                         </td>
                     </tr>
 
@@ -360,7 +360,7 @@ almacenamos en el array de recetas las recetas que recibimos para poder mostrarl
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="35" class="link-to-prism">src/app/pages/mostrar-recetas/mostrar-recetas.component.ts:35</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="37" class="link-to-prism">src/app/pages/mostrar-recetas/mostrar-recetas.component.ts:37</a></div>
                         </td>
                     </tr>
 
@@ -392,7 +392,7 @@ almacenamos en el array de recetas las recetas que recibimos para poder mostrarl
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="25" class="link-to-prism">src/app/pages/mostrar-recetas/mostrar-recetas.component.ts:25</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="27" class="link-to-prism">src/app/pages/mostrar-recetas/mostrar-recetas.component.ts:27</a></div>
                         </td>
                     </tr>
 
@@ -424,7 +424,7 @@ almacenamos en el array de recetas las recetas que recibimos para poder mostrarl
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="20" class="link-to-prism">src/app/pages/mostrar-recetas/mostrar-recetas.component.ts:20</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="22" class="link-to-prism">src/app/pages/mostrar-recetas/mostrar-recetas.component.ts:22</a></div>
                         </td>
                     </tr>
 
@@ -445,8 +445,10 @@ almacenamos en el array de recetas las recetas que recibimos para poder mostrarl
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { MiServicio } from &#x27;src/app/miServivio.service&#x27;;
-import { Receta } from &#x27;src/app/Receta.model&#x27;;
+import { Receta } from &#x27;src/app/receta.model&#x27;;
 import { recetasService } from &#x27;./recetasService.service&#x27;;
+
+
 /**
  * Componente para la Página de mostrar Recetas
  * 
@@ -479,10 +481,12 @@ export class MostrarRecetasComponent implements OnInit {
   */
   recetas:Receta[] &#x3D; [];
 
+
+
   /**
    * Injectamos los servicios para pasar y recibir datos a otro componente y para la conexión con el Backend
    * @param miServicio. Servicio para conectar componentes
-   * @param dataService. Servicio para conectar con el Backend
+   * @param recetasService. Servicio para conectar con el Backend
    */
   constructor(private miServicio: MiServicio,
     private recetasService: recetasService) {   
@@ -509,12 +513,17 @@ export class MostrarRecetasComponent implements OnInit {
       this.categoria&#x3D;false;
    this.recetasService.obtenerTodos(this.recetasXCategoria,null,null,null).subscribe(recetas&#x3D;&gt;
     {this.recetas &#x3D; recetas;});
+    
+
+    
    }else{
     this.categoria&#x3D;true;
     this.recetasService.obtenerTodos(null,null,null,this.recetasAMostrar).subscribe(recetas&#x3D;&gt;
       {this.recetas &#x3D; recetas;});
+     
    }
     }
+    
   }
  
 </code></pre>
@@ -542,14 +551,22 @@ export class MostrarRecetasComponent implements OnInit {
 
 &lt;!-- Recetas que se muestran --&gt;
   &lt;div class&#x3D;&quot;container pt-5 &quot; style&#x3D;&quot;margin-top: 50px;&quot; *ngFor&#x3D;&quot;let receta of recetas&quot; &gt;
+
  &lt;!-- Titulo--&gt;   
       &lt;div class&#x3D;&quot;row  rounded outer&quot;&gt;
         &lt;div class&#x3D;&quot;col-md-10 text-center titulo&quot; &gt;
-           {{ receta.categoria }} 
+           {{ receta.titulo }} 
         &lt;/div&gt;
 &lt;!-- Valoracion --&gt;  
-        &lt;div class&#x3D;&quot;col-md-2&quot; style&#x3D;&quot;margin-top: 50px; font-size: 25px;&quot; &gt;
-          &lt;i class&#x3D;&quot;bi bi-star-fill&quot; &gt;&lt;/i&gt;&lt;i class&#x3D;&quot;bi bi-star-fill&quot;&gt;&lt;/i&gt;&lt;i class&#x3D;&quot;bi bi-star-fill&quot;&gt;&lt;/i&gt;&lt;i class&#x3D;&quot;bi bi-star-fill&quot;&gt;&lt;/i&gt;&lt;i class&#x3D;&quot;bi bi-star&quot;&gt;&lt;/i&gt;
+        &lt;div class&#x3D;&quot;col-md-2&quot; style&#x3D;&quot;margin-top: 50px;&quot; &gt;
+          &lt;bar-rating [(rate)]&#x3D;&quot;receta.valoracionMedia&quot; [max]&#x3D;&quot;5&quot; [readOnly]&#x3D;&quot;true&quot;&gt;
+            &lt;ng-template ratingActive&gt;
+              &lt;i class&#x3D;&quot;bi bi-star-fill&quot; style&#x3D;&quot;margin: 2px; color: #3c240d&quot;&gt;&lt;/i&gt;
+            &lt;/ng-template&gt;
+            &lt;ng-template ratingInactive&gt;
+              &lt;i class&#x3D;&quot;bi bi-star-fill&quot; style&#x3D;&quot;margin: 2px; color:#d4d0c4&quot;&gt;&lt;/i&gt;
+            &lt;/ng-template&gt;
+          &lt;/bar-rating&gt;
        &lt;/div&gt;
 &lt;!-- Foto--&gt;  
         &lt;div class&#x3D;&quot;col-md-6&quot; style&#x3D;&quot;margin-top: 40px;&quot; &gt;
@@ -557,7 +574,7 @@ export class MostrarRecetasComponent implements OnInit {
             src&#x3D;&quot;assets/img/pruebareceta.jpg&quot;
             class&#x3D;&quot;rounded&quot;
             width&#x3D;&quot;350px&quot;
-            routerLink &#x3D; &quot;mostraUnaReceta/{{receta.idReceta}}&quot;
+            routerLink &#x3D; &quot;/mostraUnaReceta/{{receta.idRecetas}}&quot;
           /&gt;
         &lt;/div&gt;
 &lt;!-- Descripcion--&gt;  
@@ -579,44 +596,48 @@ export class MostrarRecetasComponent implements OnInit {
                     <code>./mostrar-recetas.component.css</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">.outer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    background-color: #d4d0c4;
-  }
-  
-.titulo{
-    font-size: 60px; 
-    margin-top: 30px;
-    font-weight: bold;
-      
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  background-color: #d4d0c4;
 }
-.receta{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80px;
-    font-size: 50px; 
-    margin-top: 50px;
-    background-color: #8b9a8a;
-    color:#FDFEFE;   
-}
-.fechaAlta{
-    text-align: right; 
-    margin-right: 100px; 
-    margin-bottom: 40px; 
-    font-size: x-large;
-    font-weight:bolder;
-    
 
-
+.titulo {
+  font-size: 60px;
+  margin-top: 30px;
+  font-weight: bold;
 }
-.descripcion{
-    font-size: 25px;
-    background-color: #3c240d;
-    color:#d4d0c4
-}</code></pre>
+.receta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  font-size: 50px;
+  margin-top: 50px;
+  background-color: #8b9a8a;
+  color: #fdfefe;
+}
+.fechaAlta {
+  text-align: right;
+  margin-right: 100px;
+  margin-bottom: 40px;
+  font-size: x-large;
+  font-weight: bolder;
+}
+.descripcion {
+  font-size: 25px;
+  background-color: #3c240d;
+  color: #d4d0c4;
+}
+
+i {
+  font-size: 30px;
+}
+.star-icon {
+  border: 1px solid #3c240d;
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -644,7 +665,7 @@ export class MostrarRecetasComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- Seccion logo --><div class="text-center" style="margin-top: 30px">  <a class="nav-link" routerLink=""    ><img src="/assets/img/logo.png" class="w-25" alt=""  /></a></div><!-- Titulo de las recetas que se van a mostrar --><div class="container rounded receta">    <h1  *ngIf="categoria; else sinCategoria"    >      {{ recetasAMostrar }}    </h1>    <ng-template #sinCategoria>      <h1>       Recetas de {{recetasXCategoria}}       </h1>    </ng-template></div><!-- Recetas que se muestran -->  <div class="container pt-5 " style="margin-top: 50px;" *ngFor="let receta of recetas" > <!-- Titulo-->         <div class="row  rounded outer">        <div class="col-md-10 text-center titulo" >           {{ receta.categoria }}         </div><!-- Valoracion -->          <div class="col-md-2" style="margin-top: 50px; font-size: 25px;" >          <i class="bi bi-star-fill" ></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>       </div><!-- Foto-->          <div class="col-md-6" style="margin-top: 40px;" >            <input type="image"             src="assets/img/pruebareceta.jpg"            class="rounded"            width="350px"            routerLink = "mostraUnaReceta/{{receta.idReceta}}"          />        </div><!-- Descripcion-->          <div class="col-md-5 descripcion rounded" >            <p >{{ receta.descripcion }}</p>        </div><!-- FechaAlta-->          <div class="fechaAlta">            {{receta.fechaAlta}}        </div>    </div>  </div></div>'
+        var COMPONENT_TEMPLATE = '<div><!-- Seccion logo --><div class="text-center" style="margin-top: 30px">  <a class="nav-link" routerLink=""    ><img src="/assets/img/logo.png" class="w-25" alt=""  /></a></div><!-- Titulo de las recetas que se van a mostrar --><div class="container rounded receta">    <h1  *ngIf="categoria; else sinCategoria"    >      {{ recetasAMostrar }}    </h1>    <ng-template #sinCategoria>      <h1>       Recetas de {{recetasXCategoria}}       </h1>    </ng-template></div><!-- Recetas que se muestran -->  <div class="container pt-5 " style="margin-top: 50px;" *ngFor="let receta of recetas" > <!-- Titulo-->         <div class="row  rounded outer">        <div class="col-md-10 text-center titulo" >           {{ receta.titulo }}         </div><!-- Valoracion -->          <div class="col-md-2" style="margin-top: 50px;" >          <bar-rating [(rate)]="receta.valoracionMedia" [max]="5" [readOnly]="true">            <ng-template ratingActive>              <i class="bi bi-star-fill" style="margin: 2px; color: #3c240d"></i>            </ng-template>            <ng-template ratingInactive>              <i class="bi bi-star-fill" style="margin: 2px; color:#d4d0c4"></i>            </ng-template>          </bar-rating>       </div><!-- Foto-->          <div class="col-md-6" style="margin-top: 40px;" >            <input type="image"             src="assets/img/pruebareceta.jpg"            class="rounded"            width="350px"            routerLink = "/mostraUnaReceta/{{receta.idRecetas}}"          />        </div><!-- Descripcion-->          <div class="col-md-5 descripcion rounded" >            <p >{{ receta.descripcion }}</p>        </div><!-- FechaAlta-->          <div class="fechaAlta">            {{receta.fechaAlta}}        </div>    </div>  </div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'InicioComponent', 'selector': 'app-inicio'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MostrarRecetasComponent', 'selector': 'app-mostrar-recetas'},{'name': 'MostrarUnaRecetaComponent', 'selector': 'app-mostrar-una-receta'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'SubirRecetaComponent', 'selector': 'app-subir-receta'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MostrarRecetasComponent'};

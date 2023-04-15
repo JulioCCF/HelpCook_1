@@ -73,7 +73,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule} from &#x27;@angular/core&#x27;;
 import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
 import { InicioComponent } from &#x27;./pages/inicio/inicio.component&#x27;;
 import { LoginComponent } from &#x27;./pages/login/login.component&#x27;;
@@ -83,6 +83,8 @@ import { PerfilComponent } from &#x27;./pages/perfil/perfil.component&#x27;;
 import { RegistroComponent } from &#x27;./pages/registro/registro.component&#x27;;
 import { SubirRecetaComponent } from &#x27;./pages/subir-receta/subir-receta.component&#x27;;
 
+
+
 const routes: Routes &#x3D; [
   {path:&#x27;&#x27;,component:InicioComponent},
   {path:&#x27;registro&#x27;,component:RegistroComponent},
@@ -91,6 +93,7 @@ const routes: Routes &#x3D; [
   {path:&#x27;perfil&#x27;,component:PerfilComponent},
   {path:&#x27;mostrarRecetas&#x27;,component:MostrarRecetasComponent},
   {path:&#x27;mostraUnaReceta&#x27;,component:MostrarUnaRecetaComponent},
+  {path:&#x27;mostraUnaReceta/:idRecetas&#x27;,component:MostrarUnaRecetaComponent}
 ];
 
 @NgModule({

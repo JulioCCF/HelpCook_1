@@ -112,19 +112,19 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#idReceta" >idReceta</a>
+                                <a href="#idRecetas" >idRecetas</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#idUsuario" >idUsuario</a>
+                                <a href="#idUsuarios" >idUsuarios</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#ingredientes" >ingredientes</a>
+                                <a href="#ingredientesResponse" >ingredientesResponse</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#pasos" >pasos</a>
+                                <a href="#pasosResponse" >pasosResponse</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -157,7 +157,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(idReceta: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, idUsuario: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, descripcion: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, tiempo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, foto: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, titulo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, categoria: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, fechaAlta: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>, valoracionMedia: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, comensales: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, ingredientes: <a href="../classes/Ingredientes.html" target="_self">Ingredientes[]</a>, pasos: <a href="../classes/Pasos.html" target="_self">Pasos[]</a>)</code>
+<code>constructor(idRecetas: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, idUsuarios: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, descripcion: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, tiempo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, foto: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, titulo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, categoria: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, fechaAlta: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>, valoracionMedia: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, comensales: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, ingredientesResponse: <a href="../classes/Ingredientes.html" target="_self">Ingredientes[]</a>, pasosResponse: <a href="../classes/Pasos.html" target="_self">Pasos[]</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -183,7 +183,7 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>idReceta</td>
+                                                        <td>idRecetas</td>
                                                   
                                                         <td>
                                                                         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
@@ -199,7 +199,7 @@
                                                         </td>
                                                 </tr>
                                                 <tr>
-                                                        <td>idUsuario</td>
+                                                        <td>idUsuarios</td>
                                                   
                                                         <td>
                                                                         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
@@ -343,7 +343,7 @@
                                                         </td>
                                                 </tr>
                                                 <tr>
-                                                        <td>ingredientes</td>
+                                                        <td>ingredientesResponse</td>
                                                   
                                                         <td>
                                                                         <code><a href="../classes/Ingredientes.html" target="_self" >Ingredientes[]</a></code>
@@ -354,12 +354,10 @@
                                                     </td>
                                                     
                                                         <td>
-                                                                <p>Ingredientes necesarios para la receta.</p>
-
                                                         </td>
                                                 </tr>
                                                 <tr>
-                                                        <td>pasos</td>
+                                                        <td>pasosResponse</td>
                                                   
                                                         <td>
                                                                         <code><a href="../classes/Pasos.html" target="_self" >Pasos[]</a></code>
@@ -370,8 +368,6 @@
                                                     </td>
                                                     
                                                         <td>
-                                                                <p>Pasos necesarios para la elaboración de la receta.</p>
-
                                                         </td>
                                                 </tr>
                                         </tbody>
@@ -557,11 +553,11 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="idReceta"></a>
+                    <a name="idRecetas"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
-                        <span ><b>idReceta</b></span>
-                        <a href="#idReceta"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>idRecetas</b></span>
+                        <a href="#idRecetas"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -590,11 +586,11 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="idUsuario"></a>
+                    <a name="idUsuarios"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
-                        <span ><b>idUsuario</b></span>
-                        <a href="#idUsuario"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>idUsuarios</b></span>
+                        <a href="#idUsuarios"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -623,11 +619,11 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="ingredientes"></a>
+                    <a name="ingredientesResponse"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
-                        <span ><b>ingredientes</b></span>
-                        <a href="#ingredientes"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>ingredientesResponse</b></span>
+                        <a href="#ingredientesResponse"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -656,11 +652,11 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="pasos"></a>
+                    <a name="pasosResponse"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
-                        <span ><b>pasos</b></span>
-                        <a href="#pasos"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>pasosResponse</b></span>
+                        <a href="#pasosResponse"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -807,12 +803,12 @@ export class Receta{
     /**
      * Identificador único de la receta.
      */
-    public idReceta:number; 
+    public idRecetas:number; 
 
     /**
      * Identificador del usuario que ha creado la receta.
      */
-    public idUsuario:number; 
+    public idUsuarios:number; 
 
     /**
      * Descripción de la receta.
@@ -858,18 +854,18 @@ export class Receta{
     /**
      * Ingredientes necesarios para la receta.
      */
-    public ingredientes: Ingredientes[];
+    public ingredientesResponse: Ingredientes[];
 
     /**
      * Pasos necesarios para la elaboración de la receta.
      */
-    public pasos: Pasos[];  
+    public pasosResponse: Pasos[];  
     
 
     /**
      * Crea una instancia de la clase Receta.
-     * @param idReceta Identificador único de la receta.
-     * @param idUsuario Identificador del usuario que ha creado la receta.
+     * @param idRecetas Identificador único de la receta.
+     * @param idUsuarios Identificador del usuario que ha creado la receta.
      * @param descripcion Descripción de la receta.
      * @param tiempo Tiempo estimado de preparación de la receta (en minutos).
      * @param foto URL de la foto de la receta.
@@ -881,9 +877,9 @@ export class Receta{
      * @param ingredientes Ingredientes necesarios para la receta.
      * @param pasos Pasos necesarios para la elaboración de la receta.
      */
-    constructor(idReceta: number, idUsuario: number, descripcion: string, tiempo: number, foto: string, titulo: string, categoria: string, fechaAlta: Date, valoracionMedia: number, comensales: number, ingredientes: Ingredientes[], pasos: Pasos[]) {
-        this.idReceta &#x3D; idReceta;
-        this.idUsuario &#x3D; idUsuario;
+    constructor(idRecetas: number, idUsuarios: number, descripcion: string, tiempo: number, foto: string, titulo: string, categoria: string, fechaAlta: Date, valoracionMedia: number, comensales: number, ingredientesResponse: Ingredientes[], pasosResponse: Pasos[]) {
+        this.idRecetas &#x3D; idRecetas;
+        this.idUsuarios &#x3D; idUsuarios;
         this.descripcion &#x3D; descripcion;
         this.tiempo &#x3D; tiempo;
         this.foto &#x3D; foto;
@@ -892,8 +888,8 @@ export class Receta{
         this.fechaAlta &#x3D; fechaAlta;
         this.valoracionMedia &#x3D; valoracionMedia;
         this.comensales &#x3D; comensales;
-        this.ingredientes &#x3D; ingredientes;
-        this.pasos &#x3D; pasos;
+        this.ingredientesResponse &#x3D; ingredientesResponse;
+        this.pasosResponse &#x3D; pasosResponse;
     }
 
 }
