@@ -2,35 +2,51 @@
 <div class="text-center" style="margin-top: 30px">
     <a class="nav-link" routerLink=""><img src="/assets/img/logo.png" class="w-25" alt="" /></a>
 </div>
-<form>
+<form [formGroup]="User" (ngSubmit)="saveUser(User.value)">
     <div class="form-group">
-        <label for="InputUsername">Nombre de usuario: </label>
-        <input type="text" class="form-control" name="username" id="InputUsername"
+        <label for="InputNombre">Nombre: </label>
+        <input type="text" class="form-control" formControlName="nombre" id="InputNombre"
+            placeholder="Introduzca su nombre" required>
+    </div>
+    <div class="form-group">
+        <label for="InputApellidos">Apellidos: </label>
+        <input type="text" class="form-control" formControlName="apellidos" id="InputApellidos"
+            placeholder="Introduzca sus apellidos" required>
+    </div>
+    <div class="form-group">
+        <label for="InputNick">Nombre de usuario: </label>
+        <input type="text" class="form-control" formControlName="nick" id="InputNick"
             placeholder="Introduzca su nombre de usuario" required>
     </div>
     <div class="form-group">
-        <label for="InputEmail1">Correo electrónico: </label>
-        <input type="email" class="form-control" name="email" id="InputEmail1"
+        <label for="InputContrasenia">Correo electrónico: </label>
+        <input type="email" class="form-control" formControlName="email" id="InputContrasenia"
             placeholder="Introduzca un correo electrónico válido" required>
     </div>
     <div class="form-group">
-        <label for="InputPassword1">Contraseña: </label>
-        <input type="password" class="form-control" name="password" id="InputPassword1" placeholder="Contraseña"
+        <label for="InputContrasenia1">Contraseña: </label>
+        <input type="password" class="form-control" formControlName="contrasenia" id="InputContrasenia1" placeholder="Introduzca la contraseña"
             required>
     </div>
     <div class="form-group">
         <label for="confirm-password">Confirmar Contraseña: </label>
-        <input type="password" class="form-control" id="confirm-password" name="confirm-password"
+        <input type="password" class="form-control" name="confirm-password" name="confirm-password"
             placeholder="Repita la contraseña" required>
     </div>
+    <div class="form-group">
+        <label for="InputFoto">Seleccione su foto de usuario: </label>
+        <input type="file" class="form-control" formControlName="foto" id="InputFoto" aria-label="file example" required>
+        <div class="invalid-feedback">Example invalid form file feedback</div>
+    </div>
+    <br/>
     <div class="custom-control custom-checkbox">
         <tr>
-            <td><input type="checkbox" class="custom-control-input" id="customCheck1"></td>
-            <td> <label class="custom-control-label" for="customCheck1">Acepto la Política de Privacidad</label></td>
+            <td><input type="checkbox" class="custom-control-input" name="privacity" id="customCheck1"></td>
+            <td> <label class="custom-control-label" for="customCheck1" required>Acepto la Política de Privacidad</label></td>
         </tr>
         <tr>
-            <td><input type="checkbox" class="custom-control-input" id="customCheck2"></td>
-            <td> <label class="custom-control-label" for="customCheck2">Autorizo el uso de mi información</label></td>
+            <td><input type="checkbox" class="custom-control-input" name="authorization" id="customCheck2"></td>
+            <td> <label class="custom-control-label" for="customCheck2" required>Autorizo el uso de mi información</label></td>
         </tr>
     </div>
     <button type="submit" class="btn btn-primary">Registrarme</button>

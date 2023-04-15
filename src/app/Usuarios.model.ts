@@ -1,4 +1,4 @@
-import { Receta } from "./Receta.model";
+import { Receta } from "./receta.model";
 
 /**
  * Clase que representa a los usuarios del sistema.

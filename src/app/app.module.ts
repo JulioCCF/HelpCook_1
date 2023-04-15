@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import {BarRatingModule} from 'ngx-bar-rating';
@@ -35,7 +35,10 @@ import { recetasService } from './pages/mostrar-recetas/recetasService.service';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BarRatingModule
+    BarRatingModule,
+    ReactiveFormsModule,
+    HttpClientModule
+    
   ],
   providers: [recetasService],
   bootstrap: [AppComponent]
