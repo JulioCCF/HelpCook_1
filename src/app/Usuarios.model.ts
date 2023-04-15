@@ -8,7 +8,7 @@ export class Usuarios{
     /**
      * Identificador único del usuario.
      */
-    public idUsuario : number;
+    public idUsuario: number;
 
     /**
      * Nickname del usuario.
@@ -58,7 +58,7 @@ export class Usuarios{
      * @param foto URL de la foto de perfil del usuario.
      * @param receta Lista de recetas creadas por el usuario.
      */
-     constructor(idUsuario: number, nick: string, contrasenia: string, nombre: string, apellido: string, email: string, foto: string, receta: Receta[]) {
+     constructor(nick: string, contrasenia: string, nombre: string, apellido: string, email: string, foto: string, receta?: Receta[], idUsuario?: number) {
         this.idUsuario = idUsuario;
         this.nick = nick;
         this.contrasenia = contrasenia;

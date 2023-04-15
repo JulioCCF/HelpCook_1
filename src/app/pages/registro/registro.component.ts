@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+//import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { RegistroService } from './registro-service.service';
+import { Usuarios } from 'src/app/Usuarios.model';
+//import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-registro',
@@ -7,21 +10,32 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./registro.component.css']
 })
 
-export class RegistroComponent{
-  
-  User = new FormGroup({
-    nombre : new FormControl('', Validators.required), 
-    apellidos : new FormControl('', Validators.required),
-    nick : new FormControl('', Validators.required),
-    email : new FormControl('', Validators.required),
-    contrasenia : new FormControl('', Validators.required),
-    foto : new FormControl('', Validators.required)
-  })
+export class RegistroComponent implements OnInit{
 
-  constructor(private fb: FormBuilder) { }
+  users: Usuarios[];
+  nombre: string;
+  apellido: string;
+  nick: string;
+  email: string;
+  contrasenia: string;
+  contraseniaRep: string;
+  foto: string;
 
-  saveUser(form: any){
-    console.log(this.User.value)
+
+  constructor(private registSvc: RegistroService) { }
+
+  ngOnInit(): void {
+    
+  }
+
+  addUserService(){
+    let usuario = new Usuarios(this.nick, this.contrasenia, this.nombre, this.apellido, this.email, this.foto);
+
+    this.users.push(usuario);
+
+    console.log(this.email);
+
+    this.registSvc.addNewUser(this.users);
   }
 
 }
