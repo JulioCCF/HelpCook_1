@@ -12,10 +12,10 @@ export class RegistroService{
        */
   constructor(private http: HttpClient) {}
 
-  addNewUser(users: Usuarios[]){
-      return this.http.post('http://localhost:8081/usuarios?', users).subscribe(
+  addNewUser(usuarios: Usuarios[]){
+      return this.http.post('http://localhost:8081/usuarios?', usuarios).subscribe(
         response => console.log("Se han guardado los usuarios: " +response),
-        error => console.log("Error " +error),
+        error => console.log("Error " +JSON.stringify(error)),
       );
   }
 }

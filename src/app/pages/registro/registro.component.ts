@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-//import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { RegistroService } from './registro-service.service';
 import { Usuarios } from 'src/app/Usuarios.model';
-//import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-registro',
@@ -12,7 +10,7 @@ import { Usuarios } from 'src/app/Usuarios.model';
 
 export class RegistroComponent implements OnInit{
 
-  users: Usuarios[];
+  usuarios: Usuarios[] = [];
   nombre: string;
   apellido: string;
   nick: string;
@@ -21,7 +19,10 @@ export class RegistroComponent implements OnInit{
   contraseniaRep: string;
   foto: string;
 
-
+  /**
+   * Injectamos los servicios para pasar y recibir datos a otro componente y para la conexión con el Backend
+   * @param registroService Servicio para conectar con el Backend
+   */
   constructor(private registSvc: RegistroService) { }
 
   ngOnInit(): void {
@@ -31,11 +32,11 @@ export class RegistroComponent implements OnInit{
   addUserService(){
     let usuario = new Usuarios(this.nick, this.contrasenia, this.nombre, this.apellido, this.email, this.foto);
 
-    this.users.push(usuario);
+    console.log(usuario);
 
-    console.log(this.email);
+    this.usuarios.push(usuario);
 
-    this.registSvc.addNewUser(this.users);
+    this.registSvc.addNewUser(this.usuarios);
   }
 
 }
