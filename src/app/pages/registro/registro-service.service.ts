@@ -13,7 +13,7 @@ export class RegistroService{
   constructor(private http: HttpClient) {}
 
   addNewUser(users: Usuarios[]){
-      return this.http.post('http://localhost:8081/usuarios?', users).subscribe(
+      return this.http.post('http://localhost:8081/usuarios/', users).subscribe(
         response => console.log("Se han guardado los usuarios: " +response),
         error => console.log("Error " +error),
       );

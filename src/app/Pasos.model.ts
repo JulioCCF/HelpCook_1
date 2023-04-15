@@ -1,4 +1,5 @@
-import { Receta } from "./receta.model";
+import { Receta } from "./Receta.model";
+
 
 
 /**
