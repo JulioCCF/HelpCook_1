@@ -69,6 +69,14 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Descripción</h3>
+    </p>
+    <p class="comment">
+        <p>Componente para la página de mostrar una receta</p>
+<p>Se mostrará la receta que haya seleccionado el usuario</p>
+
+    </p>
 
 
     <p class="comment">
@@ -135,6 +143,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#idRecetas" >idRecetas</a>
+                            </li>
+                            <li>
                                 <a href="#receta" >receta</a>
                             </li>
                         </ul>
@@ -170,17 +181,19 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, recetasService: recetasService)</code>
+<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, recetasService: <a href="../injectables/recetasService.html" target="_self">recetasService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="13" class="link-to-prism">src/app/pages/mostrar-una-receta/mostrar-una-receta.component.ts:13</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="26" class="link-to-prism">src/app/pages/mostrar-una-receta/mostrar-una-receta.component.ts:26</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Injectamos los servicios necesarios para el funcionamiento de la página</p>
+</div>
                             <div>
                                     <b>Parámetros :</b>
                                     <table class="params">
@@ -189,6 +202,7 @@
                                                 <td>Nombre</td>
                                                     <td>Tipo</td>
                                                 <td>Opcional</td>
+                                                    <td>Descripción</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -203,18 +217,26 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Para poder acceder al párametro de la URL</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>recetasService</td>
                                                   
                                                         <td>
-                                                                    <code>recetasService</code>
+                                                                        <code><a href="../injectables/recetasService.html" target="_self" >recetasService</a></code>
                                                         </td>
                                                   
                                                     <td>
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Servicio para conectar con el backEnd</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -254,14 +276,18 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="18"
-                            class="link-to-prism">src/app/pages/mostrar-una-receta/mostrar-una-receta.component.ts:18</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="48"
+                            class="link-to-prism">src/app/pages/mostrar-una-receta/mostrar-una-receta.component.ts:48</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Método que se carga cuando inicia la página</p>
+<p>Recogemos el id de la receta que se quiere mostrar mediante el route</p>
+<p>Llamamos al servicio de Recetas para la petición al back y almacenamos en nuestra variable receta la receta obtenida del servicio</p>
+</div>
 
                     <div class="io-description">
                         <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -281,6 +307,38 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="idRecetas"></a>
+                    <span class="name">
+                        <span ><b>idRecetas</b></span>
+                        <a href="#idRecetas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="26" class="link-to-prism">src/app/pages/mostrar-una-receta/mostrar-una-receta.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Variable para almacenar el id de la receta seleccionada en las demás páginas</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="receta"></a>
                     <span class="name">
                         <span ><b>receta</b></span>
@@ -296,10 +354,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="13" class="link-to-prism">src/app/pages/mostrar-una-receta/mostrar-una-receta.component.ts:13</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="20" class="link-to-prism">src/app/pages/mostrar-una-receta/mostrar-una-receta.component.ts:20</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Variable para alamacenar la receta que recuperamos de la base de datos</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -313,30 +377,89 @@
 import { ActivatedRoute } from &#x27;@angular/router&#x27;;
 import { Receta } from &#x27;src/app/Receta.model&#x27;;
 import { recetasService } from &#x27;src/app/pages/mostrar-recetas/recetasService.service&#x27;;
-
+/**
+ * Componente para la página de mostrar una receta
+ * 
+ * Se mostrará la receta que haya seleccionado el usuario
+ */
 @Component({
   selector: &#x27;app-mostrar-una-receta&#x27;,
   templateUrl: &#x27;./mostrar-una-receta.component.html&#x27;,
-  styleUrls: [&#x27;./mostrar-una-receta.component.css&#x27;]
+  styleUrls: [&#x27;./mostrar-una-receta.component.css&#x27;],
 })
-export class MostrarUnaRecetaComponent implements OnInit{
+export class MostrarUnaRecetaComponent implements OnInit {
 
+/**
+ * Variable para alamacenar la receta que recuperamos de la base de datos
+ */
   receta: Receta;
 
-  constructor(private route: ActivatedRoute, private recetasService: recetasService){}
+
+  /**
+   * Variable para almacenar el id de la receta seleccionada en las demás páginas
+   */
+  idRecetas: number;
 
 
+  /**
+   * Injectamos los servicios necesarios para el funcionamiento de la página
+   * 
+   * @param route Para poder acceder al párametro de la URL
+   * @param recetasService Servicio para conectar con el backEnd
+   */
+  constructor(
+    private route: ActivatedRoute,
+    private recetasService: recetasService
+  ) {}
+
+
+  /**
+   * Método que se carga cuando inicia la página
+   * 
+   * Recogemos el id de la receta que se quiere mostrar mediante el route
+   * 
+   * Llamamos al servicio de Recetas para la petición al back y almacenamos en nuestra variable receta la receta obtenida del servicio
+   */
   ngOnInit(): void {
-    const id &#x3D; +this.route.snapshot.paramMap.get(&#x27;id&#x27;);
-    this.recetasService.obtener(id).subscribe(receta&#x3D;&gt;{this.receta &#x3D; receta });
-  }
+    this.route.paramMap.subscribe((params) &#x3D;&gt; {
+      this.idRecetas &#x3D; +params.get(&#x27;idRecetas&#x27;);
+    });
 
+    this.recetasService.obtener(this.idRecetas).subscribe((receta) &#x3D;&gt; {
+      this.receta &#x3D; receta;
+      console.log(this.receta.ingredientesResponse)
+      });
+      
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;mostrar-una-receta works!&lt;/p&gt;
+        <pre class="line-numbers"><code class="language-html">
+{{receta?.titulo}}
+{{receta?.categoria}}
+{{receta?.comensales}}
+{{receta?.tiempo}}
+&lt;ul&gt;
+  &lt;!--Para mostrar los ingredientes--&gt;
+  &lt;li *ngFor&#x3D;&quot;let ingrediente of receta.ingredientesResponse&quot;&gt;{{ingrediente?.nombre}}&lt;/li&gt;
+  &lt;!--Para mostrar los pasos--&gt;
+  &lt;li *ngFor&#x3D;&quot;let pasos of receta.pasosResponse&quot;&gt;{{pasos?.descripcion}}&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--Para mostrar la valoración con estrellas--&gt;
+
+&lt;div class&#x3D;&quot;col-md-2&quot; style&#x3D;&quot;margin-top: 50px;&quot; &gt;
+  &lt;bar-rating [(rate)]&#x3D;&quot;receta.valoracionMedia&quot; [max]&#x3D;&quot;5&quot; [readOnly]&#x3D;&quot;true&quot;&gt;
+    &lt;ng-template ratingActive&gt;
+      &lt;i class&#x3D;&quot;bi bi-star-fill&quot; style&#x3D;&quot;margin: 2px; color: #3c240d&quot;&gt;&lt;/i&gt;
+    &lt;/ng-template&gt;
+    &lt;ng-template ratingInactive&gt;
+      &lt;i class&#x3D;&quot;bi bi-star-fill&quot; style&#x3D;&quot;margin: 2px; color: #d4d0c4&quot;&gt;&lt;/i&gt;
+    &lt;/ng-template&gt;
+  &lt;/bar-rating&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
@@ -372,7 +495,7 @@ export class MostrarUnaRecetaComponent implements OnInit{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>mostrar-una-receta works!</p></div>'
+        var COMPONENT_TEMPLATE = '<div>{{receta?.titulo}}{{receta?.categoria}}{{receta?.comensales}}{{receta?.tiempo}}<ul>  <!--Para mostrar los ingredientes-->  <li *ngFor="let ingrediente of receta.ingredientesResponse">{{ingrediente?.nombre}}</li>  <!--Para mostrar los pasos-->  <li *ngFor="let pasos of receta.pasosResponse">{{pasos?.descripcion}}</li></ul><!--Para mostrar la valoración con estrellas--><div class="col-md-2" style="margin-top: 50px;" >  <bar-rating [(rate)]="receta.valoracionMedia" [max]="5" [readOnly]="true">    <ng-template ratingActive>      <i class="bi bi-star-fill" style="margin: 2px; color: #3c240d"></i>    </ng-template>    <ng-template ratingInactive>      <i class="bi bi-star-fill" style="margin: 2px; color: #d4d0c4"></i>    </ng-template>  </bar-rating></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'InicioComponent', 'selector': 'app-inicio'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MostrarRecetasComponent', 'selector': 'app-mostrar-recetas'},{'name': 'MostrarUnaRecetaComponent', 'selector': 'app-mostrar-una-receta'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'SubirRecetaComponent', 'selector': 'app-subir-receta'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MostrarUnaRecetaComponent'};

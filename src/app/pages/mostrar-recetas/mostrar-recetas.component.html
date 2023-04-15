@@ -26,8 +26,15 @@
            {{ receta.titulo }} 
         </div>
 <!-- Valoracion -->  
-        <div class="col-md-2" style="margin-top: 50px; font-size: 25px;" >
-          <i class="bi bi-star-fill" ></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+        <div class="col-md-2" style="margin-top: 50px;" >
+          <bar-rating [(rate)]="receta.valoracionMedia" [max]="5" [readOnly]="true">
+            <ng-template ratingActive>
+              <i class="bi bi-star-fill" style="margin: 2px; color: #3c240d"></i>
+            </ng-template>
+            <ng-template ratingInactive>
+              <i class="bi bi-star-fill" style="margin: 2px; color:#d4d0c4"></i>
+            </ng-template>
+          </bar-rating>
        </div>
 <!-- Foto-->  
         <div class="col-md-6" style="margin-top: 40px;" >
