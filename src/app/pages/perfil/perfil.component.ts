@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { PerfilService } from './perfil-service.service';
 import { Usuarios } from 'src/app/Usuarios.model';
+import { recetasService } from '../mostrar-recetas/recetasService.service';
+import { Receta } from 'src/app/Receta.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
@@ -9,30 +12,35 @@ import { Usuarios } from 'src/app/Usuarios.model';
 })
 export class PerfilComponent implements OnInit{
 
-  nombre: string;
-  apellido: string;
-  nick: string;
-  email: string;
-  contrasenia: string;
-  contraseniaRep: string;
-  foto: string;
-  recetaGuardada: string;
-  recetaSubida: string;
+  usuario: Usuarios;
+  idUsuario: number;
+  favoritos: Receta[];
+  recetas: Receta[];
 
-  constructor(private perfilServicio: PerfilService) {
+  constructor(private perfilService: PerfilService, private recetasService: recetasService, private route:ActivatedRoute) {
     
+    let id: number;
+    this.recetasService.obtenerTodos(null, null, id, null).subscribe(recetas => {
+      this.recetas = recetas;
+    })
+
+    this.perfilService.getUser(this.idUsuario).subscribe((usuario => {
+      
+    }))
+
+
   }
 
   ngOnInit(): void {
     
   }
 
-  obtenerUsuario() {
-    let usuario = new Usuarios(this.nick, this.contrasenia, this.nombre, this.apellido, this.email, this.foto);
+  obtenerRecetas() {
     let id: number;
-
-    this.perfilServicio.getUser(id).subscribe(response => {
-      
+    this.recetasService.obtenerTodos(null, null, id, null).subscribe(recetas => {
+      this.recetas = recetas;
     })
   }
+
+
 }
