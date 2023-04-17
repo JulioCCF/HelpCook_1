@@ -1,5 +1,6 @@
 import { Receta } from "./receta.model";
 
+
 /**
  * Clase que representa los ingredientes de las recetas.
  */

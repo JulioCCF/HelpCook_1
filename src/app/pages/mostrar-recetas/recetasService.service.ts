@@ -1,12 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Receta } from '../../receta.model';
+
 import { Ingredientes } from '../../Ingredientes.model';
+import { Receta } from 'src/app/receta.model';
 
 
 /**
  * Servicio que proporciona acceso a la API REST utilizando el HttpClient de Angular
+ * 
+ * Utilizado para las consultas de recetas.
  */
 @Injectable()
 export class recetasService {

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import {BarRatingModule} from 'ngx-bar-rating';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,7 +34,6 @@ import { recetasService } from './pages/mostrar-recetas/recetasService.service';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BarRatingModule,
     ReactiveFormsModule,
     HttpClientModule
     
