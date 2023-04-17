@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { MiServicio } from 'src/app/miServivio.service';
 import { recetasService } from '../mostrar-recetas/recetasService.service';
-import { Receta } from 'src/app/receta.model';
+import { Receta } from 'src/app/Recetacambio.model';
 
 /**
  * Componente para la página de Inicio
