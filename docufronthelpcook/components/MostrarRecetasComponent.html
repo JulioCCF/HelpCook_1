@@ -445,7 +445,7 @@ almacenamos en el array de recetas las recetas que recibimos para poder mostrarl
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { MiServicio } from &#x27;src/app/miServivio.service&#x27;;
-import { Receta } from &#x27;src/app/Receta.model&#x27;;
+import { Receta } from &#x27;src/app/receta.model&#x27;;
 import { recetasService } from &#x27;./recetasService.service&#x27;;
 
 
@@ -530,65 +530,7 @@ export class MostrarRecetasComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;!-- Seccion logo --&gt;
-&lt;div class&#x3D;&quot;text-center&quot; style&#x3D;&quot;margin-top: 30px&quot;&gt;
-  &lt;a class&#x3D;&quot;nav-link&quot; routerLink&#x3D;&quot;&quot;
-    &gt;&lt;img src&#x3D;&quot;/assets/img/logo.png&quot; class&#x3D;&quot;w-25&quot; alt&#x3D;&quot;&quot;
-  /&gt;&lt;/a&gt;
-&lt;/div&gt;
-&lt;!-- Titulo de las recetas que se van a mostrar --&gt;
-&lt;div class&#x3D;&quot;container rounded receta&quot;&gt;
-    &lt;h1  *ngIf&#x3D;&quot;categoria; else sinCategoria&quot;
-    &gt;
-      {{ recetasAMostrar }}
-    &lt;/h1&gt;
-    &lt;ng-template #sinCategoria&gt;
-      &lt;h1&gt;
-       Recetas de {{recetasXCategoria}} 
-      &lt;/h1&gt;
-    &lt;/ng-template&gt;
-&lt;/div&gt;
-
-&lt;!-- Recetas que se muestran --&gt;
-  &lt;div class&#x3D;&quot;container pt-5 &quot; style&#x3D;&quot;margin-top: 50px;&quot; *ngFor&#x3D;&quot;let receta of recetas&quot; &gt;
-
- &lt;!-- Titulo--&gt;   
-      &lt;div class&#x3D;&quot;row  rounded outer&quot;&gt;
-        &lt;div class&#x3D;&quot;col-md-10 text-center titulo&quot; &gt;
-           {{ receta.titulo }} 
-        &lt;/div&gt;
-&lt;!-- Valoracion --&gt;  
-        &lt;div class&#x3D;&quot;col-md-2&quot; style&#x3D;&quot;margin-top: 50px;&quot; &gt;
-          &lt;bar-rating [(rate)]&#x3D;&quot;receta.valoracionMedia&quot; [max]&#x3D;&quot;5&quot; [readOnly]&#x3D;&quot;true&quot;&gt;
-            &lt;ng-template ratingActive&gt;
-              &lt;i class&#x3D;&quot;bi bi-star-fill&quot; style&#x3D;&quot;margin: 2px; color: #3c240d&quot;&gt;&lt;/i&gt;
-            &lt;/ng-template&gt;
-            &lt;ng-template ratingInactive&gt;
-              &lt;i class&#x3D;&quot;bi bi-star-fill&quot; style&#x3D;&quot;margin: 2px; color:#d4d0c4&quot;&gt;&lt;/i&gt;
-            &lt;/ng-template&gt;
-          &lt;/bar-rating&gt;
-       &lt;/div&gt;
-&lt;!-- Foto--&gt;  
-        &lt;div class&#x3D;&quot;col-md-6&quot; style&#x3D;&quot;margin-top: 40px;&quot; &gt;
-            &lt;input type&#x3D;&quot;image&quot; 
-            src&#x3D;&quot;assets/img/pruebareceta.jpg&quot;
-            class&#x3D;&quot;rounded&quot;
-            width&#x3D;&quot;350px&quot;
-            routerLink &#x3D; &quot;/mostraUnaReceta/{{receta.idRecetas}}&quot;
-          /&gt;
-        &lt;/div&gt;
-&lt;!-- Descripcion--&gt;  
-        &lt;div class&#x3D;&quot;col-md-5 descripcion rounded&quot; &gt;
-            &lt;p &gt;{{ receta.descripcion }}&lt;/p&gt;
-        &lt;/div&gt;
-&lt;!-- FechaAlta--&gt;  
-        &lt;div class&#x3D;&quot;fechaAlta&quot;&gt;  
-          {{receta.fechaAlta}}
-        &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-</code></pre>
+        <pre class="line-numbers"><code class="language-html"></code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -665,7 +607,7 @@ i {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- Seccion logo --><div class="text-center" style="margin-top: 30px">  <a class="nav-link" routerLink=""    ><img src="/assets/img/logo.png" class="w-25" alt=""  /></a></div><!-- Titulo de las recetas que se van a mostrar --><div class="container rounded receta">    <h1  *ngIf="categoria; else sinCategoria"    >      {{ recetasAMostrar }}    </h1>    <ng-template #sinCategoria>      <h1>       Recetas de {{recetasXCategoria}}       </h1>    </ng-template></div><!-- Recetas que se muestran -->  <div class="container pt-5 " style="margin-top: 50px;" *ngFor="let receta of recetas" > <!-- Titulo-->         <div class="row  rounded outer">        <div class="col-md-10 text-center titulo" >           {{ receta.titulo }}         </div><!-- Valoracion -->          <div class="col-md-2" style="margin-top: 50px;" >          <bar-rating [(rate)]="receta.valoracionMedia" [max]="5" [readOnly]="true">            <ng-template ratingActive>              <i class="bi bi-star-fill" style="margin: 2px; color: #3c240d"></i>            </ng-template>            <ng-template ratingInactive>              <i class="bi bi-star-fill" style="margin: 2px; color:#d4d0c4"></i>            </ng-template>          </bar-rating>       </div><!-- Foto-->          <div class="col-md-6" style="margin-top: 40px;" >            <input type="image"             src="assets/img/pruebareceta.jpg"            class="rounded"            width="350px"            routerLink = "/mostraUnaReceta/{{receta.idRecetas}}"          />        </div><!-- Descripcion-->          <div class="col-md-5 descripcion rounded" >            <p >{{ receta.descripcion }}</p>        </div><!-- FechaAlta-->          <div class="fechaAlta">            {{receta.fechaAlta}}        </div>    </div>  </div></div>'
+        var COMPONENT_TEMPLATE = '<div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'InicioComponent', 'selector': 'app-inicio'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MostrarRecetasComponent', 'selector': 'app-mostrar-recetas'},{'name': 'MostrarUnaRecetaComponent', 'selector': 'app-mostrar-una-receta'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'SubirRecetaComponent', 'selector': 'app-subir-receta'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MostrarRecetasComponent'};

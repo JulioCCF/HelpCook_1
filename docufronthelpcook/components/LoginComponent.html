@@ -140,6 +140,9 @@
                             <li>
                                 <a href="#password" >password</a>
                             </li>
+                            <li>
+                                <a href="#usuario" >usuario</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -181,7 +184,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="13" class="link-to-prism">src/app/pages/login/login.component.ts:13</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">src/app/pages/login/login.component.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -248,8 +251,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="22"
-                            class="link-to-prism">src/app/pages/login/login.component.ts:22</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="24"
+                            class="link-to-prism">src/app/pages/login/login.component.ts:24</a></div>
                 </td>
             </tr>
 
@@ -285,8 +288,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="18"
-                            class="link-to-prism">src/app/pages/login/login.component.ts:18</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="20"
+                            class="link-to-prism">src/app/pages/login/login.component.ts:20</a></div>
                 </td>
             </tr>
 
@@ -327,7 +330,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">src/app/pages/login/login.component.ts:12</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="13" class="link-to-prism">src/app/pages/login/login.component.ts:13</a></div>
                         </td>
                     </tr>
 
@@ -353,7 +356,38 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="13" class="link-to-prism">src/app/pages/login/login.component.ts:13</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="14" class="link-to-prism">src/app/pages/login/login.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usuario"></a>
+                    <span class="name">
+                        <span ><b>usuario</b></span>
+                        <a href="#usuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="../classes/Usuarios.html" target="_self" >Usuarios[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">src/app/pages/login/login.component.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -369,6 +403,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { NgForm } from &#x27;@angular/forms&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
+import { Usuarios } from &#x27;src/app/Usuarios.model&#x27;;
 
 @Component({
   selector: &#x27;app-login&#x27;,
@@ -379,6 +414,7 @@ export class LoginComponent implements OnInit{
 
   email: string;
   password: string;
+  usuario:Usuarios[] &#x3D; [];
 
   constructor(private router: Router) {
 
@@ -411,7 +447,7 @@ export class LoginComponent implements OnInit{
         &lt;label for&#x3D;&quot;InputPassword1&quot;&gt;Contraseña: &lt;/label&gt;
         &lt;input type&#x3D;&quot;password&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;password&quot; id&#x3D;&quot;InputPassword1&quot; placeholder&#x3D;&quot;Contraseña&quot;&gt;
     &lt;/div&gt;
-    &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;login()&quot;&gt;Iniciar sesión&lt;/button&gt;
+    &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;login()&quot; routerLink &#x3D; &quot;/perfil&quot;&gt;Iniciar sesión&lt;/button&gt;
     &lt;p class&#x3D;&quot;p-texto&quot;&gt;Si aún no tienes una cuenta puedes&lt;/p&gt;
     &lt;p class&#x3D;&quot;p-link&quot;&gt;&lt;a class&#x3D;&quot;link-registro&quot; href&#x3D;&quot;/registro&quot;&gt;registrarte aquí&lt;/a&gt;&lt;/p&gt;
 &lt;/form&gt;</code></pre>
@@ -510,7 +546,7 @@ button {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- Seccion logo --><div class="text-center" style="margin-top: 30px">    <a class="nav-link" routerLink=""><img src="/assets/img/logo.png" class="w-25" alt="" /></a>  </div>  <!-- Formulario --><form>    <div class="form-group">        <label for="InputEmail1">Correo electrónico: </label>        <input type="email" class="form-control" name="email" id="InputEmail1" placeholder="Correo electrónico">    </div>    <div class="form-group">        <label for="InputPassword1">Contraseña: </label>        <input type="password" class="form-control" name="password" id="InputPassword1" placeholder="Contraseña">    </div>    <button type="submit" class="btn btn-primary" (click)="login()">Iniciar sesión</button>    <p class="p-texto">Si aún no tienes una cuenta puedes</p>    <p class="p-link"><a class="link-registro" href="/registro">registrarte aquí</a></p></form></div>'
+        var COMPONENT_TEMPLATE = '<div><!-- Seccion logo --><div class="text-center" style="margin-top: 30px">    <a class="nav-link" routerLink=""><img src="/assets/img/logo.png" class="w-25" alt="" /></a>  </div>  <!-- Formulario --><form>    <div class="form-group">        <label for="InputEmail1">Correo electrónico: </label>        <input type="email" class="form-control" name="email" id="InputEmail1" placeholder="Correo electrónico">    </div>    <div class="form-group">        <label for="InputPassword1">Contraseña: </label>        <input type="password" class="form-control" name="password" id="InputPassword1" placeholder="Contraseña">    </div>    <button type="submit" class="btn btn-primary" (click)="login()" routerLink = "/perfil">Iniciar sesión</button>    <p class="p-texto">Si aún no tienes una cuenta puedes</p>    <p class="p-link"><a class="link-registro" href="/registro">registrarte aquí</a></p></form></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'InicioComponent', 'selector': 'app-inicio'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MostrarRecetasComponent', 'selector': 'app-mostrar-recetas'},{'name': 'MostrarUnaRecetaComponent', 'selector': 'app-mostrar-una-receta'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'SubirRecetaComponent', 'selector': 'app-subir-receta'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
