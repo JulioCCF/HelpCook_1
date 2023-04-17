@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Receta } from 'src/app/Recetacambio.model';
+import { Receta } from 'src/app/Receta.model';
 import { recetasService } from 'src/app/pages/mostrar-recetas/recetasService.service';
 /**
  * Componente para la página de mostrar una receta

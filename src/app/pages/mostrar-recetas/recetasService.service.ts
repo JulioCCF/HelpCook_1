@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Ingredientes } from '../../Ingredientes.model';
-import { Receta } from 'src/app/Recetacambio.model';
+import { Receta } from 'src/app/Receta.model';
 
 
 /**

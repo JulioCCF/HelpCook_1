@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { MiServicio } from 'src/app/miServivio.service';
 import { recetasService } from '../mostrar-recetas/recetasService.service';
-import { Receta } from 'src/app/Recetacambio.model';
+import { Receta } from 'src/app/Receta.model';
 
 /**
  * Componente para la página de Inicio
@@ -43,10 +43,14 @@ export class InicioComponent implements OnInit{
   constructor(private miServicio: MiServicio, private recetasService: recetasService ){
 
     this.recetasService.obtenerTodos(null,null,null,"Recetas mejor valoradas").subscribe(recetas=>
-      {this.recetasMejorValoradas = recetas;});
+      {this.recetasMejorValoradas = recetas;
+      
+     
+      });
 
       this.recetasService.obtenerTodos(null,null,null,"Recetas más recientes").subscribe(recetas=>
-        {this.recetasMasRecientes = recetas;});
+        {this.recetasMasRecientes = recetas;
+          });
   }
   
   /**

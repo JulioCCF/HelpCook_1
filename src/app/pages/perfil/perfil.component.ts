@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PerfilService } from './perfil-service.service';
 import { Usuarios } from 'src/app/Usuarios.model';
 import { recetasService } from '../mostrar-recetas/recetasService.service';
-import { Receta } from 'src/app/Recetacambio.model';
+import { Receta } from 'src/app/Receta.model';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
