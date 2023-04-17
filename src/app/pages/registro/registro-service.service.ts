@@ -2,6 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { Usuarios } from 'src/app/Usuarios.model';
 
+
+/**
+ * Servicio que proporciona acceso a la API REST utilizando el HttpClient de Angular
+ * 
+ * Utilizado para las consultas de usuarios.
+ */
 @Injectable({
   providedIn: 'root'
 })
@@ -12,10 +18,13 @@ export class RegistroService{
        */
   constructor(private http: HttpClient) {}
 
-  addNewUser(usuarios: Usuarios[]){
-      return this.http.post('http://localhost:8081/usuarios?', usuarios).subscribe(
-        response => console.log("Se han guardado los usuarios: " +response),
-        error => console.log("Error " +JSON.stringify(error)),
-      );
+
+  /**
+   * Método para la conexión con el método del backend para crear un Usuario,
+   * @param users. Recibimos el objeto usuario con los datos rellenados por éste
+   * @returns Devolvemos el usuario ya guardado en la BBDD
+   */
+  addNewUser(users: Usuarios){
+      return this.http.post('http://localhost:8081/usuarios', users);
   }
 }

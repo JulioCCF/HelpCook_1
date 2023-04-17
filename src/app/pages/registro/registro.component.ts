@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { RegistroService } from './registro-service.service';
 import { Usuarios } from 'src/app/Usuarios.model';
-
+import { HttpErrorResponse } from '@angular/common/http';
+/**
+ * Componente para la página de registro
+ * 
+ * Se mostrara el usuario que se ha creado con los valores introducidos en el form
+ */
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -9,18 +14,46 @@ import { Usuarios } from 'src/app/Usuarios.model';
 })
 
 export class RegistroComponent implements OnInit{
-
-  usuarios: Usuarios[] = [];
+  
+  /**
+   * Variable para almacenar el nombre real de la persona que se registra
+   */
   nombre: string;
-  apellido: string;
-  nick: string;
-  email: string;
-  contrasenia: string;
-  contraseniaRep: string;
-  foto: string;
 
   /**
-   * Injectamos los servicios para pasar y recibir datos a otro componente y para la conexión con el Backend
+   * Variable para almacenar los apellidos de la persona que se registra
+   */
+  apellido: string;
+
+  /**
+   * Variable para almacenar el nick/username que tendrá en su cuenta de usuario
+   */
+  nick: string;
+
+  /**
+   * Variable para almacenar el email con el que se registra la persona y que estara asignado a su cuenta de usuario
+   */
+  email: string;
+
+  /**
+   * Variable para almacenar la contraseña para acceder a su cuenta de usuario
+   */
+  contrasenia: string;
+
+  /**
+   * Variable para almacenar la contraseña repetida para comprobar que la contraseña que ha introducido es la deseada
+   */
+  contraseniaRep: string;
+
+  /**
+   * Variable para almacenar la foto de perfil del usuario que esta creando
+   */
+  foto: string;
+
+  
+
+  /**
+   * Injectamos los servicios para la conexión con el Backend
    * @param registroService Servicio para conectar con el Backend
    */
   constructor(private registSvc: RegistroService) { }
@@ -29,14 +62,31 @@ export class RegistroComponent implements OnInit{
     
   }
 
+  /**
+   * Método que se carga cuando el usuario pulsa el botón "Registrarme"
+   * 
+   * Recogemos los valores que el usuario introduce en el formulario de registro y los asignamos al objeto usuario
+   * 
+   * Llamamos al servicio de Registro para la conexión con el back y mostramos por pantalla
+   * "Se ha guardado el usuario: " si el usuario se ha guardado correctamente o 
+   * "Error de red o error en el servidor" si el usuario no se ha guardado correctamente dependiendo de donde proceda el error
+   */
   addUserService(){
     let usuario = new Usuarios(this.nick, this.contrasenia, this.nombre, this.apellido, this.email, this.foto);
 
     console.log(usuario);
 
-    this.usuarios.push(usuario);
-
-    this.registSvc.addNewUser(this.usuarios);
+    this.registSvc.addNewUser(usuario).subscribe(
+      response => console.log("Se ha guardado el usuario: " + response),
+      (error: HttpErrorResponse) => {
+        if (error.error instanceof ErrorEvent) {
+          console.error('Error de red:', error.error.message);
+        } else {
+          console.error(`Error en el servidor: ${error.status}: ${error.error}`);
+        }
+      
+      }
+    );
   }
 
 }
