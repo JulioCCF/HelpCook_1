@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
 /**
  * Componente principal de la aplicación.
  *
- * @remarks
  * Este componente representa el contenedor principal de la aplicación HelpCook.
  * Proporciona el menú principal de navegación y permite expandir/cerrar el menú lateral.
  *
@@ -34,9 +33,8 @@ export class AppComponent {
     /**
    * Crea una instancia del componente AppComponent.
    */
-  constructor(){
-    
-  }
+  constructor(){}
+  
   /**
    * Alterna la visibilidad del menú lateral.
    */
