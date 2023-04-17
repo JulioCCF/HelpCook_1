@@ -67,7 +67,7 @@ export class RegistroComponent implements OnInit{
    * 
    * Recogemos los valores que el usuario introduce en el formulario de registro y los asignamos al objeto usuario
    * 
-   * Llamamos al servicio de Registro para la conexión con el back y mostramos por pantalla
+   * Llamamos al servicio de Registro para la conexión con el back y mostramos por la consola
    * "Se ha guardado el usuario: " si el usuario se ha guardado correctamente o 
    * "Error de red o error en el servidor" si el usuario no se ha guardado correctamente dependiendo de donde proceda el error
    */

@@ -142,15 +142,119 @@ export class PerfilComponent {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;perfil works!&lt;/p&gt;
-</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;!-- Seccion logo --&gt;
+&lt;div class&#x3D;&quot;text-center&quot; style&#x3D;&quot;margin-top: 30px&quot;&gt;
+    &lt;a class&#x3D;&quot;nav-link&quot; routerLink&#x3D;&quot;&quot;&gt;&lt;img src&#x3D;&quot;/assets/img/logo.png&quot; class&#x3D;&quot;w-25&quot; alt&#x3D;&quot;&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;body&gt;
+    &lt;section class&#x3D;&quot;h-100 gradient-custom-2&quot;&gt;
+        &lt;div class&#x3D;&quot;container py-5 h-100&quot;&gt;
+            &lt;div class&#x3D;&quot;row d-flex justify-content-center align-items-center h-100&quot;&gt;
+                &lt;div class&#x3D;&quot;col col-lg-9 col-xl-7&quot;&gt;
+                    &lt;div class&#x3D;&quot;card&quot;&gt;
+                        &lt;div class&#x3D;&quot;rounded-top text-white d-flex flex-row&quot;
+                            style&#x3D;&quot;background-color: #8A9A8A; height:200px;&quot;&gt;
+                            &lt;div class&#x3D;&quot;ms-4 mt-5 d-flex flex-column&quot; style&#x3D;&quot;width: 150px;&quot;&gt;
+                                &lt;img src&#x3D;&quot;https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp&quot;
+                                    alt&#x3D;&quot;Generic placeholder image&quot; class&#x3D;&quot;img-fluid img-thumbnail mt-4 mb-2&quot;
+                                    style&#x3D;&quot;width: 150px; z-index: 1&quot;&gt;
+                                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-dark&quot; data-mdb-ripple-color&#x3D;&quot;dark&quot;
+                                    style&#x3D;&quot;z-index: 1;&quot;&gt;
+                                    Editar perfil
+                                &lt;/button&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;ms-3&quot; style&#x3D;&quot;margin-top: 130px;&quot;&gt;
+                                &lt;h3 class&#x3D;&quot;fw-bold&quot;&gt;Nombre&lt;/h3&gt;
+                                &lt;p class&#x3D;&quot;fw-semibold&quot;&gt;@nombreusuario&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class&#x3D;&quot;p-4&quot; style&#x3D;&quot;background-color: #f8f9fa; color: #3F2811&quot;&gt;
+                            &lt;div class&#x3D;&quot;d-flex justify-content-end text-center py-1&quot;&gt;
+                                &lt;div&gt;
+                                    &lt;p class&#x3D;&quot;mb-1 h5&quot;&gt;253&lt;/p&gt;
+                                    &lt;p class&#x3D;&quot;normal mb-0&quot;&gt;Recetas subidas&lt;/p&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;px-3&quot;&gt;
+                                    &lt;p class&#x3D;&quot;mb-1 h5&quot;&gt;1026&lt;/p&gt;
+                                    &lt;p class&#x3D;&quot;normal mb-0&quot;&gt;Recetas guardadas&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class&#x3D;&quot;card-body p-4&quot; style&#x3D;&quot;color: #3F2811&quot;&gt;
+                            &lt;!-- &lt;div class&#x3D;&quot;mb-5&quot;&gt;
+                                &lt;p class&#x3D;&quot;lead fw-normal mb-1&quot;&gt;Datos del usuario&lt;/p&gt;
+                                &lt;div class&#x3D;&quot;p-4&quot; style&#x3D;&quot;background-color: #f8f9fa;&quot;&gt;
+                                    &lt;p class&#x3D;&quot;font-italic mb-1&quot;&gt;Web Developer&lt;/p&gt;
+                                    &lt;p class&#x3D;&quot;font-italic mb-1&quot;&gt;Lives in New York&lt;/p&gt;
+                                    &lt;p class&#x3D;&quot;font-italic mb-0&quot;&gt;Photographer&lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt; --&gt;
+                            &lt;div class&#x3D;&quot;d-flex justify-content-between align-items-center mb-4&quot;&gt;
+                                &lt;p class&#x3D;&quot;lead fw-bold mb-0&quot;&gt;Últimas recetas subidas&lt;/p&gt;
+                                &lt;p class&#x3D;&quot;mb-0&quot;&gt;&lt;a href&#x3D;&quot;#!&quot; class&#x3D;&quot;text-muted&quot;&gt;Mostrar todas&lt;/a&gt;&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;row g-2&quot;&gt;
+                                &lt;div class&#x3D;&quot;col mb-2&quot;&gt;
+                                    &lt;img src&#x3D;&quot;https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(112).webp&quot;
+                                        alt&#x3D;&quot;image 1&quot; class&#x3D;&quot;w-100 rounded-3&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;col mb-2&quot;&gt;
+                                    &lt;img src&#x3D;&quot;https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(107).webp&quot;
+                                        alt&#x3D;&quot;image 1&quot; class&#x3D;&quot;w-100 rounded-3&quot;&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;row g-2&quot;&gt;
+                                &lt;div class&#x3D;&quot;col&quot;&gt;
+                                    &lt;img src&#x3D;&quot;https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(108).webp&quot;
+                                        alt&#x3D;&quot;image 1&quot; class&#x3D;&quot;w-100 rounded-3&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;col&quot;&gt;
+                                    &lt;img src&#x3D;&quot;https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(114).webp&quot;
+                                        alt&#x3D;&quot;image 1&quot; class&#x3D;&quot;w-100 rounded-3&quot;&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;d-flex justify-content-between align-items-center mb-4 mt-5&quot;&gt;
+                                &lt;p class&#x3D;&quot;lead fw-bold mb-0&quot;&gt;Últimas recetas guardadas&lt;/p&gt;
+                                &lt;p class&#x3D;&quot;mb-0&quot;&gt;&lt;a href&#x3D;&quot;#!&quot; class&#x3D;&quot;text-muted&quot;&gt;Mostrar todas&lt;/a&gt;&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;row g-2&quot;&gt;
+                                &lt;div class&#x3D;&quot;col mb-2&quot;&gt;
+                                    &lt;img src&#x3D;&quot;https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(112).webp&quot;
+                                        alt&#x3D;&quot;image 1&quot; class&#x3D;&quot;w-100 rounded-3&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;col mb-2&quot;&gt;
+                                    &lt;img src&#x3D;&quot;https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(107).webp&quot;
+                                        alt&#x3D;&quot;image 1&quot; class&#x3D;&quot;w-100 rounded-3&quot;&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;row g-2&quot;&gt;
+                                &lt;div class&#x3D;&quot;col&quot;&gt;
+                                    &lt;img src&#x3D;&quot;https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(108).webp&quot;
+                                        alt&#x3D;&quot;image 1&quot; class&#x3D;&quot;w-100 rounded-3&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;col&quot;&gt;
+                                    &lt;img src&#x3D;&quot;https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(114).webp&quot;
+                                        alt&#x3D;&quot;image 1&quot; class&#x3D;&quot;w-100 rounded-3&quot;&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
                     <code>./perfil.component.css</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f6ed;
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -178,7 +282,7 @@ export class PerfilComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>perfil works!</p></div>'
+        var COMPONENT_TEMPLATE = '<div><!-- Seccion logo --><div class="text-center" style="margin-top: 30px">    <a class="nav-link" routerLink=""><img src="/assets/img/logo.png" class="w-25" alt="" /></a></div><body>    <section class="h-100 gradient-custom-2">        <div class="container py-5 h-100">            <div class="row d-flex justify-content-center align-items-center h-100">                <div class="col col-lg-9 col-xl-7">                    <div class="card">                        <div class="rounded-top text-white d-flex flex-row"                            style="background-color: #8A9A8A; height:200px;">                            <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"                                    alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"                                    style="width: 150px; z-index: 1">                                <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark"                                    style="z-index: 1;">                                    Editar perfil                                </button>                            </div>                            <div class="ms-3" style="margin-top: 130px;">                                <h3 class="fw-bold">Nombre</h3>                                <p class="fw-semibold">@nombreusuario</p>                            </div>                        </div>                        <div class="p-4" style="background-color: #f8f9fa; color: #3F2811">                            <div class="d-flex justify-content-end text-center py-1">                                <div>                                    <p class="mb-1 h5">253</p>                                    <p class="normal mb-0">Recetas subidas</p>                                </div>                                <div class="px-3">                                    <p class="mb-1 h5">1026</p>                                    <p class="normal mb-0">Recetas guardadas</p>                                </div>                            </div>                        </div>                        <div class="card-body p-4" style="color: #3F2811">                            <!-- <div class="mb-5">                                <p class="lead fw-normal mb-1">Datos del usuario</p>                                <div class="p-4" style="background-color: #f8f9fa;">                                    <p class="font-italic mb-1">Web Developer</p>                                    <p class="font-italic mb-1">Lives in New York</p>                                    <p class="font-italic mb-0">Photographer</p>                                </div>                            </div> -->                            <div class="d-flex justify-content-between align-items-center mb-4">                                <p class="lead fw-bold mb-0">Últimas recetas subidas</p>                                <p class="mb-0"><a href="#!" class="text-muted">Mostrar todas</a></p>                            </div>                            <div class="row g-2">                                <div class="col mb-2">                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(112).webp"                                        alt="image 1" class="w-100 rounded-3">                                </div>                                <div class="col mb-2">                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(107).webp"                                        alt="image 1" class="w-100 rounded-3">                                </div>                            </div>                            <div class="row g-2">                                <div class="col">                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(108).webp"                                        alt="image 1" class="w-100 rounded-3">                                </div>                                <div class="col">                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(114).webp"                                        alt="image 1" class="w-100 rounded-3">                                </div>                            </div>                            <div class="d-flex justify-content-between align-items-center mb-4 mt-5">                                <p class="lead fw-bold mb-0">Últimas recetas guardadas</p>                                <p class="mb-0"><a href="#!" class="text-muted">Mostrar todas</a></p>                            </div>                            <div class="row g-2">                                <div class="col mb-2">                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(112).webp"                                        alt="image 1" class="w-100 rounded-3">                                </div>                                <div class="col mb-2">                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(107).webp"                                        alt="image 1" class="w-100 rounded-3">                                </div>                            </div>                            <div class="row g-2">                                <div class="col">                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(108).webp"                                        alt="image 1" class="w-100 rounded-3">                                </div>                                <div class="col">                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(114).webp"                                        alt="image 1" class="w-100 rounded-3">                                </div>                            </div>                        </div>                    </div>                </div>            </div>        </div>    </section></body></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'InicioComponent', 'selector': 'app-inicio'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MostrarRecetasComponent', 'selector': 'app-mostrar-recetas'},{'name': 'MostrarUnaRecetaComponent', 'selector': 'app-mostrar-una-receta'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'SubirRecetaComponent', 'selector': 'app-subir-receta'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'PerfilComponent'};
