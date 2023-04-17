@@ -52,7 +52,6 @@ export class MostrarUnaRecetaComponent implements OnInit {
 
     this.recetasService.obtener(this.idRecetas).subscribe((receta) => {
       this.receta = receta;
-      console.log(this.receta.ingredientesResponse)
       });
       
   }
