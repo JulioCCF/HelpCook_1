@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RegistroService } from './registro-service.service';
 import { Usuarios } from 'src/app/Usuarios.model';
 import { HttpErrorResponse } from '@angular/common/http';
+import { DomSanitizer } from '@angular/platform-browser';
 /**
  * Componente para la página de registro
  * 
@@ -50,8 +51,10 @@ export class RegistroComponent implements OnInit{
    */
   foto: string;
 
-  mensaje: string
+
+  mensaje: string;
   
+
 
   /**
    * Injectamos los servicios para la conexión con el Backend
@@ -63,6 +66,20 @@ export class RegistroComponent implements OnInit{
     
   }
 
+  onFileSelected(event) {
+    const file = event.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+      this.foto = reader.result as string;
+    };
+  }
+}
+
+
+
   /**
    * Método que se carga cuando el usuario pulsa el botón "Registrarme"
    * 
@@ -72,22 +89,21 @@ export class RegistroComponent implements OnInit{
    * "Se ha guardado el usuario: " si el usuario se ha guardado correctamente o 
    * "Error de red o error en el servidor" si el usuario no se ha guardado correctamente dependiendo de donde proceda el error
    */
+
   addUserService(){
+    
     let usuario = new Usuarios(this.nick, this.contrasenia, this.nombre, this.apellido, this.email, this.foto);
-
-    console.log(usuario);
-
-    this.registSvc.addNewUser(usuario).subscribe(
-      response => this.mensaje = "Enhorabuena! ya estaá registrado, bienvenido: " + usuario.nombre,
-      (error: HttpErrorResponse) => {
-        if (error.error instanceof ErrorEvent) {
-          this.mensaje = 'Error de red:'+ error.error.message;
-        } else {
-          this.mensaje = `Error en el servidor: ${error.status}: ${error.error}`;
+      console.log(this.foto);
+  
+      this.registSvc.addNewUser(usuario).subscribe(
+        response => this.mensaje = "Enhorabuena! ya está registrado, bienvenido: " + usuario.nombre,
+        (error: HttpErrorResponse) => {
+          if (error.error instanceof ErrorEvent) {
+            this.mensaje = 'Error de red:'+ error.error.message;
+          } else {
+            this.mensaje = `Error en el servidor: ${error.status}: ${error.error}`;
+          }
         }
-      
-      }
-    );
-  }
-
+      );
+    };
 }

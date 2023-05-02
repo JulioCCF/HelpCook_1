@@ -2,3 +2,43 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f5f6ed;
 }
+
+.recetas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    height: fit-content;
+    color: #3F2811;
+    
+  }
+  
+  .receta {
+    width: 300px;
+    height: 350px;
+    display: inline-block;
+    margin-left: 40px;
+    margin-bottom: 1px;
+  }
+  
+  .receta:last-child {
+    margin-right: 0px;
+    margin-bottom: 0px;
+  }
+
+  .receta img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 5px;
+    border-radius: 10px;
+  }
+  .boton-edit-perfil{
+    background-color: #8b9a8a;
+    color: #fff;
+    border-radius: 10px; 
+    border: #3F2811;
+    width: 160px;
+    z-index: 1;
+  }
+  

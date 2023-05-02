@@ -3,7 +3,7 @@
     <a class="nav-link" routerLink=""><img src="/assets/img/logo.png" class="w-25" alt="" /></a>
 </div>
 <!-- Formulario de registro -->
-<form>
+<form enctype="multipart/form-data">
     <!-- Nombre real de la persona que se esta registrando -->
     <div class="form-group">
         <label for="InputNombre">Nombre: </label>
@@ -42,9 +42,9 @@
     </div>
     <!-- Foto de perfil del usuario que se esta registrando -->
     <div class="form-group">
-        <label for="InputFoto">Seleccione su foto de usuario: </label>
-        <input type="file" class="form-control" name="foto" [(ngModel)]="foto" id="InputFoto" aria-label="file example" required>
-        <div class="invalid-feedback">Example invalid form file feedback</div>
+        <label for="InputFoto">Seleccione su foto de usuario: (PNG,JPG) </label>
+        <input type="file"  class="form-control" name="file" id="InputFoto" aria-label="file example" required (change)="onFileSelected($event)">
+        
     </div>
     <br/>
     <div class="custom-control custom-checkbox">
