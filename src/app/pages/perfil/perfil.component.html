@@ -21,18 +21,18 @@
                                 </button>
                             </div>
                             <div class="ms-3" style="margin-top: 130px;">
-                                <h3 class="fw-semibold">Nombre</h3>
-                                <p class="fw-normal">@nombreusuario</p>
+                                <h3 class="fw-semibold">{{usuario.nombre}}</h3>
+                                <p class="fw-normal">{{usuario.email}}</p>
                             </div>
                         </div>
                         <div class="p-4" style="background-color: #f8f9fa; color: #3F2811">
                             <div class="d-flex justify-content-end text-center py-1">
                                 <div>
-                                    <p class="mb-1 h5">253</p>
+                                    <p class="mb-1 h5">{{recetas.length}}</p>
                                     <p class="normal mb-0">Recetas subidas</p>
                                 </div>
                                 <div class="px-3">
-                                    <p class="mb-1 h5">1026</p>
+                                    <p class="mb-1 h5">{{usuario.favoritos.length}}</p>
                                     <p class="normal mb-0">Recetas guardadas</p>
                                 </div>
                             </div>

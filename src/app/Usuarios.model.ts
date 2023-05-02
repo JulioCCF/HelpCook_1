@@ -1,3 +1,4 @@
+import { Favoritos } from "./Favoritos.model";
 import { Receta } from "./Receta.model";
 
 
@@ -43,9 +44,9 @@ export class Usuarios{
     public foto: string;
 
     /**
-     * Lista de recetas creadas por el usuario o añadidas como faritos.
+     * Lista de favoritos guardadas por el usuario 
      */
-    public receta: Receta[];
+    public favoritos: Favoritos[];
  
 
 
@@ -60,7 +61,7 @@ export class Usuarios{
      * @param foto URL de la foto de perfil del usuario.
      * @param receta Lista de recetas creadas por el usuario.
      */
-     constructor(nick: string, contrasenia: string, nombre: string, apellido: string, email: string, foto: string, receta?: Receta[], idUsuario?: number) {
+     constructor(nick: string, contrasenia: string, nombre: string, apellido: string, email: string, foto: string, favoritos?: Favoritos[], idUsuario?: number) {
         this.idUsuario = idUsuario;
         this.nick = nick;
         this.contrasenia = contrasenia;
@@ -68,6 +69,6 @@ export class Usuarios{
         this.apellido = apellido;
         this.email = email;
         this.foto = foto;
-        this.receta = receta;
+        this.favoritos = favoritos;
     }
 }

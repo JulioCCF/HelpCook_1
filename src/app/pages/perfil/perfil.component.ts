@@ -13,31 +13,24 @@ import { ActivatedRoute } from '@angular/router';
 export class PerfilComponent implements OnInit{
 
   usuario: Usuarios;
-  idUsuario: number;
-  favoritos: Receta[];
   recetas: Receta[];
 
-  constructor(private perfilService: PerfilService, private recetasService: recetasService, private route:ActivatedRoute) {
+  constructor( private recetasService: recetasService, private route:ActivatedRoute) {
     
     let id: number;
     this.recetasService.obtenerTodos(null, null, id, null).subscribe(recetas => {
       this.recetas = recetas;
     })
 
-    this.perfilService.getUser(this.idUsuario).subscribe((usuario => {
-      
-    }))
-
-
   }
 
   ngOnInit(): void {
-    
+    this.usuario = history.state.usuario;
   }
 
   obtenerRecetas() {
     let id: number;
-    this.recetasService.obtenerTodos(null, null, id, null).subscribe(recetas => {
+    this.recetasService.obtenerTodos(null, null, this.usuario.idUsuario, null).subscribe(recetas => {
       this.recetas = recetas;
     })
   }

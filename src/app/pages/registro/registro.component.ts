@@ -50,6 +50,7 @@ export class RegistroComponent implements OnInit{
    */
   foto: string;
 
+  mensaje: string
   
 
   /**
@@ -77,12 +78,12 @@ export class RegistroComponent implements OnInit{
     console.log(usuario);
 
     this.registSvc.addNewUser(usuario).subscribe(
-      response => console.log("Se ha guardado el usuario: " + response),
+      response => this.mensaje = "Enhorabuena! ya estaá registrado, bienvenido: " + usuario.nombre,
       (error: HttpErrorResponse) => {
         if (error.error instanceof ErrorEvent) {
-          console.error('Error de red:', error.error.message);
+          this.mensaje = 'Error de red:'+ error.error.message;
         } else {
-          console.error(`Error en el servidor: ${error.status}: ${error.error}`);
+          this.mensaje = `Error en el servidor: ${error.status}: ${error.error}`;
         }
       
       }

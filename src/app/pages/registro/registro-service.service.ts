@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Usuarios } from 'src/app/Usuarios.model';
 
 
@@ -27,4 +28,17 @@ export class RegistroService{
   addNewUser(users: Usuarios){
       return this.http.post('http://localhost:8081/usuarios', users);
   }
+
+ 
+    login(email: string, contrasenia: string): Observable<Usuarios>{
+     
+     let params = 'email='+email+'&contrasenia='+contrasenia;
+    
+     
+    return this.http.get<Usuarios>('http://localhost:8081/usuarios/login?'+ params);
+      
+    
+    }
+    
+  
 }
