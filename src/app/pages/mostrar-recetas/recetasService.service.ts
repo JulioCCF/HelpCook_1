@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -13,6 +13,8 @@ import { Receta } from 'src/app/Receta.model';
  */
 @Injectable()
 export class recetasService {
+
+
   /**
    * Constructor del servicio que inyecta el HttpClient de Angular.
    * @param http. Cliente HTTP utilizado para realizar solicitudes a una API REST.
@@ -74,6 +76,25 @@ export class recetasService {
     
     return this.http.get<Receta>('http://localhost:8081/recetas/' + id);
 
+  }
+
+  obtenerFavoritos(idRecetas: number[]): Observable<Receta[]> {
+
+    let i:number = 0;
+    let params = '';
+
+    for(i;i<idRecetas.length;i++){
+      if(i==0){
+        params = 'idRecetas='+ idRecetas[0];
+      }else{
+        params += '&idRecetas='+idRecetas[i];
+      }
+      if(i === idRecetas.length - 1) {
+      }
+    }
+    console.log("URL" + params);
+
+    return this.http.get<any>('http://localhost:8081/recetas/recetasFavoritos?'+ params );
   }
 
 }

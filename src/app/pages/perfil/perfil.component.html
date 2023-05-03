@@ -1,69 +1,103 @@
 <!-- Seccion logo -->
 <div class="text-center" style="margin-top: 30px">
-    <a class="nav-link" routerLink=""><img src="/assets/img/logo.png" class="w-25" alt="" /></a>
+  <a class="nav-link" routerLink=""
+    ><img src="/assets/img/logo.png" class="w-25" alt=""
+  /></a>
 </div>
 
 <body>
-    <section class="h-100 gradient-custom-2">
-        <div class="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col col-lg-9 col-xl-7">
-                    <div class="card">
-                        <div class="rounded-top d-flex flex-row"
-                            style="background-color: #d4d0c4; height:200px; color:#3F2811">
-                            <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
-                                <img src ={{usuario.foto}}
-                                    alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
-                                    style="width: 150px; z-index: 1">
-                                <button type="button" class="boton-edit-perfil">
-                                    Editar perfil
-                                </button>
-                            </div>
-                            <div class="ms-3" style="margin-top: 130px;">
-                                <h3 class="fw-semibold">{{usuario.nombre}}</h3>
-                                <p class="fw-normal">{{usuario.email}}</p>
-                            </div>
-                        </div>
-                        <!-- Seccion Datos de recetas del Usuario -->
-                        <div class="p-4" style="background-color: #edebe6; color: #3F2811;">
-                            <div class="d-flex justify-content-end text-center py-1">
-                                <div>
-                                    <p class="mb-1 h5">{{recetas.length}}</p>
-                                    <p class="normal mb-0">Recetas subidas</p>
-                                </div>
-                                <div class="px-3">
-                                    <p class="mb-1 h5">{{usuario.favoritos.length}}</p>
-                                    <p class="normal mb-0">Recetas guardadas</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Seccion Recetas subidas por el Usuario -->
-                        <div class="container">
-                            <div class="d-flex justify-content-between align-items-center mb-4 mt-5" style="margin-top: 30px;">
-                                <p class="lead fw-bold mb-0">Últimas recetas guardadas</p>
-                                <p class="mb-0"><a href="#!" class="text-muted">Mostrar todas</a></p>
-                            </div>
-                            <div class="receta" *ngFor="let receta of recetas">
-                                <img src={{receta.foto}} alt={{receta.titulo}} class="w-100 rounded-1" routerLink = "/mostraUnaReceta/{{receta.idRecetas}}">
-                                <div  style="background-color:  #8b9a8a; color: #edebe6; text-align: center" class="w-100 rounded-3">{{receta.titulo}}</div>
-                            </div>
-                        </div>
-                        
-
-                            <!-- Seccion Recetas guardadas por el Usuario -->
-                        <div class="container">  
-                            <div class="d-flex justify-content-between align-items-center mb-4 mt-5" style="margin-top: 15px;">
-                                <p class="lead fw-bold mb-0">Últimas recetas guardadas</p>
-                                <p class="mb-0"><a href="#!" class="text-muted">Mostrar todas</a></p>
-                            </div>
-                            <div class="receta" *ngFor="let favorito of usuario.favoritos">
-                                <img src={{favorito}} alt={{favorito.descripcion}} class="w-100 rounded-3">
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
+  <section class="h-100 gradient-custom-2">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-lg-9 col-xl-7">
+          <div class="card" style="background-color: #edebe6;">
+            <div
+              class="rounded-top d-flex flex-row"
+              style="background-color:#d4d0c4 ; height: 200px; color: #3f2811"
+            >
+              <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px">
+                <img
+                  src="{{ usuario.foto }}"
+                  alt="Generic placeholder image"
+                  class="img-fluid img-thumbnail mt-4 mb-2; "
+                  style="width: 150px; z-index: 1"
+                />
+                <button type="button" class="boton-edit-perfil">
+                  Editar perfil
+                </button>
+              </div>
+              <div class="ms-3" style="margin-top: 130px">
+                <h3 class="fw-semibold">{{ usuario.nombre }}</h3>
+                <p class="fw-normal">{{ usuario.email }}</p>
+              </div>
             </div>
+            <!-- Seccion Datos de recetas del Usuario -->
+            <div class="p-4" style="background-color: #8b9a8a; color: #edebe6">
+              <div class="d-flex justify-content-end text-center py-1">
+                <div>
+                  <p class="mb-1 h5">{{ recetas.length }}</p>
+                  <p class="normal mb-0">Recetas subidas</p>
+                </div>
+                <div class="px-3">
+                  <p class="mb-1 h5">{{ usuario.favoritos.length }}</p>
+                  <p class="normal mb-0">Recetas guardadas</p>
+                </div>
+              </div>
+            </div>
+            <!-- Seccion Recetas subidas por el Usuario -->
+            <div class="container">
+              <div
+                class="d-flex justify-content-between align-items-center mb-4 mt-5"
+                style="margin-top: 30px; background-color: #d4d0c4;"
+              >
+                <p class="lead fw-bold mb-0" >Últimas recetas subidas</p>
+                <p class="mb-0">
+                  <a href="#!" class="text-muted">Mostrar todas</a>
+                </p>
+              </div>
+              <div class="recetas-container">
+                <div class="receta" *ngFor="let receta of recetas">
+                  <img
+                    src="{{ receta.foto }}"
+                    alt="{{ receta.titulo }}"
+                    class="w-100 rounded-1"
+                    routerLink="/mostraUnaReceta/{{ receta.idRecetas }}"
+                  />
+                  <div class="w-100 rounded-3; titulos"
+                  >
+                    {{ receta.titulo }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Seccion Recetas guardadas por el Usuario -->
+            <div class="container">
+              <div
+                class="d-flex justify-content-between align-items-center mb-4 mt-5"
+                style="background-color: #d4d0c4;"
+              >
+                <p class="lead fw-bold mb-0">Últimas recetas guardadas</p>
+                <p class="mb-0">
+                  <a href="#!" class="text-muted">Mostrar todas</a>
+                </p>
+              </div>
+              <div class="recetas-container">
+                <div class="receta" *ngFor="let favorito of recetasFavoritos">
+                  <img
+                    src="{{ favorito.foto }}"
+                    alt="{{ favorito.titulo }}"
+                    class="w-100 rounded-3"
+                  />
+                  <div class="w-100 rounded-3; titulos"
+                  >
+                    {{ favorito.titulo }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 </body>

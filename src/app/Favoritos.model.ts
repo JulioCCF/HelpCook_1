@@ -13,7 +13,7 @@ export class Favoritos{
     /**
      * Identificador único de la receta favorita.
      */
-    public idReceta: number;
+    public idRecetas: number;
 
     /**
      * Descripción del favorito 
@@ -36,7 +36,7 @@ export class Favoritos{
      */
     constructor(idFavorito: number, idReceta: number, descripcion: string, usuario: Usuarios[]) {
         this.idFavorito = idFavorito;
-        this.idReceta = idReceta;
+        this.idRecetas = idReceta;
         this.descripcion = descripcion;
         this.usuario = usuario;
 }

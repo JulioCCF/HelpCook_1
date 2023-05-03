@@ -33,6 +33,7 @@ export class RegistroService{
     login(email: string, contrasenia: string): Observable<Usuarios>{
      
      let params = 'email='+email+'&contrasenia='+contrasenia;
+     console.log("URL validar usuario" + params);
     
      
     return this.http.get<Usuarios>('http://localhost:8081/usuarios/login?'+ params);
