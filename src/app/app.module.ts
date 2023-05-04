@@ -15,6 +15,7 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 import { MostrarRecetasComponent } from './pages/mostrar-recetas/mostrar-recetas.component';
 import { MostrarUnaRecetaComponent } from './pages/mostrar-una-receta/mostrar-una-receta.component';
 import { recetasService } from './pages/mostrar-recetas/recetasService.service';
+import { EditarPerfilComponent } from './pages/editar-perfil/editar-perfil.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { recetasService } from './pages/mostrar-recetas/recetasService.service';
     SubirRecetaComponent,
     PerfilComponent,
     MostrarRecetasComponent,
-    MostrarUnaRecetaComponent
+    MostrarUnaRecetaComponent,
+    EditarPerfilComponent
   ],
   imports: [
     BrowserModule,

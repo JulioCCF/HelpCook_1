@@ -96,7 +96,7 @@ export class RegistroComponent implements OnInit{
       console.log(this.foto);
   
       this.registSvc.addNewUser(usuario).subscribe(
-        response => this.mensaje = "Enhorabuena! ya está registrado, bienvenido: " + usuario.nombre,
+        response => this.mensaje = "¡Enhorabuena! Ya está registrado, bienvenido: " + usuario.nombre,
         (error: HttpErrorResponse) => {
           if (error.error instanceof ErrorEvent) {
             this.mensaje = 'Error de red:'+ error.error.message;

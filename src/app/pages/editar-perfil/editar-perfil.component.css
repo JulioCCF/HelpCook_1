@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
+    font-weight: 400px;
 }
-
 form {
     background-color: #D4D0C4;
     padding: 20px;
@@ -28,33 +28,12 @@ p{
     text-align: center;
 }
 
-.form-label {
+.form-group {
     font-size: 20px;
+    font-weight: bold;
 }
 
-.btn-group {
-    background-color: #edebe6;
-    border-radius: 30px;
-}
-
-.btn-iconosbarra {
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 33.3%;
-    border: none;
-    border-radius: 5px;
-    padding: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-left: 50%;
-    margin-top: 20px;
-    transform: translateX(-50%);
-}
-
-.btn-mostrarmas {
-    color: #3c240d;
+.form-control {
     font-size: 20px;
 }
 
