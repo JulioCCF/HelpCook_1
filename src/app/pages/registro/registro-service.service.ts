@@ -43,6 +43,11 @@ export class RegistroService{
      
     return this.http.get<Usuarios>('http://localhost:8081/usuarios/login?'+ params);
       
+    
+  }
+  
+  updateUser(users: Usuarios){
+      return this.http.post('http://localhost:8081/usuarios', users);
   }
     
   
