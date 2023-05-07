@@ -30,16 +30,20 @@ export class RegistroService{
   }
 
  
-    login(email: string, contrasenia: string): Observable<Usuarios>{
+
+  /**
+   * Método para la conexión con el backend para obtener al usuario por su email y contrasenia
+   * @param email. Recibimos la variable email
+   * @param contrasenia. Recibimos la variable contrasenia 
+   * @returns 
+   */
+  login(email: string, contrasenia: string): Observable<Usuarios>{
      
      let params = 'email='+email+'&contrasenia='+contrasenia;
-     console.log("URL validar usuario" + params);
-    
      
     return this.http.get<Usuarios>('http://localhost:8081/usuarios/login?'+ params);
       
-    
-    }
+  }
     
   
 }

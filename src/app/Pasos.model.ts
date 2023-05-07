@@ -1,4 +1,4 @@
-import { Receta } from "./Receta.model";
+
 
 
 
@@ -32,11 +32,7 @@ export class Pasos{
      */
     public foto: string;
 
-    /**
-     * Recetas a las que pertenece este paso.
-     */
-    public recetas: Receta[];
-    
+  
     /**
      * Crea una instancia de la clase Pasos.
      * @param idPasos Identificador único del paso.
@@ -45,8 +41,9 @@ export class Pasos{
      * @param foto Foto del paso.
      * @param recetas Recetas a las que pertenece este paso.
      */
-    constructor(idPasos: number, tipo: number, descripcion: string, foto: string, recetas: Receta[]) {
+    constructor(idPasos: number, idRecetas: number, tipo: number, descripcion: string, foto: string) {
         this.idPasos = idPasos;
+        this.idRecetas = idRecetas;
         this.tipo = tipo;
         this.descripcion = descripcion;
         this.foto = foto;

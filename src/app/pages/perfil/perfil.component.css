@@ -40,6 +40,16 @@ body {
     z-index: 1;
   }
 
+  .boton-subir-receta{
+    background-color: #8b9a8a;
+    color: #edebe6;
+    border-radius: 10px; 
+    border:2px solid #3c240d;
+    width: 160px;
+    margin-top:5px;
+    z-index: 1;
+  }
+
   .p{
     color: #3c240d;
   }

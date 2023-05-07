@@ -43,7 +43,7 @@
     <!-- Foto de perfil del usuario que se esta registrando -->
     <div class="form-group">
         <label for="InputFoto">Seleccione su foto de usuario: (PNG,JPG) </label>
-        <input type="file"  class="form-control" name="file" id="InputFoto" aria-label="file example" required (change)="onFileSelected($event)">
+        <input type="file"  class="form-control" name="file" id="InputFoto" aria-label="file example" [(ngModel)]="foto" required (change)="onFileSelected($event)">
         
     </div>
     <br/>

@@ -78,6 +78,12 @@ export class recetasService {
 
   }
 
+
+  /**
+   * Método para la conexion con el front y obtener los favoritos de un Usuario
+   * @param idRecetas. Recibimos un array con los id de las recetas que el usuario tiene como favoritos
+   * @returns Devuelve una lista de las recetas con los ids que le hemos mandado
+   */
   obtenerFavoritos(idRecetas: number[]): Observable<Receta[]> {
 
     let i:number = 0;
@@ -92,9 +98,37 @@ export class recetasService {
       if(i === idRecetas.length - 1) {
       }
     }
-    console.log("URL" + params);
-
+    
     return this.http.get<any>('http://localhost:8081/recetas/recetasFavoritos?'+ params );
   }
 
+
+  /**
+   * Método para la conexión con el backend
+   * para insertar una receta en la base de datos
+   * @param receta. Recibimos la receta
+   * @returns 
+   */
+  subirReceta(receta:Receta){
+
+    return this.http.post('http://localhost:8081/recetas', receta);
+
+  }
+
+  /**
+   * Método para la conexión con el backend y obtener  todos los ingredientes 
+   * 
+   * o los ingredientes según su tipo
+   * @param tipo. Recibimos el tipo de los ingredientes que queremos obtener o la variable vacia para obtener todos
+   * @returns Recibimos una lista de ingredientes
+   */
+  obtenerTodosIngredientes(tipo:string) {
+
+    let param = '';
+    if(tipo!=null){
+      param = '?tipo='+ tipo;
+    }
+   
+    return this.http.get<Ingredientes[]>('http://localhost:8081/ingredientes'+param);
+}
 }
