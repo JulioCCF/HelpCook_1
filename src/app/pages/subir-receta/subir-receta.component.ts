@@ -110,9 +110,15 @@ export class SubirRecetaComponent {
    */
   tipoSeleccionado: string;
 
-  ingrediente: Ingredientes;
-
+  /**
+   * Array que contendrá los ingredientes contendrá la receta
+   */
   ingredientes: Ingredientes[];
+
+
+  ocultarIngredientes = false;
+
+
 
  
 
@@ -122,7 +128,10 @@ export class SubirRecetaComponent {
  * @param route Routing para poder recibir el id del Usuario que va a subir la receta
  * @param recetasService Servicio necesario para la optención de los datos de las recetas y los ingredientes
  */
-  constructor(private route: ActivatedRoute, private recetasService: recetasService) {}
+  constructor(private route: ActivatedRoute, private recetasService: recetasService) {
+
+    this.ingredientes = [];
+  }
   
 
 /**
@@ -140,6 +149,8 @@ export class SubirRecetaComponent {
       this.idUsuario = +params.get('idUsuario');
     });
 
+    
+
     this.recetasService.obtenerTodosIngredientes(null).subscribe(ingredientesMostrar=>
       {this.ingredientesMostrar = ingredientesMostrar;
        
@@ -148,6 +159,20 @@ export class SubirRecetaComponent {
        
       });      
       
+
+      const fechaActual = new Date();
+      const anyo = fechaActual.getFullYear().toString();
+      let mes = (fechaActual.getMonth() + 1).toString();
+      if (mes.length === 1) {
+        mes = '0' + mes;
+      }
+      let dia = fechaActual.getDate().toString();
+      if (dia.length === 1) {
+        dia = '0' + dia;
+      }
+      this.fechaAlta = new Date(`${anyo}-${mes}-${dia}`);
+
+     
   }
   
 
@@ -207,19 +232,38 @@ capturarCategorias(event: any) {
 }
 
 /**
- * Método para mostar o no el input de cantidad del ingrediente seleccionado
+ * Método para mostar o no el input de cantidad del ingrediente seleccionado,
+ * si el ingrediente se selecciona lo añade al array de ingredientes para asociarlo a la receta,
+ * si lo deselecciona lo borra del array
  * @param ingXtipo 
  */
 ingSelect(ingXtipo){
 
   ingXtipo.seleccionado = !ingXtipo.seleccionado;
 
+  if (ingXtipo.seleccionado) {
+    this.ingredientes.push(ingXtipo);
+  } else {
+    const index = this.ingredientes.findIndex(i => i.idIngrediente === ingXtipo.idIngrediente);
+    this.ingredientes.splice(index, 1);
+  }
+
+}
+/**
+ * Método para asignar la cantidad al ingrediente seleccionado
+ * @param cantidad. Recibe la cantidad ingresada por el usuario
+ * @param ingXTipo. Recibe el ingrediente para asociarle la cantidad
+ */
+setCantidad(cantidad: any, ingXTipo:Ingredientes) {
+  const ingredienteseleccionado = this.ingredientes.find(i => i.idIngrediente === ingXTipo.idIngrediente);
+  if(typeof cantidad === 'string'){
+    ingXTipo.cantidad = cantidad;
+  }
+  console.log(this.ingredientes);
 }
 
-cantidadInputChange(idIngrediente: number, cantidad: string) {
-  console.log("idIngrediente: ", idIngrediente);
-  console.log("cantidad: ", cantidad);
-  
+ocultar(){
+  this.ocultarIngredientes = true;
 }
 
 /**
@@ -280,9 +324,11 @@ agregarPaso() {
  */
 subirReceta(){
     
-  let receta = new Receta(null,this.idUsuario, this.descripcion, this.tiempo, this.foto, this.titulo, this.categoria,
+
+    let receta = new Receta(null,this.idUsuario, this.descripcion, this.tiempo, this.foto, this.titulo, this.categoria,
     this.fechaAlta,this.valoracionMedia,this.comensales,this.ingredientes, this.pasos);
-    console.log(this.foto);
+    
+    console.log(receta);
 
     this.recetasService.subirReceta(receta).subscribe(
       response => this.mensaje = "Enhorabuena! se ha añadido la receta, gracias.",

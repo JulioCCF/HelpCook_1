@@ -26,17 +26,16 @@ export class PerfilComponent implements OnInit{
   constructor(private recetasService: recetasService, private route: ActivatedRoute, private registroService: RegistroService,
     private router: Router) {
     
-   
+  
 
   }
 
   ngOnInit(): void {
 
     this.usuario = history.state.usuario;
-  
+    console.log(this.usuario);
 
-    let id: number;
-    this.recetasService.obtenerTodos(null, null, id, null).subscribe(recetas => {
+    this.recetasService.obtenerTodos(null, null, this.usuario.idUsuarios, null).subscribe(recetas => {
       this.recetas = recetas;
     });
     
@@ -47,18 +46,8 @@ export class PerfilComponent implements OnInit{
       this.recetasFavoritos = recetasFavoritos;
   
     });
+   
   }
 
-  login() {
-    console.log("Email",this.email,"Contraseña",this.contrasenia);
-    this.registroService.login(this.email,this.contrasenia).subscribe((usuario) => {
-      this.usuario = usuario;
-      this.validado = false;
-      this.router.navigate(['/perfil'],{state:{usuario:usuario}}); // Redireccionar a la página de perfil
-    }, (error) => {
-      console.log(error);
-      this.validado = true;
-    });
-  }
 
 }

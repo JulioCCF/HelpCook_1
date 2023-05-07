@@ -111,6 +111,8 @@ export class recetasService {
    */
   subirReceta(receta:Receta){
 
+
+    console.log(receta);
     return this.http.post('http://localhost:8081/recetas', receta);
 
   }
@@ -128,7 +130,7 @@ export class recetasService {
     if(tipo!=null){
       param = '?tipo='+ tipo;
     }
-   
+    
     return this.http.get<Ingredientes[]>('http://localhost:8081/ingredientes'+param);
 }
 }
