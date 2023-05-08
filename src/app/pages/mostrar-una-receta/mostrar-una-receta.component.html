@@ -1,0 +1,64 @@
+<div class="receta">
+    <!-- Para mostrar o nombre de la receta -->
+    <h1 class="receta-title">{{ receta?.titulo }}</h1>
+
+    <!--Para mostrar la valoración con estrellas-->
+
+    <div class="receta-valoracion">
+        <bar-rating [rate]="valoracionMedia" [max]="5" [readOnly]="true">
+            <ng-template ratingActive>
+                <i class="bi bi-star-fill" style="margin: 2px; color: #3c240d"></i>
+            </ng-template>
+            <ng-template ratingInactive>
+                <i class="bi bi-star-fill" style="margin: 2px; color: #d4d0c4"></i>
+            </ng-template>
+        </bar-rating>
+    </div>
+
+    <!-- Para mostrar la foto -->
+
+    <div class="receta-img-container">
+        <img src="/assets/recetas/{{nomeFoto}}.jpg" alt="" class="receta-img">
+    </div>
+
+    <!-- Para mostrar lo autor -->
+
+    <div class="receta-autor">Receta subida por {{ autor }}</div>
+
+    <div class="listas">
+        <ul class="receta-list">
+            <h2 class="receta-list-title">Ingredientes</h2>
+            <!-- Para mostrar los ingredientes -->
+            <span *ngIf="!ingredientes.length">¡Ups! Todavía tenemos que buscar los ingredientes.</span>
+            <li *ngFor="let ingrediente of ingredientes" class="receta-ingrediente">{{ ingrediente }}</li>
+        </ul>
+
+        <!-- Para mostrar las informacions -->
+        <ul class="receta-list info">
+            <h2 class="receta-list-title">Información</h2>
+            <li><b>Tiempo de preparación:</b> {{ tiempoPreparacion }} minutos.</li>
+            <li><b>Tiempo total:</b> {{ tiempoTotal }} minutos.</li>
+            <li><b>Raciones:</b> {{ raciones }}g.</li>
+            <li><b>Categoria:</b> {{ categoria }}.</li>
+            <li><b>Tipo de cocina:</b> {{ tipoCocina }}.</li>
+            <li><b>Calorías por ración (kcal):</b> {{ kcal }}.</li>
+            <li><b>Comensales:</b> {{ comensales }}</li>
+        </ul>
+    </div>
+
+    <div class="receta-img2-container">
+        <img src="/assets/recetas/{{nomeFoto}}.jpg" alt="" class="receta-img">
+    </div>
+
+    <!-- Para mostrar la preparacion -->
+    <div class="receta-preparacion">
+        <ul class="receta-pasos">
+            <h2 class="receta-list-title preparacion">Preparación</h2>
+            <li *ngFor="let paso of pasos; let i = index" class="receta-paso">
+                <h4 class="receta-paso-title">Paso {{ i + 1 }}:</h4>
+                <p>{{ paso }}</p>
+            </li>
+        </ul>
+    </div>
+
+</div>
