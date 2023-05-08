@@ -1,9 +1,9 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
 import { Ingredientes } from '../../Ingredientes.model';
 import { Receta } from 'src/app/Receta.model';
+import { RecetasRequest } from 'src/app/RecetasRequest.model';
 
 
 /**
@@ -109,7 +109,7 @@ export class recetasService {
    * @param receta. Recibimos la receta
    * @returns 
    */
-  subirReceta(receta:Receta){
+  subirReceta(receta:RecetasRequest){
 
 
     console.log(receta);

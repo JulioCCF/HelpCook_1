@@ -53,6 +53,12 @@ p{
     transform: translateX(-50%);
 }
 
+.btn-iconosbarra-seleccionado{
+ background-color: #8A9A8A;
+ 
+}
+
+
 
 .btn-mostrarmas {
     color: #3c240d;

@@ -20,6 +20,8 @@ export class PerfilComponent implements OnInit{
   email: string;
   contrasenia: string;
   validado:  boolean;
+
+  numRecetasMostradas: number = 4;
  
   
 
@@ -33,7 +35,7 @@ export class PerfilComponent implements OnInit{
   ngOnInit(): void {
 
     this.usuario = history.state.usuario;
-    console.log(this.usuario);
+    
 
     this.recetasService.obtenerTodos(null, null, this.usuario.idUsuarios, null).subscribe(recetas => {
       this.recetas = recetas;
@@ -49,5 +51,10 @@ export class PerfilComponent implements OnInit{
    
   }
 
+
+  mostrarMasRecetas() {
+    this.numRecetasMostradas += 4;
+    
+  }
 
 }

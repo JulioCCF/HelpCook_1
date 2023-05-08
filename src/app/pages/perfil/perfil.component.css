@@ -62,4 +62,14 @@ body {
     text-align: center;
     
   }
- 
+
+
+ .btn-link.mostrar-mas {
+  color: #3c240d;
+  background-color: transparent;
+}
+
+.btn-link.mostrar-mas:hover {
+  color: #8b9a8a;
+  background-color: transparent;
+}

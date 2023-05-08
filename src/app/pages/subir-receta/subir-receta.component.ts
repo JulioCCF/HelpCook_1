@@ -1,11 +1,17 @@
 import { Component, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Receta } from 'src/app/Receta.model';
 import { recetasService } from '../mostrar-recetas/recetasService.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Ingredientes } from 'src/app/Ingredientes.model';
 import { Pasos } from 'src/app/Pasos.model';
+import { RecetasRequest } from 'src/app/RecetasRequest.model';
 
+
+/**
+ * Componente para crear una receta
+ * 
+ * Se creará una receta con los datos introducidos por el usuario
+ */
 @Component({
   selector: 'app-subir-receta',
   templateUrl: './subir-receta.component.html',
@@ -119,9 +125,11 @@ export class SubirRecetaComponent {
   ocultarIngredientes = false;
 
 
-
+  activeButtonIndex: number = null;
  
+  subidaCorrectamente: boolean;
 
+  categoriaSeleccionada:  any = null;
  
 /**
  * Constructor de la clase donde donde Injectamos los servicios necesarios
@@ -131,6 +139,8 @@ export class SubirRecetaComponent {
   constructor(private route: ActivatedRoute, private recetasService: recetasService) {
 
     this.ingredientes = [];
+  
+    
   }
   
 
@@ -141,6 +151,9 @@ export class SubirRecetaComponent {
  * 
  * Obtenemos todos los ingredientes de la base de datos mandando la consulta a nuestro servicio,
  * recorremos el array de ingredientes para optener los tipos de éstos y  guardamos los tipos no repetidos en nuestra variable tipos únicos.
+ * 
+ * Creamos una variable Date para almacenar la fecha actual cuando ingresa en la página, recogemos el año, mes y dia de esa variable,
+ * y se la asignamos a la variable que vamos a mandar a la receta en el formato que necesitamos
  */
   ngOnInit(): void {
 
@@ -209,10 +222,22 @@ onFileSelectedPasos(event:any) {
 }
 
 /**
- * Método para capturar la categoría de la receta
+ * Método para capturar la categoría de la receta y cambiar el color de la categoria seleccionada
  */
 capturarCategorias(event: any) {
-  this.categoria = event.target.alt;
+  const botonSeleccionado = event.currentTarget;
+  const botones = document.querySelectorAll('.btn-iconosbarra');
+  
+  // Si hay un botón seleccionado, lo deseleccionamos
+  if (this.categoriaSeleccionada) {
+    this.categoriaSeleccionada.classList.remove('btn-iconosbarra-seleccionado');
+  }
+
+  this.categoria = botonSeleccionado.querySelector('img').alt;
+  botonSeleccionado.classList.add('btn-iconosbarra-seleccionado');
+  this.categoriaSeleccionada = botonSeleccionado;
+
+  console.log(this.categoria);
 }
 
 
@@ -262,6 +287,9 @@ setCantidad(cantidad: any, ingXTipo:Ingredientes) {
   console.log(this.ingredientes);
 }
 
+/**
+ * Método para ocultar los div de ingredientes cuando se ha terminado de elegirlos
+ */
 ocultar(){
   this.ocultarIngredientes = true;
 }
@@ -310,8 +338,7 @@ agregarPaso() {
       foto: this.fotoPaso
      };
      this.pasos.push(paso); // agrega el objeto paso al array de pasos
-     this.fotoPaso = null;
-     console.log(this.pasos);
+     this.fotoPaso = null;  //reiniciamos la variable foto
    });
   
 }
@@ -325,18 +352,19 @@ agregarPaso() {
 subirReceta(){
     
 
-    let receta = new Receta(null,this.idUsuario, this.descripcion, this.tiempo, this.foto, this.titulo, this.categoria,
+    let receta = new RecetasRequest(null,this.idUsuario, this.descripcion, this.tiempo, this.foto, this.titulo, this.categoria,
     this.fechaAlta,this.valoracionMedia,this.comensales,this.ingredientes, this.pasos);
     
-    console.log(receta);
 
     this.recetasService.subirReceta(receta).subscribe(
-      response => this.mensaje = "Enhorabuena! se ha añadido la receta, gracias.",
+      
+      response => this.subidaCorrectamente = true,
+      
       (error: HttpErrorResponse) => {
         if (error.error instanceof ErrorEvent) {
-          this.mensaje = 'Error de red:'+ error.error.message;
+          this.subidaCorrectamente = false;
         } else {
-          this.mensaje = `Error en el servidor: ${error.status}: ${error.error}`;
+          this.subidaCorrectamente = false;
         }
       }
     );
