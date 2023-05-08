@@ -73,10 +73,10 @@
   <!--Valorar la receta-->
   <div>
 
-    <div class="row fw-bold">
-      <p>¿Quieres valorar la receta?</p>
+    <div class="row text-center mt-5">
+      <h5 class="fw-bold">¿Quieres valorar la receta?</h5>
     </div>
-    <div class="col ">
+    <div class="d-grid col justify-content-center">
       <bar-rating [rate]="nuevaValoracion" [max]="5" (rateChange)="valorarReceta($event)">
         <ng-template ratingActive>
           <i class="bi bi-star-fill" style="margin: 2px; color: #3c240d"></i>
