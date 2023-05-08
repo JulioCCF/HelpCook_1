@@ -308,7 +308,7 @@ agregarPaso() {
     <div class="row paso" >
       <div class="col">
         <label class="form-label custom-label fw-bold mt-3" for="InputDescripPaso">Paso ${this.numPasos}</label>
-        <textarea name="text" id="InputDescripPaso" cols="50" rows="3"></textarea>
+        <textarea name="text" id="InputDescripPaso" cols="50" rows="3" placeholder="Descripción del paso" ></textarea>
       </div>
       <div class="col">
         <label class="form-label fw-bold text-center mt-3" for="InputFotoPaso">Adjunta la imagen</label>

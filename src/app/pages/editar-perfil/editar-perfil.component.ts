@@ -22,11 +22,14 @@ export class EditarPerfilComponent implements OnInit{
 
   constructor(private registSvc: RegistroService) {
     
+    this.usuario = this.registSvc.getCurrentUser();
+    console.log(this.usuario);
   }
 
 
   ngOnInit(): void {
-    this.usuario = history.state.usuario;
+  
+  
   }
 
   onFileSelected(event) {

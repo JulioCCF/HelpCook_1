@@ -51,10 +51,14 @@ export class PerfilComponent implements OnInit{
    
   }
 
-
   mostrarMasRecetas() {
     this.numRecetasMostradas += 4;
     
+  }
+
+  mandarUsuario(){
+    this.registroService.setCurrentUser(this.usuario);
+    this.router.navigate(['/editarPerfil']);
   }
 
 }

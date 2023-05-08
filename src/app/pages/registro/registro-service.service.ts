@@ -4,6 +4,9 @@ import { Observable } from 'rxjs';
 import { Usuarios } from 'src/app/Usuarios.model';
 
 
+
+
+
 /**
  * Servicio que proporciona acceso a la API REST utilizando el HttpClient de Angular
  * 
@@ -13,6 +16,13 @@ import { Usuarios } from 'src/app/Usuarios.model';
   providedIn: 'root'
 })
 export class RegistroService{
+
+/**
+ * Variable para almacenar Usuario
+ */
+  private currentUser: Usuarios;
+
+
   /**
        * Constructor del servicio que inyecta el HttpClient de Angular.
        * @param http. Cliente HTTP utilizado para realizar solicitudes a una API REST.
@@ -46,6 +56,24 @@ export class RegistroService{
     
   }
   
+  
+/**
+ * 
+ * @param user Método para guardar el usuario
+ */
+  setCurrentUser(user: Usuarios) {
+    this.currentUser = user;
+  }
+
+  /**
+   * 
+   * @returns Método para recuperar el usuario
+   */
+  getCurrentUser() {
+    return this.currentUser;
+  }
+
+
   updateUser(users: Usuarios){
       return this.http.post('http://localhost:8081/usuarios', users);
   }
