@@ -89,15 +89,30 @@
       src="{{ paso.foto }}"
       class="rounded"
       width="300px"
-      routerLink="/mostraUnaReceta/{{ receta.idRecetas }}"
     />
 
     </div>
     </div>
     </ul>
-  </div>
+  </div>  
+ <!--Valorar la receta--> 
+    <div>
+      
+        <div class = "row">
+          <p>¿Quieres valorar la receta?</p>
+        </div>
+        <div class="col ">
+          <bar-rating [rate]="nuevaValoracion" [max]="5" (rateChange)="valorarReceta($event)" >
+            <ng-template ratingActive>
+              <i class="bi bi-star-fill" style="margin: 2px; color: #3c240d"></i>
+            </ng-template>
+            <ng-template ratingInactive>
+              <i class="bi bi-star-fill" style="margin: 2px; color: #d4d0c4"></i>
+            </ng-template>
+          </bar-rating>
+        </div>
+        
+    </div>
   
-  <div>
-
-  </div>
+  
 </div>
