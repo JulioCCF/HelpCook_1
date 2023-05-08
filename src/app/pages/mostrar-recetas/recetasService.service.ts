@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Ingredientes } from '../../Ingredientes.model';
 import { Receta } from 'src/app/Receta.model';
 import { RecetasRequest } from 'src/app/RecetasRequest.model';
+import { Valoraciones } from 'src/app/Valoraciones.model';
 
 
 /**
@@ -111,8 +112,6 @@ export class recetasService {
    */
   subirReceta(receta:RecetasRequest){
 
-
-    console.log(receta);
     return this.http.post('http://localhost:8081/recetas', receta);
 
   }
@@ -132,5 +131,15 @@ export class recetasService {
     }
     
     return this.http.get<Ingredientes[]>('http://localhost:8081/ingredientes'+param);
+}
+
+/**
+ * Método para la conexión con el back para añadir una valoración a la receta
+ * @param valoracion 
+ * @returns 
+ */
+anyadirValoracion(valoracion:Valoraciones){
+
+  return this.http.post('http://localhost:8081/valoraciones', valoracion);
 }
 }

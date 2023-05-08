@@ -1,8 +1,10 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Ingredientes } from 'src/app/Ingredientes.model';
 import { Pasos } from 'src/app/Pasos.model';
 import { Receta } from 'src/app/Receta.model';
+import { Valoraciones } from 'src/app/Valoraciones.model';
 import { recetasService } from 'src/app/pages/mostrar-recetas/recetasService.service';
 /**
  * Componente para la página de mostrar una receta
@@ -26,11 +28,25 @@ export class MostrarUnaRecetaComponent implements OnInit {
    */
   idRecetas: number;
 
-
+  /**
+   * Array para almacenar los ingredientes de la receta y poder mostrarlos
+   */
   ingredientes: Ingredientes[];
 
+  /**
+   * Array para almacenar los pasos de la receta y poder mostrarlos
+   */
   pasos: Pasos[];
 
+  /**
+   * Variable para almacenar el dato de la valoración que haga el usuario de la receta
+   */
+  nuevaValoracion: number;
+
+/**
+ * Variable para saber si se ha añadido la valoración
+ */
+  anyadidaCorrectamente: boolean;
 
   /**
    * Injectamos los servicios necesarios para el funcionamiento de la página
@@ -62,9 +78,28 @@ export class MostrarUnaRecetaComponent implements OnInit {
       this.pasos= this.receta.pasosResponse;
      
       });
-
-     
-      
       
   }
-}
+
+
+  valorarReceta(event){
+    this.nuevaValoracion = event;
+    console.log(this.nuevaValoracion);
+    let valoracion = new Valoraciones(null,this.idRecetas,this.nuevaValoracion,null)
+    
+    
+    this.recetasService.anyadirValoracion(valoracion).subscribe(
+      
+      response => this.anyadidaCorrectamente = true,
+      
+      (error: HttpErrorResponse) => {
+        if (error.error instanceof ErrorEvent) {
+          this.anyadidaCorrectamente = false;
+        } else {
+          this.anyadidaCorrectamente = false;
+        }
+      }
+    );
+  };
+  }
+
