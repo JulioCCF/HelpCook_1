@@ -1,11 +1,9 @@
 <!-- Seccion logo -->
 <div class="text-center" style="margin-top: 30px">
-  <a class="nav-link" routerLink=""
-    ><img src="/assets/img/logo.png" class="w-25" alt=""
-  /></a>
+  <a class="nav-link" routerLink=""><img src="/assets/img/logo.png" class="w-25" alt="" /></a>
 </div>
-<div class="receta">
-  <!-- Para mostrar o nombre de la receta -->
+<div class="receta rounded">
+  <!-- Para mostrar el nombre de la receta -->
   <h1 class="receta-title">{{ receta?.titulo }}</h1>
 
   <!--Para mostrar la valoración con estrellas-->
@@ -23,28 +21,18 @@
 
   <!-- Para mostrar la foto -->
 
-  <div class="col-md-6" style="margin-top: 40px">
-    <input
-      type="image"
-      src="{{ receta.foto }}"
-      class="rounded"
-      width="350px"
-      routerLink="/mostraUnaReceta/{{ receta.idRecetas }}"
-    />
+  <div class="text-center my-4">
+    <input type="image" src="{{ receta.foto }}" class="rounded img-fluid"
+      routerLink="/mostraUnaReceta/{{ receta.idRecetas }}" />
   </div>
 
   <div class="listas">
     <ul class="receta-list">
       <h2 class="receta-list-title">Ingredientes</h2>
       <!-- Para mostrar los ingredientes -->
-      <span *ngIf="!ingredientes.length"
-        >¡Ups! Todavía tenemos que buscar los ingredientes.</span
-      >
-      <li
-        *ngFor="let ingrediente of ingredientes"
-        class="receta-ingrediente"
-      >
-        {{ ingrediente.nombre }}: 
+      <span *ngIf="!ingredientes.length">¡Ups! Todavía tenemos que buscar los ingredientes.</span>
+      <li *ngFor="let ingrediente of ingredientes" class="receta-ingrediente">
+        {{ ingrediente.nombre }}:
         {{ ingrediente.cantidad }}
       </li>
     </ul>
@@ -59,14 +47,9 @@
     </ul>
   </div>
 
-  <div class="col-md-6" style="margin-top: 40px">
-    <input
-      type="image"
-      src="{{ receta.foto }}"
-      class="rounded"
-      width="350px"
-      routerLink="/mostraUnaReceta/{{ receta.idRecetas }}"
-    />
+  <div class="text-center my-5">
+    <input type="image" src="{{ receta.foto }}" class="rounded img-fluid"
+      routerLink="/mostraUnaReceta/{{ receta.idRecetas }}" />
   </div>
 
   <!-- Para mostrar la preparacion -->
@@ -74,45 +57,33 @@
     <ul class="receta-pasos">
       <h2 class="receta-list-title preparacion">Preparación</h2>
       <div class=" row">
-      <div class = "col">
-      <li
-        *ngFor="let paso of pasos; let i = index"
-        class="receta-paso"
-      >
-        <h4 class="receta-paso-title">Paso {{ i + 1 }}:</h4>
-        <p>{{ paso.descripcion }}</p>
-      </li>
-    </div>
-    <div class = "col" >
-      <input  *ngFor="let paso of pasos"
-      type="image"
-      src="{{ paso.foto }}"
-      class="rounded"
-      width="300px"
-    />
+        <div class="col">
+          <li *ngFor="let paso of pasos; let i = index" class="receta-paso">
+            <h4 class="receta-paso-title">Paso {{ i + 1 }}:</h4>
+            <p>{{ paso.descripcion }}</p>
+          </li>
+        </div>
+        <div class="col">
+          <input *ngFor="let paso of pasos" type="image" src="{{ paso.foto }}" class="rounded" width="300px" />
 
-    </div>
-    </div>
+        </div>
+      </div>
     </ul>
-  </div>  
- <!--Valorar la receta--> 
-    <div>
-      
-        <div class = "row">
-          <p>¿Quieres valorar la receta?</p>
-        </div>
-        <div class="col ">
-          <bar-rating [rate]="nuevaValoracion" [max]="5" (rateChange)="valorarReceta($event)" >
-            <ng-template ratingActive>
-              <i class="bi bi-star-fill" style="margin: 2px; color: #3c240d"></i>
-            </ng-template>
-            <ng-template ratingInactive>
-              <i class="bi bi-star-fill" style="margin: 2px; color: #d4d0c4"></i>
-            </ng-template>
-          </bar-rating>
-        </div>
-        
+  </div>
+  <!--Valorar la receta-->
+  <div>
+
+    <div class="row fw-bold">
+      <p>¿Quieres valorar la receta?</p>
     </div>
-  
-  
+    <div class="col ">
+      <bar-rating [rate]="nuevaValoracion" [max]="5" (rateChange)="valorarReceta($event)">
+        <ng-template ratingActive>
+          <i class="bi bi-star-fill" style="margin: 2px; color: #3c240d"></i>
+        </ng-template>
+        <ng-template ratingInactive>
+          <i class="bi bi-star-fill" style="margin: 2px; color: #d4d0c4"></i>
+        </ng-template>
+      </bar-rating>
+    </div>
 </div>
