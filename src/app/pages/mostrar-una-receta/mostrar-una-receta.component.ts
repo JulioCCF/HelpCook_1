@@ -21,7 +21,6 @@ export class MostrarUnaRecetaComponent implements OnInit {
  */
   receta: Receta;
 
-
   /**
    * Variable para almacenar el id de la receta seleccionada en las demás páginas
    */
@@ -43,7 +42,6 @@ export class MostrarUnaRecetaComponent implements OnInit {
     private route: ActivatedRoute,
     private recetasService: recetasService
   ) {}
-
 
   /**
    * Método que se carga cuando inicia la página

@@ -1,9 +1,15 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+<<<<<<< HEAD
 import { Ingredientes } from '../../Ingredientes.model';
 import { Receta } from 'src/app/Receta.model';
 import { RecetasRequest } from 'src/app/RecetasRequest.model';
+=======
+
+import { Ingredientes } from '../../Ingredientes.model';
+import { Receta } from 'src/app/Receta.model';
+>>>>>>> dc2d044e9dba90e74e2216469ca593043dd51477
 
 
 /**
