@@ -1,0 +1,169 @@
+/* Bloco da receita */
+
+.receta {
+    background-color: #FFF;
+    margin: 0 auto;
+    width: 75%;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    padding: 50px;
+    max-width: 1200px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* título de la receta */
+
+.receta-title {
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* bloque de evaluación*/
+
+.receta-valoracion {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Cada icono (estrella)*/
+
+.receta-valoracion i {
+    font-size: 25px;
+}
+
+
+/* Contenedor de la primera imagen */
+
+.receta-img-container {
+    width: 100%;
+    margin: 50px 0 25px;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* primera imagen */
+
+.receta-img-container .receta-img {
+    max-width: 75%;
+    max-height: 400px;
+}
+
+
+/*Segundo contenedor de imagen*/
+
+.receta-img2-container {
+    width: 100%;
+    margin: 25px 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* segunda imagen*/
+
+.receta-img2-container .receta-img {
+    max-width: 30%;
+    max-height: 200px;
+}
+
+
+/* autor de la receta */
+
+.receta-autor {
+    text-align: center;
+    color: #d4d0c4;
+    font-size: 22px;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+
+/* bloque de lista */
+
+.listas {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* cada lista */
+
+.receta-list {
+    padding-left: 0;
+    max-width: 50%;
+}
+
+
+/* Información */
+
+.receta-list.info {
+    list-style-type: none;
+}
+
+
+/* Título de las listas */
+
+.receta-list-title {
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #3c240d;
+    text-transform: uppercase;
+}
+
+
+/* Título de la lista de preparación */
+
+.receta-list-title.preparacion {
+    text-transform: none;
+}
+
+
+/* cada ingrediente*/
+
+.receta-ingrediente {
+    color: #3c240d;
+}
+
+
+/*bloque de preparación */
+
+.receta-preparacion {
+    text-align: center;
+}
+
+
+/* lista de pasos */
+
+.receta-pasos {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+
+/* Cada paso */
+
+.receta-paso {
+    margin-bottom: 25px;
+    color: #3c240d;
+}
+
+
+/* Título del paso (Paso 1) */
+
+.receta-paso-title {
+    font-weight: bold;
+    color: #3c240d;
+}
+
+
+/* Consulta de medios para aumentar el tamaño del contenedor cuando se trata de una pantalla más pequeña */
+
+@media screen and (max-width: 1280px) {
+    .receta {
+        width: 90%;
+    }
+}

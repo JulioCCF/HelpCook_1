@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Ingredientes } from 'src/app/Ingredientes.model';
+import { Pasos } from 'src/app/Pasos.model';
 import { Receta } from 'src/app/Receta.model';
 import { recetasService } from 'src/app/pages/mostrar-recetas/recetasService.service';
 /**
@@ -26,6 +28,11 @@ export class MostrarUnaRecetaComponent implements OnInit {
   idRecetas: number;
 
 
+  ingredientes: Ingredientes[];
+
+  pasos: Pasos[];
+
+
   /**
    * Injectamos los servicios necesarios para el funcionamiento de la página
    * 
@@ -50,9 +57,16 @@ export class MostrarUnaRecetaComponent implements OnInit {
       this.idRecetas = +params.get('idRecetas');
     });
 
-    this.recetasService.obtener(this.idRecetas).subscribe((receta) => {
+    this.recetasService.obtener(this.idRecetas).subscribe((receta) => { 
       this.receta = receta;
+      
+      this.ingredientes= this.receta.ingredientesResponse;
+      this.pasos= this.receta.pasosResponse;
+     
       });
+
+     
+      
       
   }
 }
