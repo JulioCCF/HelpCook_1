@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RegistroService } from './registro-service.service';
 import { Usuarios } from 'src/app/Usuarios.model';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 /**
  * Componente para la página de registro
  * 
@@ -59,7 +60,7 @@ export class RegistroComponent implements OnInit{
    * Injectamos los servicios para la conexión con el Backend
    * @param registroService Servicio para conectar con el Backend
    */
-  constructor(private registSvc: RegistroService) { }
+  constructor(private registSvc: RegistroService, private router: Router) { }
 
   ngOnInit(): void {
     
@@ -110,6 +111,8 @@ export class RegistroComponent implements OnInit{
             console.log(this.mensaje);
           }
         }
-      );
+    );
+    alert("Usuario registrado con éxito");
+    this.router.navigate(['/login']);
     };
 }

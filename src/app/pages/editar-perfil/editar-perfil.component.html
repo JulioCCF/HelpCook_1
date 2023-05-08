@@ -13,19 +13,19 @@
     <!-- Apellidos que quiere editar -->
     <div class="form-group">
         <label for="InputApellidos">Apellidos: </label>
-        <input type="text" class="form-control" name="apellidos" [(ngModel)]="apellido" id="InputApellidos"
+        <input type="text" class="form-control" name="apellidos" [(ngModel)]="apellido" id="InputApellidos" placeholder="{{usuario.apellido}}"
             required>
     </div>
     <!-- Nick del usuario que quiere editar -->
     <div class="form-group">
         <label for="InputNick">Nombre de usuario: </label>
-        <input type="text" class="form-control" name="nick" [(ngModel)]="nick" id="InputNick"
+        <input type="text" class="form-control" name="nick" [(ngModel)]="nick" id="InputNick" placeholder="{{usuario.nick}}"
             required>
     </div>
     <!-- Correo del usuario que quiere editar -->
     <div class="form-group">
         <label for="InputContrasenia">Correo electrónico: </label>
-        <input type="email" class="form-control" name="email" [(ngModel)]="email" id="InputContrasenia"
+        <input type="email" class="form-control" name="email" [(ngModel)]="email" id="InputContrasenia" placeholder="{{usuario.email}}"
             required>
     </div>
     <!-- Contraseña del usuario que quiere editar -->
