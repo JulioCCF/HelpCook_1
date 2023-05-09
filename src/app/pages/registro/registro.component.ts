@@ -110,6 +110,7 @@ export class RegistroComponent implements OnInit{
           } else {
             this.mensaje = "Error, el correo electrónico ya está en uso.";
             console.log(this.mensaje);
+            alert("Este correo electrónico ya está en uso. Inserte uno válido.")
           }
         },
         error => {
