@@ -24,6 +24,7 @@
 .receta-valoracion {
     display: flex;
     justify-content: center;
+    margin-top: 30px;
 }
 
 
@@ -155,4 +156,8 @@
     .receta {
         width: 90%;
     }
+
+.foto-receta{
+    border: 5px solid #3c240d;
+}
 }
