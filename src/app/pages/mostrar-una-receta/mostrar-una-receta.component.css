@@ -70,17 +70,6 @@
 }
 
 
-/* autor de la receta */
-
-.receta-autor {
-    text-align: center;
-    color: #d4d0c4;
-    font-size: 22px;
-    margin-bottom: 25px;
-    font-style: italic;
-}
-
-
 /* bloque de lista */
 
 .listas {
