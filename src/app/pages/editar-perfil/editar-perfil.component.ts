@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Usuarios } from 'src/app/Usuarios.model';
 import { RegistroService } from '../registro/registro-service.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-editar-perfil',
@@ -20,7 +21,7 @@ export class EditarPerfilComponent implements OnInit{
   foto: string;
   mensaje: string;
 
-  constructor(private registSvc: RegistroService) {
+  constructor(private registSvc: RegistroService, private router: Router) {
     
     this.usuario = this.registSvc.getCurrentUser();
     console.log(this.usuario);
@@ -60,7 +61,9 @@ export class EditarPerfilComponent implements OnInit{
             this.mensaje = `Error en el servidor: ${error.status}: ${error.error}`;
           }
         }
-      );
+    );
+    alert("Usuario modificado correctamente, " + usuario.nombre);
+    this.router.navigate(['/perfil']);
     };
 
 }
