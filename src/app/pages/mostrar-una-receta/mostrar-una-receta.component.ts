@@ -85,7 +85,7 @@ export class MostrarUnaRecetaComponent implements OnInit {
   valorarReceta(event){
     this.nuevaValoracion = event;
     console.log(this.nuevaValoracion);
-    let valoracion = new Valoraciones(null,this.idRecetas,this.nuevaValoracion,null)
+    let valoracion = new Valoraciones(null,this.idRecetas,this.nuevaValoracion)
     
     
     this.recetasService.anyadirValoracion(valoracion).subscribe(

@@ -21,10 +21,7 @@ export class Valoraciones{
      */
     public valor: number;
 
-    /**
-     * Lista de usuarios que han valorado la receta.
-     */
-    public usuario: Usuarios[];
+
 
     /**
      * Crea una instancia de la clase Valoraciones.
@@ -33,10 +30,10 @@ export class Valoraciones{
      * @param valor Valoración numérica de la receta.
      * @param usuario Lista de usuarios que han valorado la receta.
      */
-    constructor(idValoraciones: number, idRecetas: number, valor: number, usuario: Usuarios[]) {
+    constructor(idValoraciones: number, idRecetas: number, valor: number) {
         this.idValoraciones = idValoraciones;
         this.idRecetas = idRecetas;
         this.valor = valor;
-        this.usuario = usuario;
+  
     }
 }
