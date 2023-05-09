@@ -74,8 +74,11 @@ export class RegistroService{
   }
 
 
-  updateUser(users: Usuarios){
-      return this.http.post('http://localhost:8081/usuarios', users);
+  updateUser(users: Usuarios,idUsuarios:number){
+
+  console.log(idUsuarios);
+    const url = `http://localhost:8081/usuarios/${idUsuarios}`;
+    return this.http.put(url, users);
   }
     
   

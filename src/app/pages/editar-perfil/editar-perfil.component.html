@@ -7,31 +7,31 @@
     <!-- Nombre real que quiere editar -->
     <div class="form-group">
         <label for="InputNombre">Nombre: </label>
-        <input type="text" class="form-control" name="nombre" [(ngModel)]="nombre" id="InputNombre"  placeholder="{{usuario.nombre}}"
+        <input type="text" class="form-control" name="nombre" [(ngModel)]="usuario.nombre" id="InputNombre"  placeholder="{{usuario.nombre}}"
             required>
     </div>
     <!-- Apellidos que quiere editar -->
     <div class="form-group">
         <label for="InputApellidos">Apellidos: </label>
-        <input type="text" class="form-control" name="apellidos" [(ngModel)]="apellido" id="InputApellidos" placeholder="{{usuario.apellido}}"
+        <input type="text" class="form-control" name="apellidos" [(ngModel)]="usuario.apellido" id="InputApellidos" placeholder="{{usuario.apellido}}"
             required>
     </div>
     <!-- Nick del usuario que quiere editar -->
     <div class="form-group">
         <label for="InputNick">Nombre de usuario: </label>
-        <input type="text" class="form-control" name="nick" [(ngModel)]="nick" id="InputNick" placeholder="{{usuario.nick}}"
+        <input type="text" class="form-control" name="nick" [(ngModel)]="usuario.nick" id="InputNick" placeholder="{{usuario.nick}}"
             required>
     </div>
     <!-- Correo del usuario que quiere editar -->
     <div class="form-group">
         <label for="InputContrasenia">Correo electrónico: </label>
-        <input type="email" class="form-control" name="email" [(ngModel)]="email" id="InputContrasenia" placeholder="{{usuario.email}}"
+        <input type="email" class="form-control" name="email" [(ngModel)]="usuario.email" id="InputContrasenia" placeholder="{{usuario.email}}"
             required>
     </div>
     <!-- Contraseña del usuario que quiere editar -->
     <div class="form-group">
         <label for="InputContrasenia1">Contraseña: </label>
-        <input type="password" class="form-control" name="contrasenia" [(ngModel)]="contrasenia" id="InputContrasenia1"
+        <input type="password" class="form-control" name="contrasenia" [(ngModel)]="usuario.contrasenia" id="InputContrasenia1"
             required>
     </div>
     <!-- Confirmación de la contraseña -->

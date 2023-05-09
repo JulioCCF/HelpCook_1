@@ -39,18 +39,20 @@ export class EditarPerfilComponent implements OnInit{
       const reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = () => {
-      this.foto = reader.result as string;
+      this.usuario.foto = reader.result as string;
     };
   }
   }
   
   updateUserService(){
     
-    let usuario = new Usuarios(this.nick, this.contrasenia, this.nombre, this.apellido, this.email, this.foto);
-      console.log(this.foto);
+    let usuario = new Usuarios(this.usuario.nick, this.usuario.contrasenia, this.usuario.nombre, this.usuario.apellido, this.usuario.email, this.usuario.foto);
+     
+    console.log(usuario);
   
-      this.registSvc.updateUser(usuario).subscribe(
+      this.registSvc.updateUser(usuario,this.usuario.idUsuarios).subscribe(
         response => this.mensaje = "Datos actualizados correctamente, " + usuario.nombre,
+       
         (error: HttpErrorResponse) => {
           if (error.error instanceof ErrorEvent) {
             this.mensaje = 'Error de red:'+ error.error.message;
