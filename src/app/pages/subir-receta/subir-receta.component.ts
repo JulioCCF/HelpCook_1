@@ -127,7 +127,9 @@ export class SubirRecetaComponent {
 
   activeButtonIndex: number = null;
  
+
   subidaCorrectamente: boolean;
+
 
   categoriaSeleccionada:  any = null;
  
@@ -217,6 +219,7 @@ onFileSelectedPasos(event:any) {
     reader.readAsDataURL(file);
     reader.onload = () => {
     this.fotoPaso = reader.result as string;
+    console.log(this.fotoPaso);
   };
 }
 }
@@ -237,7 +240,7 @@ capturarCategorias(event: any) {
   botonSeleccionado.classList.add('btn-iconosbarra-seleccionado');
   this.categoriaSeleccionada = botonSeleccionado;
 
-  console.log(this.categoria);
+
 }
 
 
@@ -284,7 +287,6 @@ setCantidad(cantidad: any, ingXTipo:Ingredientes) {
   if(typeof cantidad === 'string'){
     ingXTipo.cantidad = cantidad;
   }
-  console.log(this.ingredientes);
 }
 
 /**
@@ -328,8 +330,9 @@ agregarPaso() {
    const pasosDivs = document.querySelectorAll('.paso');
    this.pasos = []; // reinicia el array de pasos
    pasosDivs.forEach(div => {
+
      // crea un objeto paso con la descripción y la imagen del div
-     
+     console.log(this.fotoPaso);
      const paso = {
       idPasos: null,
       idRecetas: null,
@@ -337,8 +340,9 @@ agregarPaso() {
       descripcion: div.querySelector('textarea').value,
       foto: this.fotoPaso
      };
+     console.log(paso);
      this.pasos.push(paso); // agrega el objeto paso al array de pasos
-     this.fotoPaso = null;  //reiniciamos la variable foto
+  
    });
   
 }

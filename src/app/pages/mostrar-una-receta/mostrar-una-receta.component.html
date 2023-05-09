@@ -36,7 +36,7 @@
       </li>
     </ul>
 
-    <!-- Para mostrar las informacions -->
+    <!-- Para mostrar las informacion -->
     <ul class="receta-list info">
       <h2 class="receta-list-title">Información</h2>
       <li><b>Tiempo de preparación:</b> {{ receta.tiempo }} minutos.</li>
@@ -59,8 +59,9 @@
           </li>
         </div>
         <div class="col">
-          <input *ngFor="let paso of pasos" type="image" src="{{ paso.foto }}" class="rounded" width="300px" />
-
+          <div *ngFor="let paso of pasos;" >
+          <img  src="{{ paso.foto }}" class="rounded img-fluid" style ="border: 2px solid #3c240d;"/>
+        </div>
         </div>
       </div>
     </ul>
