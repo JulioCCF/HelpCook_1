@@ -3,6 +3,7 @@ import { RegistroService } from './registro-service.service';
 import { Usuarios } from 'src/app/Usuarios.model';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { UsuariosResponse } from 'src/app/UsuariosResponse.model';
 /**
  * Componente para la página de registro
  * 
@@ -98,21 +99,23 @@ export class RegistroComponent implements OnInit{
   addUserService(){
     
     let usuario = new Usuarios(this.nick, this.contrasenia, this.nombre, this.apellido, this.email, this.foto);
-      console.log(this.foto);
-  
+      
       this.registSvc.addNewUser(usuario).subscribe(
-        response => this.mensaje = "¡Enhorabuena! Ya está registrado, bienvenido: " + usuario.nombre,
-        (error: HttpErrorResponse) => {
-          if (error.error instanceof ErrorEvent) {
-            this.mensaje = 'Error de red:'+ error.error.message;
-            console.log(this.mensaje);
+        (response:UsuariosResponse) =>{
+
+          if (response.exito) {
+            this.mensaje = "¡Enhorabuena! Ya está registrado, bienvenido: " + usuario.nombre;
+            alert("Usuario registrado con éxito");
+            this.router.navigate(['/login']);
           } else {
-            this.mensaje = `Error, debe rellenar los campos: ${error.status}: ${error.error}`;
+            this.mensaje = "Error, el correo electrónico ya está en uso.";
             console.log(this.mensaje);
           }
+        },
+        error => {
+          this.mensaje = `Error, debe rellenar los campos: ${error.status}: ${error.error}`;
+          console.log(this.mensaje);
         }
-    );
-    alert("Usuario registrado con éxito");
-    this.router.navigate(['/login']);
-    };
+      );
+    }
 }
