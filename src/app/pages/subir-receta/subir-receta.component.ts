@@ -7,6 +7,7 @@ import { Pasos } from 'src/app/Pasos.model';
 import { RecetasRequest } from 'src/app/RecetasRequest.model';
 
 
+
 /**
  * Componente para crear una receta
  * 
@@ -79,13 +80,15 @@ export class SubirRecetaComponent {
   /**
    * Variable para incrementar el número del paso
    */
-  numPasos: number = 2;
+  numPasos: number = 1;
 
 
-  /**
-   * Variable para almacenar la foto del paso una vez pasada a base 64
-   */
-  fotoPaso: string;
+ mostrarPaso:boolean = false;
+
+ contadorPasos:number = 0;
+
+ mostrarFormularioPaso = false;
+ 
 
   
   /**
@@ -140,7 +143,8 @@ export class SubirRecetaComponent {
  */
   constructor(private route: ActivatedRoute, private recetasService: recetasService, private router:Router) {
 
-    this.ingredientes = [];
+  this.ingredientes = [];
+  this.pasos =[];
   
     
   }
@@ -207,22 +211,8 @@ export class SubirRecetaComponent {
   }
 }
 
-/**
- * Método para pasar la foto de los pasos a Base 64 
- * y poder guardarlas como string 
- */
-onFileSelectedPasos(event:any) {
-  const file = event.target.files[0];
 
-  if (file) {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-    this.fotoPaso = reader.result as string;
-    console.log(this.fotoPaso);
-  };
-}
-}
+
 
 /**
  * Método para capturar la categoría de la receta y cambiar el color de la categoria seleccionada
@@ -296,58 +286,18 @@ ocultar(){
   this.ocultarIngredientes = true;
 }
 
-/**
- * Método para mostrar un nuevo div para agregar un nuevo paso y
- * 
- * añadir el paso al array de pasos
- */
-agregarPaso() {
 
-  // crea un nuevo elemento div
-  const nuevoDiv = document.createElement('div');
-
-  nuevoDiv.innerHTML = `
-    <div class="row paso" >
-      <div class="col">
-        <label class="form-label custom-label fw-bold mt-3" for="InputDescripPaso">Paso ${this.numPasos}</label>
-        <textarea name="text" id="InputDescripPaso" cols="50" rows="3" placeholder="Descripción del paso" ></textarea>
-      </div>
-      <div class="col">
-        <label class="form-label fw-bold text-center mt-3" for="InputFotoPaso">Adjunta la imagen</label>
-        <input class="form-control mt-4 fs-5" type="file" name="formFile" id="InputFotoPaso" required (change)="onFileSelectedPasos($event)">
-      </div>
-    </div>
-  `;
-
-  // agrega el nuevo div al contenedor de pasos
-  const pasosContainer = document.querySelector('#pasos-container');
-  pasosContainer.appendChild(nuevoDiv);
-
-  // incrementa el número de pasos
-  this.numPasos++; 
-
-   // obtiene todos los divs de paso y los recorre
-   const pasosDivs = document.querySelectorAll('.paso');
-   this.pasos = []; // reinicia el array de pasos
-   pasosDivs.forEach(div => {
-
-     // crea un objeto paso con la descripción y la imagen del div
-     console.log(this.fotoPaso);
-     const paso = {
-      idPasos: null,
-      idRecetas: null,
-      tipo: null,
-      descripcion: div.querySelector('textarea').value,
-      foto: this.fotoPaso
-     };
-     console.log(paso);
-     this.pasos.push(paso); // agrega el objeto paso al array de pasos
-  
-   });
-  
+mostrarPasos() {
+  this.mostrarPaso = true;
+  this.contadorPasos++;
 }
 
 
+
+  onPasoAgregado(paso: { descripcion: string, foto: string }) {
+    this.pasos.push(new Pasos(null,null,null,paso.descripcion, paso.foto));
+    console.log(this.pasos);
+  }
 
 
 /**

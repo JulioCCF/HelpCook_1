@@ -258,46 +258,16 @@
 
   <!-- Pasos -->
   <div id="pasos-container">
-    <div class="row paso">
-      <div class="col">
-        <label
-          class="form-label custom-label fw-bold mt-3"
-          for="InputDescripPaso"
-          >Paso 1</label
-        >
-        <textarea
-          name="text"
-          id="InputDescripPaso"
-          cols="50"
-          rows="3"
-          placeholder="Descripción del paso"          
-        ></textarea>
-      </div>
-      <div class="col">
-        <label class="form-label fw-bold text-center mt-3" for="InputFotoPaso"
-          >Adjunta la imagen</label
-        >
-        <input
-          class="form-control mt-4 fs-5"
-          type="file"
-          name="formFile"
-          id="InputFotoPaso"
-          required
-          (change)="onFileSelectedPasos($event)"
-        />
-      </div>
+    <button (click)="mostrarPasos()">Agrega los Pasos</button>
+    <div *ngFor="let paso of pasos; let i = index">
+      <h3>Paso {{i + 1}}</h3>
+      <p>{{paso.descripcion}}</p>
+      <img [src]="paso.foto" alt="Foto de paso {{i + 1}}">
     </div>
+    <ng-container *ngIf="mostrarPaso">
+      <app-captura-paso [contadorPasos]="contadorPasos" (pasoAgregado)="onPasoAgregado($event)"></app-captura-paso>
+    </ng-container>   
   </div>
-  <!-- Botón añadir más pasos -->
-  <p>
-    <a
-      class="btn-mostrarmas text-center mt-5"
-      role="button"
-      id="agregar-paso-link"
-      (click)="agregarPaso()"
-      >Pulsar para añadir el paso a la receta, Añadir Paso {{ numPasos }}</a
-    >
-  </p>
 
   <br />
   <br />
