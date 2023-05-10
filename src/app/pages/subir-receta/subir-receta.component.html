@@ -62,7 +62,6 @@
         type="button"
         class="btn iconosbarra"
         (click)="capturarCategorias($event)"
-        
       >
         <img
           src="/assets/iconos/carnes.png"
@@ -192,14 +191,15 @@
     </div>
   </div>
   <!--Ingredientes-->
-    <div class = "row"> 
-      <label
-      class="form-label custom-label fw-bold mt-3 ms-5 text-center" 
+  <div class="row">
+    <label
+      class="form-label custom-label fw-bold mt-3  text-center"
       for="InputIngredientesTipo"
+      style="margin-bottom: 30px;"
       >Ingredientes</label
     >
-   <!-- Selección tipo Ingredientes ---> 
-    <div class="col md-5;" >  
+    <!-- Selección tipo Ingredientes --->
+    <div class="col">
       <select
         class="form-select form-select fw-bold mt-2"
         for="InputIngredientesTipo"
@@ -212,8 +212,12 @@
         </option>
       </select>
 
-     <!-- Selección Ingredientes y su cantidad--->
-      <div class="form-check" *ngIf="tipoSeleccionado" style="margin-top: 15px" [hidden]="ocultarIngredientes">
+      <!-- Selección Ingredientes y su cantidad--->
+      <div
+        class="form-check"
+        *ngIf="tipoSeleccionado"
+        style="margin-top: 15px"
+      >
         <div *ngFor="let ingXTipo of ingredientesXTipo">
           <input
             class="form-check-input"
@@ -236,42 +240,53 @@
         </div>
       </div>
     </div>
-  <!--Panel que muestra los ingredientes seleccionados-->   
-    <div class = "col" style="margin-top: 10px; margin-left: 120px;" >
-      <h5 >Ingredientes seleccionados:</h5>
-      <ul [hidden]="ocultarIngredientes">
-        <li *ngFor="let ingSelect of ingredientes">{{ingSelect.nombre}} - {{ingSelect.cantidad}}</li>
+    <!--Panel que muestra los ingredientes seleccionados-->
+    <div class="col" style="margin-top: 10px; margin-left: 120px">
+      <h5><strong>Ingredientes seleccionados:</strong></h5>
+      <ul>
+        <li *ngFor="let ingSelect of ingredientes">
+          {{ ingSelect.nombre }} - {{ ingSelect.cantidad }}
+        </li>
       </ul>
-    </div> 
-    <!-- <div style="margin-top:50px">
-      <button type="submit" class="btn btn-primary"  ocultarIngredientes = true; (click)="ocultar();" >
-        Añadir los Ingredientes
-      </button>
-    </div>    -->
-        <br />
-        <br />
-       
-      
+    </div>
   </div>
-  
-  
-
+  <br />
+  <br />
   <!-- Pasos -->
   <div id="pasos-container">
-    <button (click)="mostrarPasos()">Agrega los Pasos</button>
-    <div *ngFor="let paso of pasos; let i = index">
-      <h3>Paso {{i + 1}}</h3>
-      <p>{{paso.descripcion}}</p>
-      <img [src]="paso.foto" alt="Foto de paso {{i + 1}}">
+    <button class="btn btn-primary" (click)="mostrarPasos()">
+      Agrega los Pasos
+    </button>
+    <div *ngFor="let paso of pasos; let i = index" style="margin-top: 40px">
+      <h5>
+        <strong>Paso {{ i + 1 }}</strong>
+      </h5>
+      <div class="row" style="margin-top: 25px;;">
+        <div class="col descripcion rounded">
+          <h6>{{ paso.descripcion }}</h6>
+        </div>
+        <div class="col">
+          <img
+            [src]="paso.foto"
+            class="rounded"
+            width="300px"
+            alt="Foto de paso {{ i + 1 }}"
+          />
+        </div>
+      </div>
     </div>
     <ng-container *ngIf="mostrarPaso">
-      <app-captura-paso [contadorPasos]="contadorPasos" (pasoAgregado)="onPasoAgregado($event)"></app-captura-paso>
-    </ng-container>   
+      <app-captura-paso
+        [contadorPasos]="contadorPasos"
+        (pasoAgregado)="onPasoAgregado($event)"
+      ></app-captura-paso>
+    </ng-container>
   </div>
 
   <br />
   <br />
   <!-- Botón enviar -->
-  <button type="submit" class="btn btn-primary" (click)="subirReceta()">Enviar</button>
-  
+  <button type="submit" class="btn btn-primary" (click)="subirReceta()">
+    Enviar
+  </button>
 </form>

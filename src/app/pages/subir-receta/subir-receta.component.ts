@@ -67,30 +67,23 @@ export class SubirRecetaComponent {
    */
   comensales: number;
 
-   /**
-   * Variable para almacenar un paso de la receta
-   */
-  paso: Pasos;
-
   /**
    * Array para almacenar todos los pasos
    */
   pasos: Pasos[];
 
-  /**
-   * Variable para incrementar el número del paso
-   */
-  numPasos: number = 1;
 
 
+/**
+ * Variable para mostrar el div de la inserción del paso
+ */
  mostrarPaso:boolean = false;
 
+ /**
+  * Variable para almacenar el número de pasos insertados
+  */
  contadorPasos:number = 0;
 
- mostrarFormularioPaso = false;
- 
-
-  
   /**
    * Array para recuperar todos los ingredientes de la base de datos
    */
@@ -102,11 +95,6 @@ export class SubirRecetaComponent {
  */
   ingredientesXTipo: Ingredientes[];
 
-
-  /**
-   * Variable para mostrar si se ha guardado la receta
-   */
-  mensaje: string;
 
 
   /**
@@ -125,15 +113,14 @@ export class SubirRecetaComponent {
   ingredientes: Ingredientes[];
 
 
-  ocultarIngredientes = false;
-
-
-  activeButtonIndex: number = null;
- 
-
+  /**
+   * Variable para mostrar si la receta se ha agregado a la base de datos
+   */
   subidaCorrectamente: boolean;
 
-
+  /**
+   * Variable para almacenar la categoria de la receta seleccionada por el usuario
+   */
   categoriaSeleccionada:  any = null;
  
 /**
@@ -190,8 +177,7 @@ export class SubirRecetaComponent {
         dia = '0' + dia;
       }
       this.fechaAlta = new Date(`${anyo}-${mes}-${dia}`);
-
-     
+    
   }
   
 
@@ -279,24 +265,25 @@ setCantidad(cantidad: any, ingXTipo:Ingredientes) {
   }
 }
 
+
+
 /**
- * Método para ocultar los div de ingredientes cuando se ha terminado de elegirlos
+ * Método para mostrar el div del paso cuando se le de al botón y contabilizar los pasos agregados
  */
-ocultar(){
-  this.ocultarIngredientes = true;
-}
-
-
 mostrarPasos() {
   this.mostrarPaso = true;
   this.contadorPasos++;
 }
 
 
-
+/**
+ * Método que se recibe del componente hijo el paso con los datos capturados
+ * 
+ * para añadir al array de pasos un nuevo paso con los datos recibidos
+ * @param paso. Recibimos un array con los datos que nos interesan para creación del paso.
+ */
   onPasoAgregado(paso: { descripcion: string, foto: string }) {
     this.pasos.push(new Pasos(null,null,null,paso.descripcion, paso.foto));
-    console.log(this.pasos);
   }
 
 
