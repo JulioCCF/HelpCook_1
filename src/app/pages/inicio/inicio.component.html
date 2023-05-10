@@ -48,17 +48,17 @@
       Encuentra las recetas mejor valoradas según nuestros usuarios
     </h5>
     <br/>
-  <div class="container " style="margin-top: 40px; margin-left: 150px">
-    <div class="row">
+  <div class="container text-center" style="margin-top: 40px">
+    <div class="row justify-content-center">
       <div class="col"><input type="image" 
           src={{recetasMejorValoradas[0].foto}}
           class="img-fluid"
           class="rounded"
           width="300px"
-          height="200"
+          height="200px"
           routerLink = "mostraUnaReceta/{{recetasMejorValoradas[0].idRecetas}}"
         />
-        <h4 style="text-align: center; font-weight: bold">{{recetasMejorValoradas[0]?.titulo}}</h4>
+        <h4 class="fw-bold">{{recetasMejorValoradas[0]?.titulo}}</h4>
       </div>
 
       <div class="col" style="margin-left: 100px">
@@ -67,10 +67,10 @@
           class="img-fluid"
           class="rounded"
           width="300px"
-          height="200"
+          height="200px"
           routerLink = "mostraUnaReceta/{{recetasMejorValoradas[1].idRecetas}}"
         />
-        <h4 style=" font-weight: bold">{{recetasMejorValoradas[1]?.titulo}}</h4>
+        <h4 class="fw-bold">{{recetasMejorValoradas[1]?.titulo}}</h4>
       </div>
 
       <div class="col" style="margin-left: 100px"><input type="image" 
@@ -78,10 +78,10 @@
           class="img-fluid"
           class="rounded"
           width="300px"
-          height="200"
+          height="200px"
           routerLink = "mostraUnaReceta/{{recetasMejorValoradas[2].idRecetas}}"
         />
-        <h4 style="text-align: center; font-weight: bold">{{recetasMejorValoradas[2]?.titulo}}</h4>
+        <h4 class="fw-bold">{{recetasMejorValoradas[2]?.titulo}}</h4>
       </div>
     </div>
   </div>
@@ -96,18 +96,17 @@
   <a routerLink="mostrarRecetas" ><h4 style="margin-left: 150px; font-weight: bold; font-size: 35px;" (click)="capturarTexto($event)">Recetas más recientes</h4></a>
   <h5 class="texto" style="margin-left: 150px;font-size: 25px;">Últimas recetas añadidas</h5>
   <br/>
-  <div class="container" style="margin-top: 40px; margin-left: 100px">
-    <div class="row">
+  <div class="container text-center" style="margin-top: 40px">
+    <div class="row justify-content-center">
       <div class="col"><input type="image" 
           src={{recetasMasRecientes[0].foto}}
           class="img-fluid"
           class="rounded"
           width="300px"
-          height="200"
-          style="margin-left: 50px"
+          height="200px"
           routerLink = "mostraUnaReceta"
         />
-        <h4 style="text-align: center; font-weight: bold">{{recetasMasRecientes[0].titulo}}</h4>
+        <h4 class="fw-bold">{{recetasMasRecientes[0].titulo}}</h4>
       </div>
 
       <div class="col"  style="margin-left: 80px" ><input type="image" 
@@ -115,11 +114,10 @@
           class="img-fluid"
           class="rounded"
           width="300px"
-          height="200"
-          style="margin-left: 50px"
+          height="200px"
           routerLink = "mostraUnaReceta"
         />
-        <h4 style="text-align: center; font-weight: bold">{{recetasMasRecientes[1].titulo}}</h4>
+        <h4 class="fw-bold">{{recetasMasRecientes[1].titulo}}</h4>
       </div>
 
       <div class="col"  style="margin-left: 80px"><input type="image" 
@@ -127,11 +125,10 @@
           class="img-fluid"
           class="rounded"
           width="300px"
-          height="200"
-          style="margin-left: 50px"
+          height="200px"
           routerLink = "mostraUnaReceta"
         />
-        <h4 style="text-align: center; font-weight: bold">{{recetasMasRecientes[2].titulo}}</h4>
+        <h4 class="fw-bold">{{recetasMasRecientes[2].titulo}}</h4>
       </div>
     </div>
   </div>
