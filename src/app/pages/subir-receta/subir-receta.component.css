@@ -78,22 +78,23 @@ p{
 .btn-guardar-paso{
     background-color:#5d5b56;
     color: white;
-    display: flex;
+    display: block;
     align-items:center;
     justify-content: center;
     width:15%;
     border: none;
     border-radius: 5px;
-    padding: 5px;
+    /* padding: 5px; */
     cursor: pointer;
     font-size: 16px;
-    margin-left: 50%;
-    transform: translateX(-50%);
-    float: right;
-    text-align: right;
+    /* margin-left: 50%; */
+    /* transform: translateX(-50%); */
+    /* float: right;*/
+    /*text-align: right; */
 }
 .descripcion {
     font-size: 25px;
     background-color: #f5f6ed;
     color: #3c240d;
   }
+  
