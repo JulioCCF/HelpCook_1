@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Usuarios } from 'src/app/Usuarios.model';
+import { UsuariosResponse } from 'src/app/UsuariosResponse.model';
 
 
 
@@ -76,9 +77,9 @@ export class RegistroService{
 
   updateUser(users: Usuarios,idUsuarios:number){
 
-  console.log(idUsuarios);
     const url = `http://localhost:8081/usuarios/${idUsuarios}`;
-    return this.http.put(url, users);
+    return this.http.put<Usuarios>(url, users);
+
   }
     
   
