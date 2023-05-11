@@ -52,3 +52,8 @@ p{
     margin-left: 50%;
     transform: translateX(-50%);
 }
+
+button:disabled{
+    background-color: gray;
+    color: white;
+}

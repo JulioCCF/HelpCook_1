@@ -37,14 +37,20 @@
     <!-- Confirmación de la contraseña -->
     <div class="form-group">
         <label for="confirm-password">Confirmar Contraseña: </label>
-        <input type="password" class="form-control" name="confirm-password" [(ngModel)]="contraseniaRep"
-            placeholder="Repita la contraseña" required>
+        <input type="password" class="form-control" name="confirm-password" 
+        [(ngModel)]="contraseniaRep" 
+        placeholder="Repita la contraseña" required
+        (ngModelChange)="contraseniaCoincide = contrasenia === contraseniaRep"
+        [ngClass]="{'is-invalid': !contraseniaCoincide}"
+        >
+        <div *ngIf="!contraseniaCoincide" class="invalid-feedback">
+            Las contraseñas no coinciden.
+        </div>
     </div>
     <!-- Foto de perfil del usuario que se esta registrando -->
     <div class="form-group">
         <label for="InputFoto">Seleccione su foto de usuario: (PNG,JPG) </label>
         <input type="file"  class="form-control" name="file" id="InputFoto" aria-label="file example" [(ngModel)]="foto" required (change)="onFileSelected($event)">
-        
     </div>
     <br/>
     <div class="custom-control custom-checkbox">
@@ -60,7 +66,7 @@
         </tr>
     </div>
     <!-- Botón de registro que llama a la funcion guardar usuario --> 
-    <button type="submit" class="btn btn-primary" (click)="addUserService()">Registrarme</button>
+    <button type="submit" class="btn btn-primary" (click)="addUserService()" [disabled]="!contraseniaCoincide">Registrarme</button>
     <!-- Botón que te dirige a la página de Inicio de sesión -->
     <p>¿Ya tienes una cuenta? <a class="link-login" href="/login">Iniciar Sesión</a></p>
 </form>

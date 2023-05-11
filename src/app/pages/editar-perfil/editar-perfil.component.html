@@ -31,14 +31,19 @@
     <!-- Contraseña del usuario que quiere editar -->
     <div class="form-group">
         <label for="InputContrasenia1">Contraseña: </label>
-        <input type="password" class="form-control" name="contrasenia" [(ngModel)]="usuario.contrasenia" id="InputContrasenia1"
+        <input type="password" class="form-control" name="contrasenia" [(ngModel)]="contrasenia" id="InputContrasenia1"
             required>
     </div>
     <!-- Confirmación de la contraseña -->
     <div class="form-group">
         <label for="confirm-password">Confirmar Contraseña: </label>
         <input type="password" class="form-control" name="confirm-password" [(ngModel)]="contraseniaRep"
-            required>
+        required
+        (ngModelChange)="contraseniaCoincide = contrasenia === contraseniaRep"
+        [ngClass]="{'is-invalid': !contraseniaCoincide}">
+        <div *ngIf="!contraseniaCoincide" class="invalid-feedback">
+            Las contraseñas no coinciden.
+        </div>
     </div>
     <!-- Foto de perfil del usuario que quiere editar -->
     <div class="form-group">
@@ -49,5 +54,5 @@
     <br/>
     
     <!-- Botón de registro que llama a la funcion guardar usuario --> 
-    <button type="submit" class="btn btn-primary" (click)="updateUserService()">Actualizar datos</button>
+    <button type="submit" class="btn btn-primary" (click)="updateUserService()" [disabled]="!contraseniaCoincide">Actualizar datos</button>
 </form>

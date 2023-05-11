@@ -65,6 +65,11 @@ button {
     transform: translateX(-50%);
 }
 
+button:disabled{
+    background-color: gray;
+    color: white;
+}
+
 p{
     margin-top: 20px;
     text-align: center;

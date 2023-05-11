@@ -21,7 +21,12 @@ export class EditarPerfilComponent implements OnInit{
   contraseniaRep: string;
   foto: string;
   mensaje: string;
-  usuarioModificado: UsuariosResponse;
+  
+
+  /**
+ * Variable para controlar que la petición de las contraseña coincidan
+ */
+  contraseniaCoincide: boolean = true;
 
   constructor(private registSvc: RegistroService, private router: Router) {
     

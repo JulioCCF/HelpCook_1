@@ -52,9 +52,13 @@ export class RegistroComponent implements OnInit{
    */
   foto: string;
 
+/**
+ * Variable para controlar que la petición de las contraseña coincidan
+ */
+  contraseniaCoincide: boolean = true;
 
-  mensaje: string;
-  
+
+ 
 
 
   /**
@@ -86,6 +90,8 @@ export class RegistroComponent implements OnInit{
 
 
 
+
+
   /**
    * Método que se carga cuando el usuario pulsa el botón "Registrarme"
    * 
@@ -104,18 +110,11 @@ export class RegistroComponent implements OnInit{
         (response:UsuariosResponse) =>{
 
           if (response.exito) {
-            this.mensaje = "¡Enhorabuena! Ya está registrado, bienvenido: " + usuario.nombre;
             alert("Usuario registrado con éxito");
             this.router.navigate(['/login']);
           } else {
-            this.mensaje = "Error, el correo electrónico ya está en uso.";
-            console.log(this.mensaje);
             alert("Este correo electrónico ya está en uso. Inserte uno válido.")
           }
-        },
-        error => {
-          this.mensaje = `Error, debe rellenar los campos: ${error.status}: ${error.error}`;
-          console.log(this.mensaje);
         }
       );
     }
