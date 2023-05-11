@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Favoritos } from 'src/app/Favoritos.model';
 import { Ingredientes } from 'src/app/Ingredientes.model';
 import { Pasos } from 'src/app/Pasos.model';
@@ -96,7 +96,8 @@ export class MostrarUnaRecetaComponent implements OnInit {
     this.recetasService.obtener(this.idRecetas).subscribe((receta) => {
       this.receta = receta;
       this.ingredientes = this.receta.ingredientesResponse;
-      this.pasos = this.receta.pasosResponse;
+      this.pasos = this.receta.pasosResponse.sort((a, b) => a.tipo - b.tipo);
+      console.log(this.pasos);
     });
   }
 

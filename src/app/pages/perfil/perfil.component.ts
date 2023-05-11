@@ -69,7 +69,10 @@ export class PerfilComponent implements OnInit{
 
 
   mandarUsuarioReceta(recetaId: number){
-    console.log(recetaId)
     this.router.navigate(['/mostraUnaReceta'],{state:{usuario:this.usuario,recetaId:recetaId }});
+  }
+
+  UsuarioAnyadeReceta(){
+    this.router.navigate(['/subirReceta'],{state:{usuario:this.usuario}});
   }
 }

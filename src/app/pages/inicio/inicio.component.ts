@@ -45,15 +45,6 @@ export class InicioComponent implements OnInit{
  */
   constructor(private router: Router, private recetasService: recetasService ){
 
-    this.recetasService.obtenerTodos(null,null,null,"Recetas mejor valoradas").subscribe(recetas=>
-      {this.recetasMejorValoradas = recetas;
-      
-     
-      });
-
-      this.recetasService.obtenerTodos(null,null,null,"Recetas más recientes").subscribe(recetas=>
-        {this.recetasMasRecientes = recetas;
-          });
   }
   
   /**
@@ -63,6 +54,15 @@ export class InicioComponent implements OnInit{
   
     this.usuario = history.state.usuario;
     
+    this.recetasService.obtenerTodos(null,null,null,"Recetas mejor valoradas").subscribe(recetas=>
+      {this.recetasMejorValoradas = recetas;
+      
+     
+      });
+
+      this.recetasService.obtenerTodos(null,null,null,"Recetas más recientes").subscribe(recetas=>
+        {this.recetasMasRecientes = recetas;
+          });
   }
 
   /**
@@ -74,6 +74,8 @@ export class InicioComponent implements OnInit{
    */
   capturarTexto(evento :MouseEvent) {
     this.recetasAMostrar = (evento.target as HTMLElement).textContent;
+
+    console.log(this.recetasAMostrar);
     this.router.navigate(['/mostrarRecetas'],{state:{usuario:this.usuario,recetasAMostrar:this.recetasAMostrar}});
   }
 

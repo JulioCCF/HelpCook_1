@@ -20,10 +20,11 @@
               <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px">
                 <img src="{{ usuario.foto }}" alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2;"
                   style="width: 150px; height: 150px; z-index: 1" />
-                <!-- Botón editar perfil -->
-                <button type="button" class="boton-subir-receta" routerLink="/subirReceta/{{ usuario.idUsuarios }}">
+                <!-- Botón subir receta -->
+                <button type="button" class="boton-subir-receta" (click)="UsuarioAnyadeReceta()">
                   Subir receta
                 </button>
+                 <!-- Botón editar perfil -->
                 <button type="button" class="boton-edit-perfil" (click)="mandarUsuario()">
                   Editar perfil
                 </button>
