@@ -1,6 +1,6 @@
 <!-- Seccion logo -->
 <div class="text-center" style="margin-top: 30px">
-  <a class="nav-link" routerLink=""><img src="/assets/img/logo.png" class="w-25" alt="" /></a>
+  <a class="nav-link"(click)="volverInicio()"><img src="/assets/img/logo.png" class="w-25" alt="" /></a>
 </div>
 <div class="receta rounded">
   <!-- Para mostrar el nombre de la receta -->
@@ -27,8 +27,10 @@
 
   <!-- Botón guardar -->
   <div class="d-flex justify-content-around">
-    <div class="guardar-receta">
-      <button class="btn-guardar"><i class="bi bi-bookmark-heart"></i> Guardar receta</button>
+    <div class="guardar-receta" *ngIf = "usuario">
+      <label class="form-label fw-bold text-center mt-3" for="InputTitulo">Añade una nota para la receta:</label>
+      <input class="form-control fs-5" type="text" name="descripcion" id="InputDescripcion" [(ngModel)] = "descripcionFavorito">
+      <button class="btn-guardar" (click)="guardarReceta()"><i class="bi bi-bookmark-heart"></i> Guardar receta</button>
     </div>
   </div>
   
@@ -74,12 +76,11 @@
   </div>
   <!--Valorar la receta-->
   <div>
-
     <div class="row text-center mt-5">
       <h5 class="fw-bold">¿Quieres valorar la receta?</h5>
     </div>
     <div class="d-grid col justify-content-center" class="receta-valoracion">
-      <bar-rating [rate]="nuevaValoracion" [max]="5" (rateChange)="valorarReceta($event)">
+      <bar-rating [rate]="nuevaValoracion" [max]="5" (rateChange)="valorarReceta($event)" *ngIf="!valoracionAnyadida">
         <ng-template ratingActive>
           <i class="bi bi-star-fill" style="margin: 2px; color: #3c240d"></i>
         </ng-template>
@@ -89,3 +90,4 @@
       </bar-rating>
     </div>
   </div>
+  <div *ngIf="valoracionAnyadida">{{this.mensajeValoracion}}</div>

@@ -28,7 +28,6 @@ export class Valoraciones{
      * @param idValoraciones Identificador único de la valoración.
      * @param idReceta Identificador único de la receta valorada.
      * @param valor Valoración numérica de la receta.
-     * @param usuario Lista de usuarios que han valorado la receta.
      */
     constructor(idValoraciones: number, idRecetas: number, valor: number) {
         this.idValoraciones = idValoraciones;

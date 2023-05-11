@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MiServicio } from 'src/app/miServivio.service';
 import { Receta } from 'src/app/Receta.model';
 import { recetasService } from './recetasService.service';
+import { Usuarios } from 'src/app/Usuarios.model';
+import { Router } from '@angular/router';
 
 
 /**
@@ -37,17 +38,20 @@ export class MostrarRecetasComponent implements OnInit {
   recetas:Receta[] = [];
 
 
-
+  usuario: Usuarios;
+    
   /**
    * Injectamos los servicios para pasar y recibir datos a otro componente y para la conexión con el Backend
    * @param miServicio. Servicio para conectar componentes
    * @param recetasService. Servicio para conectar con el Backend
    */
-  constructor(private miServicio: MiServicio,
+  constructor( private router: Router,
     private recetasService: recetasService) {   
 
-        this.recetasAMostrar = this.miServicio.recetasAMostrar;
-        this.recetasXCategoria = this.miServicio.recetasXCategoria;
+    const navigationState = history.state;
+    this.usuario = navigationState.usuario;
+    this.recetasXCategoria = navigationState.categoria;
+    this.recetasAMostrar = navigationState.recetasAMostrar;
       
   }
 
@@ -68,9 +72,7 @@ export class MostrarRecetasComponent implements OnInit {
       this.categoria=false;
    this.recetasService.obtenerTodos(this.recetasXCategoria,null,null,null).subscribe(recetas=>
     {this.recetas = recetas;});
-    
-
-    
+     
    }else{
     this.categoria=true;
     this.recetasService.obtenerTodos(null,null,null,this.recetasAMostrar).subscribe(recetas=>
@@ -79,5 +81,14 @@ export class MostrarRecetasComponent implements OnInit {
    }
     }
     
+    volverInicio(){
+      this.router.navigate([''],{state:{usuario:this.usuario}});
+    }
+
+    mandarUsuarioReceta(recetaId: number){
+      console.log(recetaId)
+      this.router.navigate(['/mostraUnaReceta'],{state:{usuario:this.usuario,recetaId:recetaId }});
+    }
+  
   }
  

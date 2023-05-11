@@ -1,6 +1,6 @@
 <!-- Seccion logo -->
 <div class="text-center" style="margin-top: 30px">
-    <a class="nav-link" routerLink=""
+    <a class="nav-link" (click)="volverInicio()"
       ><img src="/assets/img/logo.png" class="w-25" alt=""
     /></a>
   </div>
@@ -42,7 +42,7 @@
               src={{receta.foto}}
               class="rounded"
               width="350px"
-              routerLink = "/mostraUnaReceta/{{receta.idRecetas}}"
+              (click)="mandarUsuarioReceta(receta.idRecetas)"
             />
           </div>
   <!-- Descripcion-->  

@@ -1,7 +1,8 @@
 import { Component, OnInit} from '@angular/core';
-import { MiServicio } from 'src/app/miServivio.service';
 import { recetasService } from '../mostrar-recetas/recetasService.service';
 import { Receta } from 'src/app/Receta.model';
+import { Usuarios } from 'src/app/Usuarios.model';
+import { ActivatedRoute, Router } from '@angular/router';
 
 /**
  * Componente para la página de Inicio
@@ -35,12 +36,14 @@ export class InicioComponent implements OnInit{
    * Variable para almacenar la lista de recetas más recientes
    */
   recetasMasRecientes: Receta[];
+
+  usuario: Usuarios;
  
 /**
  * Injectamos el servicio para pasar y recibir datos a otro componente
  * @param miServicio. Servicio para conectar componentes
  */
-  constructor(private miServicio: MiServicio, private recetasService: recetasService ){
+  constructor(private router: Router, private recetasService: recetasService ){
 
     this.recetasService.obtenerTodos(null,null,null,"Recetas mejor valoradas").subscribe(recetas=>
       {this.recetasMejorValoradas = recetas;
@@ -58,6 +61,7 @@ export class InicioComponent implements OnInit{
    */
   ngOnInit(): void {
   
+    this.usuario = history.state.usuario;
     
   }
 
@@ -70,9 +74,7 @@ export class InicioComponent implements OnInit{
    */
   capturarTexto(evento :MouseEvent) {
     this.recetasAMostrar = (evento.target as HTMLElement).textContent;
-    this.miServicio.mostrarRecetas(this.recetasAMostrar);
-    
-    
+    this.router.navigate(['/mostrarRecetas'],{state:{usuario:this.usuario,recetasAMostrar:this.recetasAMostrar}});
   }
 
   /**
@@ -84,7 +86,13 @@ export class InicioComponent implements OnInit{
    */
   capturarTextoCategorias(event: any) {
     this.recetasXCategoria = event.target.alt;
-    this.miServicio.mostrarRecetasCategoria(this.recetasXCategoria);
+    this.router.navigate(['/mostrarRecetas'],{state:{usuario:this.usuario,categoria:this.recetasXCategoria}});
+  }
+
+
+  mandarUsuarioReceta(recetaId: number){
+    console.log(recetaId)
+    this.router.navigate(['/mostraUnaReceta'],{state:{usuario:this.usuario,recetaId:recetaId }});
   }
 
 }

@@ -5,6 +5,7 @@ import { Ingredientes } from '../../Ingredientes.model';
 import { Receta } from 'src/app/Receta.model';
 import { RecetasRequest } from 'src/app/RecetasRequest.model';
 import { Valoraciones } from 'src/app/Valoraciones.model';
+import { Favoritos } from 'src/app/Favoritos.model';
 
 
 /**
@@ -135,11 +136,17 @@ export class recetasService {
 
 /**
  * Método para la conexión con el back para añadir una valoración a la receta
- * @param valoracion 
- * @returns 
+ * @param valoracion. Recibimos el objeto valoracion con la valoracion hecha por el usuario 
+ * @returns nos devuelve la valoración
  */
 anyadirValoracion(valoracion:Valoraciones){
 
   return this.http.post('http://localhost:8081/valoraciones', valoracion);
+}
+
+agregarFavorito(favorito: Favoritos){
+
+  console.log(favorito);
+  return this.http.post('http://localhost:8081/favoritos', favorito);
 }
 }

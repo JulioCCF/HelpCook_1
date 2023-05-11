@@ -1,6 +1,6 @@
 <!-- Seccion logo -->
 <div class="text-center" style="margin-top: 30px">
-  <a class="nav-link" routerLink=""><img src="/assets/img/logo.png" class="w-25" alt="" /></a>
+  <a class="nav-link" (click)="volverInicio()"><img src="/assets/img/logo.png" class="w-25" alt="" /></a>
 </div>
 
 <body>
@@ -55,13 +55,11 @@
                 <p class="lead fw-bold mb-0">Últimas recetas guardadas</p>
               </div>
               <div class="recetas-container">
-                <div class="receta" *ngFor="
-                    let favorito of recetasFavoritos.slice(
-                      0,
-                      numRecetasMostradas
-                    )
-                  ">
-                  <img src="{{ favorito.foto }}" alt="{{ favorito.titulo }}" class="w-100 rounded-3" />
+                <div class="receta" *ngFor="let favorito of recetasFavoritos.slice(0,numRecetasMostradas)">
+                  <img src="{{ favorito.foto }}" alt="{{ favorito.titulo }}" class="w-100 rounded-3" 
+                  routerLink="/mostraUnaReceta/{{ favorito.idRecetas }}"
+                  (click) = "mandarUsuarioReceta(favorito.idRecetas)"
+                  />
                   <div class="w-100 rounded-3; titulos">
                     {{ favorito.titulo }}
                   </div>
@@ -86,7 +84,8 @@
               <div class="recetas-container">
                 <div class="receta" *ngFor="let receta of recetas.slice(0, numRecetasMostradas)">
                   <img src="{{ receta.foto }}" alt="{{ receta.titulo }}" class="w-100 rounded-1"
-                    routerLink="/mostraUnaReceta/{{ receta.idRecetas }}" />
+                  (click) = "mandarUsuarioReceta(receta.idRecetas)"
+                   >
                   <div class="w-100 rounded-3; titulos">
                     {{ receta.titulo }}
                   </div>

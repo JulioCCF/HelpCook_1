@@ -5,6 +5,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Ingredientes } from 'src/app/Ingredientes.model';
 import { Pasos } from 'src/app/Pasos.model';
 import { RecetasRequest } from 'src/app/RecetasRequest.model';
+import { Usuarios } from 'src/app/Usuarios.model';
 
 
 
@@ -25,7 +26,8 @@ export class SubirRecetaComponent {
   /**
    * Variable para almacenar el Usuario que sube la receta
    */
-  idUsuario: number;
+  usuario: Usuarios;
+    
   
   /**
    * Variable para almacenar la descripcion de la receta
@@ -151,9 +153,8 @@ export class SubirRecetaComponent {
   ngOnInit(): void {
 
    
-    this.route.paramMap.subscribe((params) => {
-      this.idUsuario = +params.get('idUsuario');
-    });
+    this.usuario = history.state.usuario;
+    
 
     
 
@@ -293,7 +294,7 @@ mostrarPasos() {
 subirReceta(){
     
 
-    let receta = new RecetasRequest(null,this.idUsuario, this.descripcion, this.tiempo, this.foto, this.titulo, this.categoria,
+    let receta = new RecetasRequest(null,this.usuario.idUsuarios, this.descripcion, this.tiempo, this.foto, this.titulo, this.categoria,
     this.fechaAlta,this.valoracionMedia,this.comensales,this.ingredientes, this.pasos);
     
 
@@ -310,7 +311,7 @@ subirReceta(){
       }
   );
   alert("Receta subida correctamente.")
-  this.router.navigate(['']);
+  this.router.navigate([''],{state:{usuario:this.usuario}});
   };
 
 }

@@ -14,6 +14,11 @@ export class Favoritos{
      * Identificador único de la receta favorita.
      */
     public idRecetas: number;
+    
+     /**
+     * Usuarios que han agregado el favorito.
+     */
+     public idUsuarios: number;
 
     /**
      * Descripción del favorito 
@@ -21,10 +26,7 @@ export class Favoritos{
     public descripcion: string;
 
 
-    /**
-     * Usuarios que han agregado el favorito.
-     */
-    public usuario: Usuarios[];
+   
 
 
      /**
@@ -32,12 +34,13 @@ export class Favoritos{
      * @param idFavorito Identificador único del favorito.
      * @param idReceta Identificador único de la receta favorita.
      * @param descripcion Descripción del favorito (opcional).
-     * @param usuario Usuarios que han agregado el favorito.
+     * @param idUsuarios Identificador único del usuario que ha guardado la receta
      */
-    constructor(idFavorito: number, idReceta: number, descripcion: string, usuario: Usuarios[]) {
+    constructor(idFavorito: number, idReceta: number, descripcion: string, idUsuarios: number) {
         this.idFavorito = idFavorito;
         this.idRecetas = idReceta;
+        this.idUsuarios = idUsuarios;
         this.descripcion = descripcion;
-        this.usuario = usuario;
+        
 }
 }

@@ -21,6 +21,8 @@ export class PerfilComponent implements OnInit{
   contrasenia: string;
   validado:  boolean;
 
+ 
+
   numRecetasMostradas: number = 4;
  
   
@@ -56,9 +58,18 @@ export class PerfilComponent implements OnInit{
     
   }
 
+  volverInicio(){
+    this.router.navigate([''],{state:{usuario:this.usuario}});
+  }
+  
   mandarUsuario(){
     this.registroService.setCurrentUser(this.usuario);
-    this.router.navigate(['/editarPerfil']);
+    this.router.navigate(['/editarPerfil'],{state:{usuario:this.usuario}});
   }
 
+
+  mandarUsuarioReceta(recetaId: number){
+    console.log(recetaId)
+    this.router.navigate(['/mostraUnaReceta'],{state:{usuario:this.usuario,recetaId:recetaId }});
+  }
 }
