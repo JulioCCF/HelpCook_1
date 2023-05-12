@@ -2,7 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { recetasService } from '../mostrar-recetas/recetasService.service';
 import { Receta } from 'src/app/Receta.model';
 import { Usuarios } from 'src/app/Usuarios.model';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 /**
  * Componente para la página de Inicio
@@ -12,8 +12,6 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.css']
 })
-
-
 export class InicioComponent implements OnInit{
 
 /**
@@ -37,11 +35,16 @@ export class InicioComponent implements OnInit{
    */
   recetasMasRecientes: Receta[];
 
+  /**
+   * objeto Usuario para recibir al usuario si llega a esta página una vez registrado
+   */
   usuario: Usuarios;
  
 /**
- * Injectamos el servicio para pasar y recibir datos a otro componente
- * @param miServicio. Servicio para conectar componentes
+ * Injectamos los servicios
+ * 
+ * @param recetasService Servicio para hacer la consulta al backend
+ * @param router Para el envio del Usuario a otras páginas
  */
   constructor(private router: Router, private recetasService: recetasService ){
 
@@ -91,7 +94,10 @@ export class InicioComponent implements OnInit{
     this.router.navigate(['/mostrarRecetas'],{state:{usuario:this.usuario,categoria:this.recetasXCategoria}});
   }
 
-
+  /**
+   * Método para el routing a la Página de mostrar una receta mandandole el usuario si está registrado y la receta que quiere visualizar
+   * @param recetaId Recibimos el id de la receta que queremos visualizar
+   */
   mandarUsuarioReceta(recetaId: number){
     console.log(recetaId)
     this.router.navigate(['/mostraUnaReceta'],{state:{usuario:this.usuario,recetaId:recetaId }});

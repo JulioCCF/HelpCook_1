@@ -144,6 +144,11 @@ anyadirValoracion(valoracion:Valoraciones){
   return this.http.post('http://localhost:8081/valoraciones', valoracion);
 }
 
+/**
+ * Método para la conexion con el back para añadir una receta como favorito a un Uusario
+ * @param favorito Recibimos los datos del Favorito con la receta y el usuario que la guarda
+ * @returns 
+ */
 agregarFavorito(favorito: Favoritos){
 
   console.log(favorito);

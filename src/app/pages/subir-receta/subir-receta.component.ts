@@ -1,5 +1,5 @@
 import { Component, EventEmitter } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import {  Router } from '@angular/router';
 import { recetasService } from '../mostrar-recetas/recetasService.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Ingredientes } from 'src/app/Ingredientes.model';
@@ -115,11 +115,10 @@ export class SubirRecetaComponent {
 
   /**
    * Constructor de la clase donde donde Injectamos los servicios necesarios
-   * @param route Routing para poder recibir el id del Usuario que va a subir la receta
+   * @param router Routing para poder recibir el Usuario que va a subir la receta
    * @param recetasService Servicio necesario para la optención de los datos de las recetas y los ingredientes
    */
   constructor(
-    private route: ActivatedRoute,
     private recetasService: recetasService,
     private router: Router
   ) {

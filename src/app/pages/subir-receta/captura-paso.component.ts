@@ -16,6 +16,7 @@ export class CapturaPasoComponent {
    */
   @Input() contadorPasos: number;
 
+  
   /**
    * Evento para mandar a SubirReceta los datos de la descripción y la foto del paso
    */

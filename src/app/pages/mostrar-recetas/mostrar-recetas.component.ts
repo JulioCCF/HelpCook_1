@@ -37,12 +37,14 @@ export class MostrarRecetasComponent implements OnInit {
   */
   recetas:Receta[] = [];
 
-
+/**
+ * Objeto usuario para recibirlo en la página si proviene de haberse registrado
+ */
   usuario: Usuarios;
     
   /**
    * Injectamos los servicios para pasar y recibir datos a otro componente y para la conexión con el Backend
-   * @param miServicio. Servicio para conectar componentes
+   * @param router Para el envio del Usuario a otras páginas
    * @param recetasService. Servicio para conectar con el Backend
    */
   constructor( private router: Router,
@@ -81,10 +83,17 @@ export class MostrarRecetasComponent implements OnInit {
    }
     }
     
+    /**
+     * Método para mandar el usuario a Inicio si se está registrado
+     */
     volverInicio(){
       this.router.navigate([''],{state:{usuario:this.usuario}});
     }
 
+    /**
+     * Método para mandar el usuario si está registrado y la recetas que se quiere visualizar a la página Mostrar una receta
+     * @param recetaId 
+     */
     mandarUsuarioReceta(recetaId: number){
       console.log(recetaId)
       this.router.navigate(['/mostraUnaReceta'],{state:{usuario:this.usuario,recetaId:recetaId }});

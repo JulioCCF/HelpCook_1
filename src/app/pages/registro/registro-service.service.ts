@@ -2,10 +2,6 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Usuarios } from 'src/app/Usuarios.model';
-import { UsuariosResponse } from 'src/app/UsuariosResponse.model';
-
-
-
 
 
 /**
@@ -59,22 +55,27 @@ export class RegistroService{
   
   
 /**
- * 
- * @param user Método para guardar el usuario
+ * Método para devolver el Usuario
+ * @param user Recibimos el Usuario
  */
   setCurrentUser(user: Usuarios) {
     this.currentUser = user;
   }
 
   /**
-   * 
-   * @returns Método para recuperar el usuario
+   * Método para capturar el usuario
+   * @returns Devolvemos el Usuario
    */
   getCurrentUser() {
     return this.currentUser;
   }
 
-
+/**
+ * Método para la conexión con el backend para la actualización de los datos de un Usuario
+ * @param users Recibimos el usuario modificado
+ * @param idUsuarios Recibimos el id del usuario que se va a modificar
+ * @returns Devolvemos el usuario ya modificado
+ */
   updateUser(users: Usuarios,idUsuarios:number){
 
     const url = `http://localhost:8081/usuarios/${idUsuarios}`;

@@ -41,12 +41,16 @@ export class LoginComponent implements OnInit{
   
   /**
    * Injectamos los servicios 
-   * @param router Para el envio del Usuario a la página del perfil
+   * @param router Para el envio del Usuario a otras páginas
    * @param registroService Servicio para hacer la consulta al backend
    */
   constructor(private router: Router, private registroService: RegistroService) {
     this.validado = false;
   }
+
+  /**
+   * Método que se ejecuta cuando se inicia la página
+   */
   ngOnInit(): void {
    
   }

@@ -72,7 +72,7 @@ export class MostrarUnaRecetaComponent implements OnInit {
   /**
    * Injectamos los servicios necesarios para el funcionamiento de la página
    *
-   * @param route Para poder acceder al párametro de la URL
+   * @param router Para el envio del Usuario a otras páginas
    * @param recetasService Servicio para conectar con el backEnd
    */
   constructor(private router: Router, private recetasService: recetasService) {
@@ -101,6 +101,14 @@ export class MostrarUnaRecetaComponent implements OnInit {
     });
   }
 
+  /**
+   * Método para añadir una valoración a la receta
+   * 
+   * recibimos la valoracion, creamos un Objeto valoración con el id de la receta que se valora y la valoración capturada 
+   * 
+   * y la mandamos al servicio para su inserción el la base de datos
+   * @param event 
+   */
   valorarReceta(event) {
     this.nuevaValoracion = event;
     let valoracion = new Valoraciones(
@@ -124,10 +132,20 @@ export class MostrarUnaRecetaComponent implements OnInit {
     );
   }
 
+  /**
+   * Método para mandar el usuario a la página de inicio a través del routing
+   */
   volverInicio() {
     this.router.navigate([''], { state: { usuario: this.usuario } });
   }
 
+  /**
+   * Método para añadir la receta a los favoritos de un Usuraio
+   * 
+   * creamos el Objeto Favorito con el id de la receta, la descripcion del favorito y el id del Usuario que la guarda
+   * 
+   * Mandamos la valoración al servicio para su inserción e informamos de si se ha realizado con éxito
+   */
   guardarReceta() {
     let favorito = new Favoritos(
       null,
@@ -136,7 +154,6 @@ export class MostrarUnaRecetaComponent implements OnInit {
       this.usuario.idUsuarios
     );
 
-    console.log(favorito);
 
     this.recetasService.agregarFavorito(favorito).subscribe(
       (response) => {
