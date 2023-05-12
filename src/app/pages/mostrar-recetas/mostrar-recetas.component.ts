@@ -79,8 +79,9 @@ export class MostrarRecetasComponent implements OnInit {
     this.categoria=true;
     this.recetasService.obtenerTodos(null,null,null,this.recetasAMostrar).subscribe(recetas=>
       {this.recetas = recetas;});
-     
    }
+
+ 
     }
     
     /**

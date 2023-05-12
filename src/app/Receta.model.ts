@@ -66,9 +66,8 @@ export class Receta{
      * Pasos necesarios para la elaboración de la receta.
      */
     public pasosResponse: Pasos[];  
-
-    
-    
+ 
+ 
 
     /**
      * Crea una instancia de la clase Receta.

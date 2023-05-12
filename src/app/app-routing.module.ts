@@ -16,12 +16,10 @@ const routes: Routes = [
   {path:'registro',component:RegistroComponent},
   {path:'login',component:LoginComponent},
   {path:'subirReceta',component:SubirRecetaComponent},
-  {path:'subirReceta/:idUsuario',component:SubirRecetaComponent},
   {path:'perfil',component:PerfilComponent},
   {path:'mostrarRecetas',component:MostrarRecetasComponent},
   {path:'mostraUnaReceta',component:MostrarUnaRecetaComponent},
   {path: 'mostraUnaReceta/:idRecetas', component: MostrarUnaRecetaComponent },
-  { path: 'perfil/:idUsuario', component: PerfilComponent },
   {path: 'editarPerfil', component: EditarPerfilComponent}
 ];
 

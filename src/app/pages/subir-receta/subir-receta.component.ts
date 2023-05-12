@@ -178,7 +178,7 @@ export class SubirRecetaComponent {
     }
 
     this.fechaAlta = new Date(`${anyo}-${mes}-${dia}T${hora}:${minutos}:${segundos}`);
-    console.log(this.fechaAlta);
+
   }
 
   /**
@@ -280,8 +280,6 @@ export class SubirRecetaComponent {
    */
   onPasoAgregado(paso: { descripcion: string; foto: string }) {
     const tipo = this.pasos.length + 1;
-
-    console.log(tipo);
 
     this.pasos.push(new Pasos(null, null, tipo, paso.descripcion, paso.foto));
   }
