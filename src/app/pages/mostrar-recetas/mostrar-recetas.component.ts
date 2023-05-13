@@ -3,7 +3,7 @@ import { Receta } from 'src/app/Receta.model';
 import { recetasService } from './recetasService.service';
 import { Usuarios } from 'src/app/Usuarios.model';
 import { Router } from '@angular/router';
-
+import { FechaPipe } from 'src/app/fecha.pipe';
 
 /**
  * Componente para la Página de mostrar Recetas
@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
   selector: 'app-mostrar-recetas',
   templateUrl: './mostrar-recetas.component.html',
   styleUrls: ['./mostrar-recetas.component.css'],
+  providers: [FechaPipe]
 })
 
 export class MostrarRecetasComponent implements OnInit {

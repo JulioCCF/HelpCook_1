@@ -42,6 +42,7 @@ export class Ingredientes{
      * @param nombre Nombre del ingrediente.
      * @param tipo Tipo de ingrediente (opcional).
      * @param recetas Recetas en las que se utiliza este ingrediente.
+     * @param seleccionado Si ha sido seleccionado el ingrediente o no en el menu
      */
     constructor(idIngredientes: number, nombre: string, tipo: string, cantidad: string, recetas: Receta[], seleccionado: boolean) {
         this.idIngredientes = idIngredientes;

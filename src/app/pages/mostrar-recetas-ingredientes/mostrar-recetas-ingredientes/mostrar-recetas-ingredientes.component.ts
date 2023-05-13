@@ -5,6 +5,10 @@ import { Usuarios } from 'src/app/Usuarios.model';
 import { Router } from '@angular/router';
 import { recetasService } from '../../mostrar-recetas/recetasService.service';
 
+
+/**
+ * Componente para la página donde se mostrarán las recetas filtradas por ingredientes
+ */
 @Component({
   selector: 'app-mostrar-recetas-ingredientes',
   templateUrl: './mostrar-recetas-ingredientes.component.html', 
@@ -27,9 +31,13 @@ export class MostrarRecetasIngredientesComponent implements OnInit{
  */
   usuario: Usuarios;
 
+  /**
+   * Injectamos los servicios necesarios para el funcionamiento de la página
+   * @param recetasService Servicio para la conexion con el back para la recepción de las recetas
+   * @param router  Para el envio del Usuario a otras páginas
+   */
   constructor(private recetasService: recetasService, private router: Router) { 
-    const navigationState = history.state;
-    this.ingredientesSeleccionados = navigationState.idIngredientes;
+    this.usuario=null;
   }
 
   /**
@@ -40,7 +48,10 @@ export class MostrarRecetasIngredientesComponent implements OnInit{
    *
    */
   ngOnInit(): void {
-        
+    const navigationState = history.state;
+    this.usuario = history.state.usuario;
+    this.ingredientesSeleccionados = navigationState.idIngredientes;    
+
     console.log(this.ingredientesSeleccionados);
     this.recetasService.obtenerTodos(null,this.ingredientesSeleccionados,null, null).subscribe(recetas=>
       {this.recetas = recetas;});
@@ -52,10 +63,13 @@ export class MostrarRecetasIngredientesComponent implements OnInit{
      * @param recetaId 
      */
   mandarUsuarioReceta(recetaId: number){
-    console.log(recetaId)
+  
     this.router.navigate(['/mostraUnaReceta'],{state:{usuario:this.usuario,recetaId:recetaId }}); 
   }
 
+    /**
+   * Método para el routing a la página de inicio mandando al Usuario
+   */
   volverInicio(){
     this.router.navigate([''],{state:{usuario:this.usuario}});
   }

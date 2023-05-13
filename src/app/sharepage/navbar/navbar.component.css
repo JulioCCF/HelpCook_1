@@ -104,16 +104,14 @@
     width: 160px;
     height: 30px;
     justify-content: center;
+    margin-top: 30px;
 }
-
-.ingredientes-container {
-    text-align: center;
-  }
-  
+ 
   .tipo {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
+    margin-top: 20px;
   }
   
   .grupo-ingredientes {

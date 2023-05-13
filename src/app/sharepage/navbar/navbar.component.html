@@ -45,8 +45,8 @@
       </div>
       <div class="offcanvas-body" style="background-color: #f5f6ed; height: 100vh; overflow-y: auto;">
         <!-- Menu items -->
-        <div class="ingredientes-container">
-          <ng-container *ngFor="let ingrediente of ingredientes">
+        <div class = "row">
+          <ng-container *ngFor="let ingrediente of ingredientes; let i = index">
             <!-- Verificar si el tipo ha cambiado -->
             <ng-container *ngIf="tipoCambiado(ingrediente.tipo)">
               <!-- Establecer el nuevo tipo actual -->
@@ -54,16 +54,33 @@
               <div class="tipo">{{ ingrediente.tipo }}</div>
             </ng-container>
             <!-- Mostrar los ingredientes en grupos de tres -->
-            <ul class="grupo-ingredientes">
-              <li>
+            <ng-container *ngIf="(i + 1) % 3 === 1">
+            <div class = "col - 4">
                 <label>
                   <input type="checkbox" [(ngModel)]="ingrediente.seleccionado"> 
                   {{ ingrediente.nombre }}
                 </label>
-              </li>
-            </ul>
+            </div> 
+          </ng-container>
+          <ng-container *ngIf="(i + 1) % 3 === 2">
+            <div class="col-4">
+              <label>
+                <input type="checkbox" [(ngModel)]="ingrediente.seleccionado"> 
+                {{ ingrediente.nombre }}
+              </label>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="(i + 1) % 3 === 0">
+            <div class="col-4">
+              <label>
+                <input type="checkbox" [(ngModel)]="ingrediente.seleccionado"> 
+                {{ ingrediente.nombre }}
+              </label>
+            </div>
+          </ng-container>
           </ng-container>
         </div>
+      
         <div class="col" style="text-align: center;">
           <button class="btn-recetas" type="submit" (click)="obtenerRecetasIngredientes()"><a class="nav-link">BUSCAR RECETAS</a></button>
         </div>
