@@ -41,6 +41,9 @@ export class NavbarComponent implements OnInit {
  */
   usuario: Usuarios[] = [];
 
+
+
+
    /**
     * Injectamos los servicios necesarios para el funcionamiento de la página
     * @param NavbarService Servicio del componente para la obtención de los ingredientes
@@ -60,6 +63,7 @@ export class NavbarComponent implements OnInit {
     ngOnInit(): void {
         this.NavbarService.obtenerIngredientes(null).subscribe(ingredientes=>
           {this.ingredientes = ingredientes;});
+          
     }
 
     /**
@@ -78,6 +82,8 @@ export class NavbarComponent implements OnInit {
     setTipoActual(tipo: string) {
       this.tipoActual = tipo;
     }
+
+
 
     /**
      * Metodo para pasar el array de idIngrediente
