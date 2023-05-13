@@ -5,6 +5,10 @@ import { Usuarios } from 'src/app/Usuarios.model';
 import { Router } from '@angular/router';
 import { recetasService } from '../../mostrar-recetas/recetasService.service';
 
+
+/**
+ * Componente para la página donde se mostrarán las recetas filtradas por ingredientes
+ */
 @Component({
   selector: 'app-mostrar-recetas-ingredientes',
   templateUrl: './mostrar-recetas-ingredientes.component.html', 
