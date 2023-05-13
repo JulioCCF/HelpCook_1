@@ -33,10 +33,11 @@
       <button class="btn-guardar" (click)="guardarReceta()"><i class="bi bi-bookmark-heart"></i> Guardar receta</button>
     </div>
   </div>
+  
+
   <div class="listas" style="margin-top: 80px;">
     <ul class="receta-list">
       <h2 class="receta-list-title">Ingredientes</h2>
-
       <!-- Para mostrar los ingredientes -->
       <span *ngIf="!ingredientes.length">¡Ups! Todavía tenemos que buscar los ingredientes.</span>
       <li *ngFor="let ingrediente of ingredientes" class="receta-ingrediente">

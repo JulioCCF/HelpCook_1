@@ -3,7 +3,6 @@ import { Receta } from 'src/app/Receta.model';
 import { recetasService } from './recetasService.service';
 import { Usuarios } from 'src/app/Usuarios.model';
 import { Router } from '@angular/router';
-import { FechaPipe } from 'src/app/fecha.pipe';
 
 
 /**
@@ -15,7 +14,6 @@ import { FechaPipe } from 'src/app/fecha.pipe';
   selector: 'app-mostrar-recetas',
   templateUrl: './mostrar-recetas.component.html',
   styleUrls: ['./mostrar-recetas.component.css'],
-  providers: [FechaPipe]
 })
 
 export class MostrarRecetasComponent implements OnInit {
@@ -81,9 +79,8 @@ export class MostrarRecetasComponent implements OnInit {
     this.categoria=true;
     this.recetasService.obtenerTodos(null,null,null,this.recetasAMostrar).subscribe(recetas=>
       {this.recetas = recetas;});
+     
    }
-
- 
     }
     
     /**

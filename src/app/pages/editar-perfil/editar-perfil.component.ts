@@ -3,7 +3,7 @@ import { Usuarios } from 'src/app/Usuarios.model';
 import { RegistroService } from '../registro/registro-service.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
-
+import { UsuariosResponse } from 'src/app/UsuariosResponse.model';
 
 
 /**

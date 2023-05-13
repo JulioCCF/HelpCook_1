@@ -46,9 +46,9 @@ export class recetasService {
       param += 'categoria=' + recetasAMostrar;
     }
     if (idIngredientes != null && param != '') {
-      param += '&idIngredientes=' + idIngredientes;
+      param += '&idIngredientes=' + idIngredientes.map(ingrediente => ingrediente.idIngredientes).join(',');
     } else if (idIngredientes != null && param == '') {
-      param += 'idIngredientes=' + idIngredientes;
+      param += 'idIngredientes=' + idIngredientes.map(ingrediente => ingrediente.idIngredientes).join(',');
     }
 
     if (idUsuario != null && param != '') {
