@@ -9,7 +9,7 @@ export class Ingredientes{
     /**
      * Identificador único del ingrediente.
      */
-    public idIngrediente : number;
+    public idIngredientes : number;
 
     /**
      * Nombre del ingrediente.
@@ -38,13 +38,13 @@ export class Ingredientes{
 
     /**
      * Crea una instancia de la clase Ingredientes.
-     * @param idIngrediente Identificador único del ingrediente.
+     * @param idIngredientes Identificador único del ingrediente.
      * @param nombre Nombre del ingrediente.
      * @param tipo Tipo de ingrediente (opcional).
      * @param recetas Recetas en las que se utiliza este ingrediente.
      */
-    constructor(idIngrediente: number, nombre: string, tipo: string, cantidad: string, recetas: Receta[], seleccionado: boolean) {
-        this.idIngrediente = idIngrediente;
+    constructor(idIngredientes: number, nombre: string, tipo: string, cantidad: string, recetas: Receta[], seleccionado: boolean) {
+        this.idIngredientes = idIngredientes;
         this.nombre = nombre;
         this.tipo = tipo;
         this.cantidad = cantidad;

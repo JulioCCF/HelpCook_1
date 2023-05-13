@@ -1,29 +1,23 @@
 <!-- Seccion logo -->
 <div class="text-center" style="margin-top: 30px">
-    <a class="nav-link" (click)="volverInicio()"
-      ><img src="/assets/img/logo.png" class="w-25" alt=""
-    /></a>
-  </div>
+  <a class="nav-link" (click)="volverInicio()"
+    ><img src="/assets/img/logo.png" class="w-25" alt=""
+  /></a>
+</div>
   <!-- Titulo de las recetas que se van a mostrar -->
   <div class="container rounded receta">
-      <h1  *ngIf="categoria; else sinCategoria"
-      >
-        {{ recetasAMostrar }}
-      </h1>
-      <ng-template #sinCategoria>
         <h1>
-         Recetas de {{recetasXCategoria}} 
+        Estas son las recetas en base a los ingredientes que has seleccionado
         </h1>
-      </ng-template> 
   </div>
-  
+
   <!-- Recetas que se muestran -->
-    <div class="container pt-5 " style="margin-top: 50px;" *ngFor="let receta of recetas" >
-  
-   <!-- Titulo-->   
+  <div class="container pt-5 " style="margin-top: 50px;" *ngFor="let receta of recetas" >
+    
+    <!-- Titulo-->   
         <div class="row  rounded outer">
           <div class="col-md-10 text-center titulo" >
-             {{ receta.titulo }} 
+              {{ receta.titulo }} 
           </div>
   <!-- Valoracion -->  
           <div class="col-md-2" style="margin-top: 50px;" >
@@ -35,7 +29,7 @@
                 <i class="bi bi-star-fill" style="margin: 2px; color:#d4d0c4"></i>
               </ng-template>
             </bar-rating>
-         </div>
+          </div>
   <!-- Foto-->  
           <div class="col-md-6" style="margin-top: 40px;" >
               <input type="image" 
@@ -54,6 +48,4 @@
             {{receta.fechaAlta}}
           </div>
       </div>
-    </div>
-  
-  
+    </div> 

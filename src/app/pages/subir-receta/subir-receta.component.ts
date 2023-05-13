@@ -178,7 +178,7 @@ export class SubirRecetaComponent {
     }
 
     this.fechaAlta = new Date(`${anyo}-${mes}-${dia}T${hora}:${minutos}:${segundos}`);
-
+    console.log(this.fechaAlta);
   }
 
   /**
@@ -245,7 +245,7 @@ export class SubirRecetaComponent {
       this.ingredientes.push(ingXtipo);
     } else {
       const index = this.ingredientes.findIndex(
-        (i) => i.idIngrediente === ingXtipo.idIngrediente
+        (i) => i.idIngredientes === ingXtipo.idIngrediente
       );
       this.ingredientes.splice(index, 1);
     }
@@ -257,7 +257,7 @@ export class SubirRecetaComponent {
    */
   setCantidad(cantidad: any, ingXTipo: Ingredientes) {
     const ingredienteseleccionado = this.ingredientes.find(
-      (i) => i.idIngrediente === ingXTipo.idIngrediente
+      (i) => i.idIngredientes === ingXTipo.idIngredientes
     );
     if (typeof cantidad === 'string') {
       ingXTipo.cantidad = cantidad;
@@ -280,6 +280,8 @@ export class SubirRecetaComponent {
    */
   onPasoAgregado(paso: { descripcion: string; foto: string }) {
     const tipo = this.pasos.length + 1;
+
+    console.log(tipo);
 
     this.pasos.push(new Pasos(null, null, tipo, paso.descripcion, paso.foto));
   }

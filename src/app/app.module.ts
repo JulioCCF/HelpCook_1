@@ -17,7 +17,7 @@ import { MostrarUnaRecetaComponent } from './pages/mostrar-una-receta/mostrar-un
 import { recetasService } from './pages/mostrar-recetas/recetasService.service';
 import { EditarPerfilComponent } from './pages/editar-perfil/editar-perfil.component';
 import { CapturaPasoComponent } from './pages/subir-receta/captura-paso.component';
-import { FechaPipe } from './fecha.pipe';
+import { MostrarRecetasIngredientesComponent } from './pages/mostrar-recetas-ingredientes/mostrar-recetas-ingredientes/mostrar-recetas-ingredientes.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,7 @@ import { FechaPipe } from './fecha.pipe';
     MostrarUnaRecetaComponent,
     EditarPerfilComponent,
     CapturaPasoComponent,
-    FechaPipe
+    MostrarRecetasIngredientesComponent
   ],
   imports: [
     BrowserModule,

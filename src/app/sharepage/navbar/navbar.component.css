@@ -95,3 +95,42 @@
     color: #3c240d;
     font-size: 18px;
 }
+
+.btn-recetas {
+    background-color: #8b9a8a;
+    color: #fff;
+    border-radius: 10px; 
+    border: #8b9a8a;
+    width: 160px;
+    height: 30px;
+    justify-content: center;
+}
+
+.ingredientes-container {
+    text-align: center;
+  }
+  
+  .tipo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .grupo-ingredientes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .grupo-ingredientes li {
+    flex-basis: calc(50% - 1px); /* Cada ingrediente ocupa un tercio del contenedor con un espacio de 20px entre ellos */
+    margin: 1px;
+  }
+  
+  .grupo-ingredientes label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
