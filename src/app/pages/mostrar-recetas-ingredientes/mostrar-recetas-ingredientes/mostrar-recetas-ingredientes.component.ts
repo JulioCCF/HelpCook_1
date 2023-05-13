@@ -31,6 +31,11 @@ export class MostrarRecetasIngredientesComponent implements OnInit{
  */
   usuario: Usuarios;
 
+  /**
+   * Injectamos los servicios necesarios para el funcionamiento de la página
+   * @param recetasService Servicio para la conexion con el back para la recepción de las recetas
+   * @param router  Para el envio del Usuario a otras páginas
+   */
   constructor(private recetasService: recetasService, private router: Router) { 
     const navigationState = history.state;
     this.ingredientesSeleccionados = navigationState.idIngredientes;
@@ -56,10 +61,13 @@ export class MostrarRecetasIngredientesComponent implements OnInit{
      * @param recetaId 
      */
   mandarUsuarioReceta(recetaId: number){
-    console.log(recetaId)
+  
     this.router.navigate(['/mostraUnaReceta'],{state:{usuario:this.usuario,recetaId:recetaId }}); 
   }
 
+    /**
+   * Método para el routing a la página de inicio mandando al Usuario
+   */
   volverInicio(){
     this.router.navigate([''],{state:{usuario:this.usuario}});
   }

@@ -41,9 +41,11 @@ export class NavbarComponent implements OnInit {
  */
   usuario: Usuarios[] = [];
 
-    /**
-   * Crea una instancia de la clase NavbarComponent y Router.
-   */
+   /**
+    * Injectamos los servicios necesarios para el funcionamiento de la página
+    * @param NavbarService Servicio del componente para la obtención de los ingredientes
+    * @param router Para el envio del Usuario a otras páginas
+    */
     constructor(private NavbarService: NavbarService, private router: Router) {
 
     }
@@ -60,17 +62,26 @@ export class NavbarComponent implements OnInit {
           {this.ingredientes = ingredientes;});
     }
 
-    // Función para verificar si el tipo actual ha cambiado
+    /**
+     * Función para verificar si el tipo actual ha cambiado
+     * @param tipo 
+     * @returns 
+     */
     tipoCambiado(tipo: string): boolean {
       return tipo !== this.tipoActual;
     }
 
-    // Método para establecer el tipo actual
+    /**
+     * Método para establecer el tipo actual
+     * @param tipo 
+     */
     setTipoActual(tipo: string) {
       this.tipoActual = tipo;
     }
 
-    //Metodo para pasar el array de idIngrediente
+    /**
+     * Metodo para pasar el array de idIngrediente
+     */
     obtenerRecetasIngredientes(){
       const nuevosIngredientes: Ingredientes[] = [];
 
