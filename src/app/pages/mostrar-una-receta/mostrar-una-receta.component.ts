@@ -90,8 +90,6 @@ export class MostrarUnaRecetaComponent implements OnInit {
     const navigationState = history.state;
     this.usuario = navigationState.usuario;
     this.idRecetas = navigationState.recetaId;
-    console.log(this.usuario);
-    console.log(this.idRecetas);
 
     this.recetasService.obtener(this.idRecetas).subscribe((receta) => {
       this.receta = receta;

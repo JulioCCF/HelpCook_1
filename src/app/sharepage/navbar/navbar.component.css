@@ -122,13 +122,15 @@
     padding: 0;
   }
   
-  .grupo-ingredientes li {
-    flex-basis: calc(50% - 1px); /* Cada ingrediente ocupa un tercio del contenedor con un espacio de 20px entre ellos */
-    margin: 1px;
-  }
+
   
   .grupo-ingredientes label {
     display: block;
     margin-bottom: 5px;
   }
   
+  .col-6 {
+    width: 50%;
+    box-sizing: border-box;
+    padding-right: 10px;
+  }

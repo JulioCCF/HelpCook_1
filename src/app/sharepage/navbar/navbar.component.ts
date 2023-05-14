@@ -42,6 +42,9 @@ export class NavbarComponent implements OnInit {
   usuario: Usuarios[] = [];
 
 
+  numIngredientesMostrar:number = 9;
+
+
 
 
    /**
@@ -66,6 +69,8 @@ export class NavbarComponent implements OnInit {
           
     }
 
+
+
     /**
      * Función para verificar si el tipo actual ha cambiado
      * @param tipo 
@@ -84,6 +89,9 @@ export class NavbarComponent implements OnInit {
     }
 
 
+    mostrarMas(tipo: string) {
+      
+    }
 
     /**
      * Metodo para pasar el array de idIngrediente

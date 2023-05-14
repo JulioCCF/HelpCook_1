@@ -140,7 +140,6 @@ export class SubirRecetaComponent {
   ngOnInit(): void {
     this.usuario = history.state.usuario;
 
-    console.log(this.usuario);
     this.recetasService
       .obtenerTodosIngredientes(null)
       .subscribe((ingredientesMostrar) => {
