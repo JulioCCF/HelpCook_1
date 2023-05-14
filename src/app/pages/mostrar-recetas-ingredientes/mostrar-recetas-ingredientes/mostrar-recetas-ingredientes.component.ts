@@ -37,8 +37,7 @@ export class MostrarRecetasIngredientesComponent implements OnInit{
    * @param router  Para el envio del Usuario a otras páginas
    */
   constructor(private recetasService: recetasService, private router: Router) { 
-    const navigationState = history.state;
-    this.ingredientesSeleccionados = navigationState.idIngredientes;
+    this.usuario=null;
   }
 
   /**
@@ -49,7 +48,10 @@ export class MostrarRecetasIngredientesComponent implements OnInit{
    *
    */
   ngOnInit(): void {
-        
+    const navigationState = history.state;
+    this.usuario = history.state.usuario;
+    this.ingredientesSeleccionados = navigationState.idIngredientes;    
+
     console.log(this.ingredientesSeleccionados);
     this.recetasService.obtenerTodos(null,this.ingredientesSeleccionados,null, null).subscribe(recetas=>
       {this.recetas = recetas;});
