@@ -177,7 +177,7 @@ export class SubirRecetaComponent {
     }
 
     this.fechaAlta = new Date(`${anyo}-${mes}-${dia}T${hora}:${minutos}:${segundos}`);
-    console.log(this.fechaAlta);
+  
   }
 
   /**

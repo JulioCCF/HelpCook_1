@@ -55,7 +55,7 @@
       id="offcanvasExample"
       aria-labelledby="offcanvasExampleLabel"
     >
-      <div class="offcanvas-header" style="background-color: #d4d0c4">
+      <div class="offcanvas-header" style="background-color: #8b9a8a; color: #f5f6ed">
         <h4 class="offcanvas-title fw-bold" id="offcanvasExampleLabel">
           Ingredientes
         </h4>
@@ -71,37 +71,35 @@
         style="background-color: #f5f6ed; height: 100vh; overflow-y: auto"
       >
       <!--Menú-->
-      <div class="row">
-        <ng-container *ngFor="let ingrediente of ingredientes; let i = index">
-          <!-- Verificar si el tipo ha cambiado -->
-          <ng-container *ngIf="tipoCambiado(ingrediente.tipo)">
-            <!-- Establecer el nuevo tipo actual -->
-            {{ setTipoActual(ingrediente.tipo) }}
-            <div class="tipo">{{ ingrediente.tipo }}</div>
+<div class="row">
+  <!--Mostrar tipos-->
+  <ng-container *ngFor="let tipoIngrediente of tiposUnicos">
+   
+    <div class="tipos "(click)="tipo(tipoIngrediente)">{{ tipoIngrediente }}</div>
+  
+    <div *ngIf="tipoActual === tipoIngrediente" class="ingredientes">
+      <div class="form-check" style="margin-top: 20px">
+        <div class="row">
+          <ng-container *ngFor="let ingXTipo of ingredientesXTipo | slice:0:ingredientesAMostrar">
+            <div class="col-6">
+              <input class="form-check-input" type="checkbox" id="{{ ingXTipo.idIngredientes }}" [checked]="ingXTipo.seleccionado"
+                value="{{ ingXTipo.idIngredientes }}" (change)="ingSelect(ingXTipo)" />
+              {{ ingXTipo.nombre }}
+            </div>
           </ng-container>
-          <div class="row"></div>
-          <!-- Mostrar los ingredientes en grupos de dos -->
-          <div class="row">
-            <ng-container *ngIf="i % 2 === 0">
-              <div class="col-6" style="margin-top: 10px;">
-                <label>
-                  <input type="checkbox" [(ngModel)]="ingrediente.seleccionado" />
-                  {{ ingrediente.nombre }}
-                </label>
-              </div>
-              <ng-container *ngIf="i + 1 < ingredientes.length">
-                <div class="col-6" style="margin-top: 10px;">
-                  <label>
-                    <input type="checkbox" [(ngModel)]="ingredientes[i + 1].seleccionado" />
-                    {{ ingredientes[i + 1].nombre }}
-                  </label>
-                </div>
-              </ng-container>
-            </ng-container>
-          </div>
-        </ng-container>
+        </div>
+        <span class="mostrar-mas" *ngIf="ingredientesXTipo.length > ingredientesAMostrar" (click)="ingredientesAMostrar = ingredientesAMostrar + 8">Mostrar más</span>
       </div>
+    </div>
+  </ng-container>
+  
+</div>
 
+
+
+
+
+<!--Botón para mostrar las recetas-->
         <div class="col" style="text-align: center">
           <button
             class="btn-recetas"

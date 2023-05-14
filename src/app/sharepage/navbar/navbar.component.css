@@ -1,136 +1,116 @@
 /* Barra de navegación */
 
 .navbar {
-    padding: 1rem;
-    background-color: #f5f6ed;
+  padding: 1rem;
+  background-color: #f5f6ed;
 }
-
 
 .navbar-collapse {
-    align-items: center;
+  align-items: center;
 }
-
 
 /* Estilo registro */
 
 .btn-reg {
-    background-color: #8b9a8a;
-    color: #fff;
-    border-radius: 10px; 
-    border: #8b9a8a;
-    width: 140px;
-    height: 30px;
+  background-color: #8b9a8a;
+  color: #fff;
+  border-radius: 10px;
+  border: #8b9a8a;
+  width: 140px;
+  height: 30px;
 }
 
 /* Estilo login */
 
 .btn-login {
-    background-color: #8b9a8a;
-    color: #fff;
-    border-radius: 10px; 
-    border: #8b9a8a;
-    width: 140px;
-    height: 30px;
+  background-color: #8b9a8a;
+  color: #fff;
+  border-radius: 10px;
+  border: #8b9a8a;
+  width: 140px;
+  height: 30px;
 }
 
 /* Estilo columnas de la barra de navegación */
 
 .col {
-    align-items: center;
-    justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* Estilo iconos de contacto */
 
 .seccion-instagram a {
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2px;
-    border-radius: 50%;
-    transition: all 0.2s ease-in;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border-radius: 50%;
+  transition: all 0.2s ease-in;
 }
 
 .bi-instagram {
-    color: #3c240d;
+  color: #3c240d;
 }
 
 .seccion-facebook a {
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2px;
-    border-radius: 50%;
-    transition: all 0.2s ease-in;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border-radius: 50%;
+  transition: all 0.2s ease-in;
 }
 
 .bi-facebook {
-    color: #3c240d;
+  color: #3c240d;
 }
 
 .seccion-twitter a {
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2px;
-    border-radius: 50%;
-    transition: all 0.2s ease-in;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border-radius: 50%;
+  transition: all 0.2s ease-in;
 }
 
 .bi-twitter {
-    color: #3c240d;
+  color: #3c240d;
 }
 
 .form-check-label {
-    font-size: 18px;
+  font-size: 18px;
 }
 
-.btn-mostrarmas {
-    color: #3c240d;
-    font-size: 18px;
+.mostrar-mas {
+  color: #3c240d;
+  font-size: 20px;
+  text-decoration: underline;
 }
 
 .btn-recetas {
-    background-color: #8b9a8a;
-    color: #fff;
-    border-radius: 10px; 
-    border: #8b9a8a;
-    width: 160px;
-    height: 30px;
-    justify-content: center;
-    margin-top: 30px;
+  background-color: #8b9a8a;
+  color: #fff;
+  border-radius: 10px;
+  border: #8b9a8a;
+  width: 160px;
+  height: 30px;
+  justify-content: center;
+  margin-top: 30px;
 }
- 
-  .tipo {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    margin-top: 20px;
-  }
-  
-  .grupo-ingredientes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    list-style-type: none;
-    padding: 0;
-  }
-  
 
-  
-  .grupo-ingredientes label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .col-6 {
-    width: 50%;
-    box-sizing: border-box;
-    padding-right: 10px;
-  }
+.tipos {
+    background-color: #d4d0c4;
+    padding: 10px;
+    margin-top: 25px;
+    font-weight: bold;
+    width: 100%;
+}
+

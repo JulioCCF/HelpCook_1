@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Ingredientes } from 'src/app/Ingredientes.model';
 import { NavbarService } from 'src/app/sharepage/navbar/navbar-service.service';
 import { Usuarios } from 'src/app/Usuarios.model';
+import { recetasService } from 'src/app/pages/mostrar-recetas/recetasService.service';
 
 /**
  * Componente que representa la barra de navegación de la aplicación.
@@ -41,10 +42,25 @@ export class NavbarComponent implements OnInit {
  */
   usuario: Usuarios[] = [];
 
+/**
+ * Variable para mostrar la lista de ingredientes de 8 en 8
+ */
+  ingredientesAMostrar:number = 8;
 
-  numIngredientesMostrar:number = 9;
+/**
+ * Array para almacenar los tipos de ingredientes sin repetir
+ */
+  tiposUnicos:string [];
 
+/**
+ * Array para almacenar los ingredientes de un tipo
+ */
+  ingredientesXTipo: Ingredientes[];
 
+/**
+ * Variable para saber si el ingredeinte ha sido seleccionado
+ */
+  tipoSeleccionado: string;
 
 
    /**
@@ -52,46 +68,69 @@ export class NavbarComponent implements OnInit {
     * @param NavbarService Servicio del componente para la obtención de los ingredientes
     * @param router Para el envio del Usuario a otras páginas
     */
-    constructor(private NavbarService: NavbarService, private router: Router) {
+    constructor(private NavbarService: NavbarService, private router: Router, private recetasService: recetasService) {
 
     }
 
     /**
    * Metodo que se carga al iniciar la página
    * 
-   * LLamamos al metodo obtener ingredientes para obtener los ingredientes que 
-   * estaran en el menu del navbar y que el usuario pueda filtrar recetas en base a los ingredientes que elija
+   * LLamamos al metodo obtener ingredientes para obtener los ingredientes y a la vez 
+   * 
+   * que los recibimos los filtramos para obtener los tipos metiendolos en un array sin repetirlos
+   * 
    * 
    */
     ngOnInit(): void {
         this.NavbarService.obtenerIngredientes(null).subscribe(ingredientes=>
-          {this.ingredientes = ingredientes;});
+          {this.ingredientes = ingredientes;
+
+          const tipos = this.ingredientes.map(
+            (ingrediente) => ingrediente.tipo
+          );
+          this.tiposUnicos = tipos.filter(
+            (tipo, index) => tipos.indexOf(tipo) === index
+          );
+        });
           
     }
 
-
-
     /**
-     * Función para verificar si el tipo actual ha cambiado
-     * @param tipo 
-     * @returns 
+     * Método para recuperar de la base de datos los ingredientes por su tipo y controlar la pulsación del tipo de ingrediente
+     * 
+     * reseteamos el número de ingredientes a mostrar para que pueda ser visible en las demás iteraciones
+     * @param tipoIngrediente recibimos el tipo de los ingredientes que se quieren mostrar
      */
-    tipoCambiado(tipo: string): boolean {
-      return tipo !== this.tipoActual;
+    tipo(tipoIngrediente) {
+      if (tipoIngrediente === this.tipoActual) {
+        this.tipoActual = null;
+      } else {
+      this.tipoActual = tipoIngrediente;
+      this.ingredientesAMostrar = 8;
+      this.recetasService.obtenerTodosIngredientes(tipoIngrediente).subscribe((ingredientesXTipo) => {
+        this.ingredientesXTipo = ingredientesXTipo.filter((ingrediente) => ingrediente.tipo === tipoIngrediente);
+      });
+    }
     }
 
-    /**
-     * Método para establecer el tipo actual
-     * @param tipo 
-     */
-    setTipoActual(tipo: string) {
-      this.tipoActual = tipo;
-    }
+  
+  /**
+   * Método para añadir al array de ingredientes los ingredientes que seleccione el usuario
+   * @param ingXtipo recibimos el ingrediente que se ha seleccionado en el check box
+   */
+ingSelect(ingXtipo){
+  ingXtipo.seleccionado = !ingXtipo.seleccionado;
 
+  if (ingXtipo.seleccionado) {
+    this.ingredientes.push(ingXtipo);
+  } else {
+    const index = this.ingredientes.findIndex(
+      (i) => i.idIngredientes === ingXtipo.idIngrediente
+    );
+    this.ingredientes.splice(index, 1);
+  }
+}
 
-    mostrarMas(tipo: string) {
-      
-    }
 
     /**
      * Metodo para pasar el array de idIngrediente
