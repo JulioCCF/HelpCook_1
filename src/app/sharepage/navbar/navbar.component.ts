@@ -40,7 +40,7 @@ export class NavbarComponent implements OnInit {
   /**
  * Objeto usuario para recibirlo en la página si proviene de haberse registrado
  */
-  usuario: Usuarios[] = [];
+  usuario: Usuarios;
 
 /**
  * Variable para mostrar la lista de ingredientes de 8 en 8
