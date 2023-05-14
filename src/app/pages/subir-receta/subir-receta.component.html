@@ -81,14 +81,19 @@
       </select>
       <!-- Selección Ingredientes y su cantidad--->
       <div class="form-check" *ngIf="tipoSeleccionado" style="margin-top: 15px">
-        <div *ngFor="let ingXTipo of ingredientesXTipo">
+        <div *ngFor="let ingXTipo of ingredientesXTipo | slice:0:numIngrAMostrar ">
           <input class="form-check-input" type="checkbox" id="{{ ingXTipo.idIngredientes }}"
             [checked]="ingXTipo.seleccionado" value="{{ ingXTipo.idIngredientes }}" (change)="ingSelect(ingXTipo)" />{{
           ingXTipo.nombre }}
-          <input *ngIf="ingXTipo.seleccionado" class="form-control" type="text" name="ingr{{ ingXTipo.idIngredientes }}"
+          <input *ngIf="ingXTipo.seleccionado && ingredientesXTipo.length > 0" class="form-control" type="text" name="ingr{{ ingXTipo.idIngredientes }}"
             id="cantidad{{ ingXTipo.idIngredientes }}" placeholder="Cantidad" [value]="ingXTipo.cantidad"
             (input)="setCantidad($event.target['value'], ingXTipo)" />
         </div>
+        <span
+        class="mostrar-mas"
+        (click)="mostrarIngredientes()"
+        >Mostrar más</span
+      >
       </div>
     </div>
     <!--Panel que muestra los ingredientes seleccionados-->

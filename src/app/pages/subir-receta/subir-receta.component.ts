@@ -104,6 +104,11 @@ export class SubirRecetaComponent {
   ingredientes: Ingredientes[];
 
   /**
+   * Variable para controlar los ingredeinets que se muestran
+   */
+  numIngrAMostrar: number = 5;
+
+  /**
    * Variable para mostrar si la receta se ha agregado a la base de datos
    */
   subidaCorrectamente: boolean;
@@ -224,6 +229,7 @@ export class SubirRecetaComponent {
   tipo(event: any) {
     const tipoSeleccionado = event.target.value;
     this.tipoSeleccionado = tipoSeleccionado;
+    this.numIngrAMostrar = 5;
     this.recetasService
       .obtenerTodosIngredientes(tipoSeleccionado)
       .subscribe((ingredientesXTipo) => {
@@ -269,6 +275,10 @@ export class SubirRecetaComponent {
   mostrarPasos() {
     this.mostrarPaso = true;
     this.contadorPasos++;
+  }
+
+  mostrarIngredientes(){
+    this.numIngrAMostrar += 5;
   }
 
   /**
